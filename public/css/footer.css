@@ -1,0 +1,92 @@
+/* Estilos del footer */
+#footer {
+    background-color: #44425a;
+    border-top: solid 7px var(--primary_orange) !important;
+    padding: 15px 0;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-top: 4px solid #3ea4d3 !important;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+/* Contenedor del footer */
+.footer_div-bg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias líneas si es necesario */
+}
+
+/* Columnas del footer */
+.footer_div-bg .col-4 {
+    flex: 1; /* Distribuye el espacio equitativamente */
+    display: flex;
+    align-items: center;
+    padding: 10px; /* Espaciado interno */
+}
+
+/* Alinear la primera imagen a la izquierda */
+.footer_div-bg .col-4:first-child {
+    justify-content: flex-start;
+}
+
+/* Centrar el texto */
+.footer_div-bg .col-4:nth-child(2) {
+    justify-content: center;
+}
+
+/* Alinear las dos últimas imágenes a la derecha */
+.footer_div-bg .col-4:last-child {
+    justify-content: flex-end;
+}
+
+/* Imágenes del footer */
+.footer_img-powered,
+.footer_img-tssc,
+.footer_img-elk {
+    max-height: 40px; /* Tamaño uniforme */
+    margin: 0 10px; /* Espaciado entre imágenes */
+}
+
+/* Texto de copyright */
+.footer_span-copy {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/*  RESPONSIVE DESIGN  */
+
+/* Para pantallas de menos de 768px (tablets y móviles) */
+@media (max-width: 768px) {
+    .footer_div-bg {
+        flex-direction: column; /* Apilar elementos verticalmente */
+        text-align: center;
+    }
+
+    .footer_div-bg .col-4 {
+        width: 100%;
+        padding: 5px 0; /* Espaciado entre elementos */
+    }
+
+    .footer_img-powered,
+    .footer_img-tssc,
+    .footer_img-elk {
+        max-height: 30px; /* Reducir tamaño en móviles */
+    }
+}
+
+/* Para pantallas de menos de 480px (móviles pequeños) */
+@media (max-width: 480px) {
+    .footer_span-copy {
+        font-size: 12px; /* Reducir tamaño del texto */
+    }
+
+    .footer_img-powered,
+    .footer_img-tssc,
+    .footer_img-elk {
+        max-height: 25px; /* Aún más pequeño en móviles */
+    }
+}
