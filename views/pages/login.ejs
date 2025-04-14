@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style_login.css">
-    <link rel="shortcut icon" type="image/x-icon" href="images/logo1.png">
-    <title>Numboland</title>
+    <meta charset="utf-8">
+    <title>TTR</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <!-- Favicon -->
+    <link href="images/favicon.ico" rel="icon">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="form-wrapper">
-            <img src="images/logo1.png" class="logo" style="height: 200px;" width="200px">
-            <div class="form-container">
-                <div class="login-container">
-                    <h1>Inicia Sesión</h1>
-                    <form>
-                        <div class="mb-3 input-group">
-                            <span class="input-group-text icon"><img src="images/ico_person.png"></span>
-                            <input type="text" class="form-control" placeholder="Ingrese Usuario" aria-label="Usuario">
-                        </div>
-                        <div class="mb-3 input-group">
-                            <span class="input-group-text icon"><img src="images/ico_key.png"></span>
-                            <input type="password" class="form-control" placeholder="Ingrese Contraseña" aria-label="Contraseña">
-                        </div>
-                        <input id="btn-submit" class="btn-primary button-rounded" type="button" value="Ingresar" style="cursor:pointer;">
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="contact-info">
-            <span>
-                Plataforma digital para el reforzamiento<br>				
-                de los conocimientos matematicos<br>
-                en niños de primaria desde 1° hasta 3° grado<br>
-                v1.0
-            </span>
-        </div>
-    </div>
-    
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <%- include('../partials/login/header_login') %>
+    <%- include('../partials/login/nav_login') %>
+    <%- include('../partials/login/contenido_login') %>
+    <%- include('../partials/login/footer_login') %>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="/js/login.js"></script>
+</script> 
 </body>
 </html>

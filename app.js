@@ -2,13 +2,15 @@ require('dotenv').config();
 const express = require('express');
 const routes = require('./routes/router')
 const app = express();  
-const bodyParser = require('body-parser');
-
-
 
 app.use(express.static('public'));  
 app.set('view engine' , 'ejs');
-app.use(bodyParser.urlencoded({extended:false}));
+
+// Este middleware permite leer JSON en el body de las peticiones
+app.use(express.json());
+
+// Si también se usa formularios tipo `application/x-www-form-urlencoded`:
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/', routes)
 

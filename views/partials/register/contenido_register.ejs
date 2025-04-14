@@ -1,0 +1,68 @@
+
+
+   
+    <!-- Registration Start -->
+    <div class="container-fluid bg-registration py-5" style="background-image: url('images/Math3.jfif');
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    margin-bottom: 0px; 
+    min-height: 300px;" >
+        <div class="container py-5">
+            <div class="row justify-content-center align-items-center">
+               
+                <div class="col-lg-5">
+                    <div class="card border-0">
+                        <div class="card-header bg-light text-center p-4">
+                            <h1 class="m-0">Registrate</h1>
+                        </div>
+                        <div class="card-body rounded-bottom bg-primary p-5">
+                            <form id="form-registrar" enctype="multipart/form-data" method="POST">
+                                <div class="form-group">
+                                    <input type="text" id="nombre" name="nombre" class="form-control border-0 p-4" placeholder="Nombre Completo" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="correo" name="correo" class="form-control border-0 p-4" placeholder="Correo Electrónico" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="usuario" name="usuario" class="form-control border-0 p-4" placeholder="Usuario" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" id="contrasena" name="contrasena" class="form-control border-0 p-4" placeholder="Contraseña" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <select id="grado" name="grado" class="custom-select border-0 px-4" style="height: 47px;">
+                                        <option selected>Selecciona tu Grado</option>
+                                        <option value="1">1° de Primaria</option>
+                                        <option value="2">2° de Primaria</option>
+                                        <option value="3">3° de Primaria</option>
+                                    </select>
+                                </div>
+                            
+                                <!-- Campo para subir la foto de perfil -->
+                                <div class="form-group">
+                                    <label for="profilePic" class="d-block">Sube tu foto de perfil</label>
+                                    <input type="file" id="profilePic"  name="profilePic" class="form-control-file" accept="image/*" required="required" />
+                                </div>
+                            
+                                <!-- Contenedor para la imagen de perfil -->
+                                <div class="form-group" id="profilePicContainer" style="display:none;">
+                                    <img id="profilePicPreview" src="" alt="Vista previa de la imagen" style="max-width: 150px; height: auto; border-radius: 50%; display: block; margin: auto;" />
+                                    <!-- Botón para quitar la imagen -->
+                                    <button type="button" id="removeProfilePic" class="btn btn-dark btn-block border-0 py-3">Eliminar Imagen</button>
+                                </div>
+                            
+                                <div>
+                                    <button class="btn btn-dark btn-block border-0 py-3" type="submit">Registrate</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Registration End -->
+
+
+   
