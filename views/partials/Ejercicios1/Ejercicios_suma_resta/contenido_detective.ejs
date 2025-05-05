@@ -1,0 +1,77 @@
+<div class="body">
+    <div class="dr1">
+  <h1>Ejercicios de Suma con Objetos</h1>
+  </div>
+  <div class="dr1">
+    <h2>Arrastra los elementos y escribe el resultado de la suma</h2>
+  </div>
+    <div class="contenedor-ejercicio">
+      <h3>Ejercicio 1: 5 fichas rojas + 3 fichas azules = ?
+        <input type="number" id="respuesta1" class="resultado">
+        <span id="feedback1" class="feedback"></span>
+      </h3>
+      <div class="zona-arrastre" id="zona1" ondrop="soltar(event, 'zona1')" ondragover="permitirDrop(event)"></div>
+      <div class="fuente">
+        <img src="/images/fa.webp" class="item-img" draggable="true" ondragstart="iniciarArrastre(event)">
+        <img src="https://editorialparchis.com/wp-content/uploads/2022/01/ficha.png" class="item-img" draggable="true" ondragstart="iniciarArrastre(event)">
+      </div>
+      <button class="boton-eliminar" onclick="eliminarUltimo('zona1')">Eliminar último</button>
+    </div>
+  
+    <div class="contenedor-ejercicio">
+      <h3>Ejercicio 2: 12 osos rosas + 7 osos amarillos = ?
+        <input type="number" id="respuesta2" class="resultado">
+        <span id="feedback2" class="feedback"></span>
+      </h3>
+      <div class="zona-arrastre" id="zona2" ondrop="soltar(event, 'zona2')" ondragover="permitirDrop(event)"></div>
+      <div class="fuente">
+        <img src="https://i.pinimg.com/originals/90/e6/d3/90e6d37770a240ee4875829c36e47db4.png" class="item-img" draggable="true" ondragstart="iniciarArrastre(event)">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEit-c285pvKSfAnQI3S7Ul1_Nop0eg0C5CVEURSdVIItGxM3DvpO5d5ZcFJW6_AuQnvuF2nIoFByacA2Qb_LHrDX0QoEua3G-4Jixb1lWxhhlGtenpJgIsvgeWwML0pQHPS6u8s1Pucn8V5qaZzu5DUJW1N21TRwmRHNP7jQTxjrhoFM4VEBT8B5NZAWFc/s1600-rw/care-bear-clip-art-personaje-de-cari%C3%B1ositos-en-png-con-fondo-transparente-010.png" class="item-img" draggable="true" ondragstart="iniciarArrastre(event)">
+      </div>
+      <button class="boton-eliminar" onclick="eliminarUltimo('zona2')">Eliminar último</button>
+    </div>
+  
+    <div class="contenedor-ejercicio">
+      <h3>Ejercicio 3: 8 sandías + 9 piñas = ?
+        <input type="number" id="respuesta3" class="resultado">
+        <span id="feedback3" class="feedback"></span>
+      </h3>
+      <div class="zona-arrastre" id="zona3" ondrop="soltar(event, 'zona3')" ondragover="permitirDrop(event)"></div>
+      <div class="fuente">
+        <img src="https://www.pikpng.com/pngl/b/362-3625593_fruit-cartoon-transprent-imagenes-de-sandia-animados-clipart.png" class="item-img" draggable="true" ondragstart="iniciarArrastre(event)">
+        <img src="https://png.pngtree.com/png-clipart/20231016/original/pngtree-pineapple-fruit-illustration-cartoon-png-image_13320422.png" class="item-img" draggable="true" ondragstart="iniciarArrastre(event)">
+      </div>
+      <button class="boton-eliminar" onclick="eliminarUltimo('zona3')">Eliminar último</button>
+    </div>
+  
+    <div class="contenedor-ejercicio">
+      <h3>Ejercicio 4: 4 aviones + 7 carros = ?
+        <input type="number" id="respuesta4" class="resultado">
+        <span id="feedback4" class="feedback"></span>
+      </h3>
+      <div class="zona-arrastre" id="zona4" ondrop="soltar(event, 'zona4')" ondragover="permitirDrop(event)"></div>
+      <div class="fuente">
+        <img src="https://images.vexels.com/media/users/3/129216/isolated/preview/9bef244eff56fe252ae74bb75b593c29-dibujos-animados-de-juguete-de-avion.png" class="item-img" draggable="true" ondragstart="iniciarArrastre(event)">
+        <img src="https://www.publicdomainpictures.net/pictures/560000/nahled/cartoon-auto-voertuig-png-1701820589JBZ.png" class="item-img" draggable="true" ondragstart="iniciarArrastre(event)">
+      </div>
+      <button class="boton-eliminar" onclick="eliminarUltimo('zona4')">Eliminar último</button>
+    </div>
+  
+    <div class="contenedor-ejercicio">
+      <h3>Ejercicio 5: 10 pelotas de playa + 12 balones de soccer = ?
+        <input type="number" id="respuesta5" class="resultado">
+        <span id="feedback5" class="feedback"></span>
+      </h3>
+      <div class="zona-arrastre" id="zona5" ondrop="soltar(event, 'zona5')" ondragover="permitirDrop(event)"></div>
+      <div class="fuente">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/014/179/691/small_2x/beach-ball-doodle-png.png" class="item-img" draggable="true" ondragstart="iniciarArrastre(event)">
+        <img src="https://images.vexels.com/media/users/3/158542/isolated/preview/a584351ad747068aff8e83ed254a8384-ilustracion-de-pelota-de-futbol.png" class="item-img" draggable="true" ondragstart="iniciarArrastre(event)">
+      </div>
+      <button class="boton-eliminar" onclick="eliminarUltimo('zona5')">Eliminar último</button>
+    </div>
+  <div class="dr">
+    <button onclick="verificarTodo()" id="botonVerificar">Verificar respuestas</button>
+    <div id="resultado"></div>
+    <button onclick="reiniciarEjercicios()" id="botonReiniciar">Intentar de nuevo</button>
+  </div>
+  </div>

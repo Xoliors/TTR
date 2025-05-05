@@ -1,0 +1,74 @@
+.body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+    text-align: center;
+    padding: 20px;
+  }
+  h1.he {
+    color: #0277bd;
+  }
+  .ejercicio {
+    margin-bottom: 40px;
+  }
+  .contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 40px;
+    margin-top: 20px;
+    position: relative;
+  }
+  .botella {
+    width: 80px;
+    height: 200px;
+    border: 3px solid #0277bd;
+    border-radius: 10px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.6);
+  }
+  .agua {
+    width: 100%;
+    background: #4fc3f7;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 0 10px 10px;
+  }
+  .litros {
+    position: absolute;
+    left: 100%;
+    margin-left: 5px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #0277bd;
+  }
+  .etiqueta {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  input.rs {
+    margin-top: 10px;
+    width: 50px;
+    text-align: center;
+  }
+  button.bn {
+    background-color: #0288d1;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  button.bn:hover {
+    background-color: #0277bd;
+  }
+  #resultado {
+    font-size: 20px;
+    color: #01579b;
+    margin-top: 20px;
+  }

@@ -1,0 +1,295 @@
+.body {
+    font-family: Arial, sans-serif;
+   background-image: url('/images/MATH1.webp');
+   padding: 20px;
+   text-align: center;
+
+}
+.cl{
+    background-color:  #cae4f3;
+    border-radius: 5px;
+
+}
+.jr{
+    margin-left: 350px;
+    width: 800px;
+    height: auto;
+    background-color: #cae4f3;
+  
+}
+h3{
+    text-align: left;
+}
+.recuadro {
+    width: 1600px;
+    min-height: 500px; /* Altura inicial mínima */
+    height: auto; /* La altura se ajusta automáticamente según el contenido */
+    border: 2px solid #83d4e2;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 10px;
+    position: relative;
+    background-image: url(https://previews.123rf.com/images/samuiarzt/samuiarzt1108/samuiarzt110800413/10386288-textura-de-pasto-verde-de-forma-de-campo-de-f%C3%BAtbol.jpg);
+background-repeat: no-repeat;
+background-size: cover; /* Asegura que la imagen no se corte y se ajuste dentro del recuadro */
+background-position: center; 
+   
+text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.recuadro::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255, 0); /* Fondo semitransparente sobre la imagen */
+border-radius: 10px;
+z-index: -1; /* Coloca la capa detrás del contenido */
+}
+.recuadro1 {
+    width: 1600px;
+    min-height: 500px; /* Altura inicial mínima */
+    height: auto; /* La altura se ajusta automáticamente según el contenido */
+    border: 2px solid #83d4e2;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 10px;
+    position: relative;
+    background-image: url(https://img.freepik.com/vector-premium/paisaje-via-tren_18591-58727.jpg);
+background-repeat: no-repeat;
+background-size: cover; /* Asegura que la imagen no se corte y se ajuste dentro del recuadro */
+background-position: center; 
+   
+text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.recuadro1::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255, 0); /* Fondo semitransparente sobre la imagen */
+border-radius: 10px;
+z-index: -1; /* Coloca la capa detrás del contenido */
+}
+.recuadro2 {
+    width: 1600px;
+    min-height: 500px; /* Altura inicial mínima */
+    height: auto; /* La altura se ajusta automáticamente según el contenido */
+    border: 2px solid #83d4e2;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 10px;
+    position: relative;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/000/183/860/non_2x/basketball-court-vector.png);
+background-repeat: no-repeat;
+background-size: cover; /* Asegura que la imagen no se corte y se ajuste dentro del recuadro */
+background-position: center; 
+   
+text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.recuadro2::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255, 0); /* Fondo semitransparente sobre la imagen */
+border-radius: 10px;
+z-index: -1; /* Coloca la capa detrás del contenido */
+}
+.recuadro3 {
+    width: 1600px;
+    min-height: 500px; /* Altura inicial mínima */
+    height: auto; /* La altura se ajusta automáticamente según el contenido */
+    border: 2px solid #83d4e2;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 10px;
+    position: relative;
+    background-image: url(https://img.freepik.com/vector-gratis/escena-hermoso-paisaje-urbano-edificio-alto-tienda-calle-parque_1150-48985.jpg?semt=ais_country_boost&w=740);
+background-repeat: no-repeat;
+background-size: cover; /* Asegura que la imagen no se corte y se ajuste dentro del recuadro */
+background-position: center; 
+   
+text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.recuadro3::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255, 0); /* Fondo semitransparente sobre la imagen */
+border-radius: 10px;
+z-index: -1; /* Coloca la capa detrás del contenido */
+}
+.recuadro4 {
+    width: 1600px;
+    min-height: 500px; /* Altura inicial mínima */
+    height: auto; /* La altura se ajusta automáticamente según el contenido */
+    border: 2px solid #83d4e2;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 10px;
+    position: relative;
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20190828/pngtree-school-timetable-card-background-with-striped-sheet-image_307719.jpg);
+background-repeat: no-repeat;
+background-size: cover; /* Asegura que la imagen no se corte y se ajuste dentro del recuadro */
+background-position: center; 
+   
+text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.recuadro4::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255, 0); /* Fondo semitransparente sobre la imagen */
+border-radius: 10px;
+z-index: -1; /* Coloca la capa detrás del contenido */
+}
+.item {
+    width: 80px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0; /* El margen se controla con el gap */
+}
+
+.contenedor div:last-child {
+    width: 200px; /* Aumenta el ancho */
+    margin-right: 300px; /* Espacio respecto al recuadro */
+    justify-content: center;
+    padding: 10px;
+    background-color: #f4f4f4; /* Opcional: para que se note mejor el espacio */
+    border-radius: 10px;
+    margin-top: 200px;
+}
+.contenedor {
+    display: flex;
+    justify-content: space-between; /* Esto empuja cada div a los extremos */
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.lado {
+    width: 200px;
+    margin-left: 15px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #6cace9;
+}
+
+.but {
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    background-color: #1a799e;
+    color: white;
+    border-color:#1a799e;
+    
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+.but:hover {
+    background-color: #0056b3;
+}
+
+.mensaje {
+    margin-left: 700px;
+    width: 40%;
+    height: auto;
+    border-radius: 20;
+    background-color: #cae4f3;
+    margin-top: 20px;
+    text-align: center;
+    color: rgb(7, 14, 41);
+    font-size: 40px;
+}
+
+.eliminar {
+    margin-top: 10px;
+    background-color: #337aff;
+    color: white;
+    padding: 35px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.eliminar:hover {
+    background-color: #2d12a5;
+}
+.boton-eliminar {
+    width: auto;
+    height: auto;
+    display: block;
+    margin-top: 5px;
+    background-color: #337aff;
+    color: white;
+    padding: 3px 8px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.boton-eliminar:hover {
+    background-color: #2d12a5;
+}
+
+.bot-intentar {
+    display: none; /* Al principio no se muestra */
+    background-color: #1a799e;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.bot-intentar:hover {
+    background-color: #0056b3;
+}
+
+/* Desactivar elementos cuando todo esté bloqueado */
+.bloqueado {
+    pointer-events: none;
+    opacity: 0.5;
+}

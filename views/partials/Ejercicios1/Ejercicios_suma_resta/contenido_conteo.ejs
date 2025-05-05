@@ -1,0 +1,88 @@
+
+<div class="body">
+    <h1>Ejercicio de Conteo</h1>
+    <h1>Arrastra los Objetos segun sea necesario para completar las Sumas</h1>
+
+    <div id="inciso1">
+        <h3>1. Juan tiene 5 manzanas y Pedro le regalo 10 y cuando Juan llego a su casa su mamá le compró otras 10 ¿Cuántas manzanas tiene Juan?</h3>
+        <div class="contenedor">
+            <div class="recuadro" id="recuadro1" ondrop="drop(event, 'recuadro1', 25)" ondragover="allowDrop(event)">
+                <!-- Las manzanas se irán agregando aquí -->
+            </div>
+            <div class="lado">
+                <img src="https://images.vexels.com/media/users/3/145460/isolated/preview/d08a1157100d2e42f31b4a752e71c33b-ilustracion-de-manzana.png" class="item" id="manzana" draggable="true" ondragstart="drag(event)">
+                <p>Arrastra manzanas</p>
+                <button class="boton-eliminar" onclick="eliminarElemento('recuadro1')">Eliminar elemento</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="inciso2">
+        <h3>2. En un árbol hay 15 plátanos colgados Sofia voltea al piso y ve tirados 8 plátanos mas y su papá le dice que el ya habia recodigo 17 plátanos en la mañana , ¿Cuántos plátanos hubo en total?</h3>
+        <div class="contenedor">
+            <div class="recuadro" id="recuadro2" ondrop="drop(event, 'recuadro2', 30)" ondragover="allowDrop(event)">
+                <!-- Las bananas se irán agregando aquí -->
+            </div>
+            <div class="lado">
+                <img src="https://png.pngtree.com/png-vector/20240528/ourmid/pngtree-cartoon-style-banana-fruit-vector-png-image_12540774.png" class="item" id="banana" draggable="true" ondragstart="drag(event)">
+                <p>Arrastra bananas</p>
+                <button class="boton-eliminar" onclick="eliminarElemento('recuadro2')">Eliminar elemento</button>
+            </div>
+          
+        </div>
+    </div>
+
+    <div id="inciso3">
+        <h3>3. En un restaurante preparon varios platillos que incluin zanahorias , en uno se necesitaron 8 zanahorias por que llevaba plato fuerte y entrada, en otro solo fue una crema de zanahoria que ocupo 7 zanahorias,una ensalada que ocupo 6 zanahorias y un platillo mas que ocupo 7 , ¿Cuántas zanahorias se ocuparon en total?</h3>
+        <div class="contenedor">
+            <div class="recuadro" id="recuadro3" ondrop="drop(event, 'recuadro3', 28)" ondragover="allowDrop(event)">
+                <!-- Las zanahorias se irán agregando aquí -->
+            </div>
+            <div class="lado">
+                <img src="https://png.pngtree.com/png-clipart/20230330/original/pngtree-carrot-cartoon-illustration-png-image_9012203.png" class="item" id="zanahoria" draggable="true" ondragstart="drag(event)">
+                <p>Arrastra zanahorias</p>
+                <button class="boton-eliminar" onclick="eliminarElemento('recuadro3')">Eliminar elemento</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="inciso4">
+    <h3>4. En una pasteleria 4 empresas le encargaron pasteles por su aniversario, una de ellas les encargo 7 , la otra pidio 6, por teléfono otra les pidio 9 tambien, una ya tenia encargada 8 , ¿Cuántos pasteles realizó en total la pasteleria?</h3>
+        <div class="contenedor">
+            <div class="recuadro" id="recuadro4" ondrop="drop(event, 'recuadro4', 30)" ondragover="allowDrop(event)">
+                <!-- Los pasteles se irán agregando aquí -->
+            </div>
+            <div class="lado">
+                <img src="https://images.vexels.com/media/users/3/147028/isolated/preview/38b0452cddde763cfcd49cd00e404658-dibujos-animados-de-pastel-de-cumpleanos-de-cereza.png" class="item" id="pastel" draggable="true" ondragstart="drag(event)">
+                <p>Arrastra pasteles</p>
+                <button class="boton-eliminar" onclick="eliminarElemento('recuadro4')">Eliminar elemento</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="inciso5">
+        <h3>5. Sarah, Alejandro, Ricardo y Daniela fueron a la bilbioteca  , Sarah leeyo 5 libros, Alejandro 18, Ricardo 12 y Daniela 7 ,¿Cuántos libros leeyeron entre todos? </h3>
+        <div class="contenedor">
+            <div class="recuadro" id="recuadro5" ondrop="drop(event, 'recuadro5', 42)" ondragover="allowDrop(event)">
+                <!-- Los libros se irán agregando aquí -->
+            </div>
+            <div class="lado">
+                <img src="https://png.pngtree.com/png-clipart/20221221/original/pngtree-cartoon-open-book-png-image_8791644.png" class="item" id="libro" draggable="true" ondragstart="drag(event)">
+                <p>Arrastra libros</p>
+                <button class="boton-eliminar" onclick="eliminarElemento('recuadro5')">Eliminar elemento</button>
+            </div>
+           
+        </div>
+    </div>
+    <div class="boton">
+        <button id="verificarBtn" class="boton-verificar" onclick="verificar()">Verificar respuestas</button>
+    </div>
+
+    <div class="mensaje" id="mensaje"></div>
+
+    <div class="boton">
+        <button id="intentarBtn" class="boton-intentar" onclick="reiniciar()">Intentar de nuevo</button>
+    </div>
+</div>

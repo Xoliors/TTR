@@ -1,0 +1,131 @@
+.body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+}
+.recuadro {
+    width: 1600px;
+    min-height: 500px;
+    height: auto;
+    border: 2px solid #83d4e2;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 10px;
+    position: relative;
+    background-color: #83d4e2;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.item {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.contenedor div:last-child {
+    width: 200px;
+    margin-left: 5px;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    margin-top: 200px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.lado {
+    width: 200px;
+    margin-left: 15px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mensaje {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.eliminar {
+    margin-top: 10px;
+    background-color: #337aff;
+    color: white;
+    padding: 35px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.eliminar:hover {
+    background-color: #2d12a5;
+}
+
+.boton-eliminar {
+    display: block;
+    margin-top: 5px;
+    background-color: #337aff;
+    color: white;
+    padding: 3px 8px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.boton-eliminar:hover {
+    background-color: #2d12a5;
+}
+
+/* Botón verificar respuesta azul */
+#verificarBtn {
+    background-color: #337aff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#verificarBtn:hover {
+    background-color: #2d12a5;
+}
+
+/* Botón intentar de nuevo azul */
+.boton-intentar {
+    display: none;
+    background-color: #337aff;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.boton-intentar:hover {
+    background-color: #2d12a5;
+}
+
+.bloqueado {
+    pointer-events: none;
+    opacity: 0.5;
+}

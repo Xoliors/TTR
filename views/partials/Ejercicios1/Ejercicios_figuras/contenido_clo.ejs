@@ -1,0 +1,22 @@
+<div class="body">
+    <h1>Clasifica los objetos</h1>
+    <div id="zona-instrucciones">
+      Arrastra cada objeto al recuadro correcto según tenga <b>cara plana</b> o <b>cara curva</b>.<br>
+      Tienes hasta 5 intentos en total para lograrlo.
+    </div>
+  
+    <div id="objetos"></div>
+  
+    <div class="zona-clasificacion">
+      <div class="zona" id="plana" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h3>Objetos con cara plana</h3>
+      </div>
+      <div class="zona" id="curva" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h3>Objetos con cara curva</h3>
+      </div>
+    </div>
+  
+    <button class="bien" id="calificarBtn" onclick="calificar()">Calificar</button>
+    <button class="bien" id="intentarBtn" onclick="intentarDeNuevo()" style="display: none;">Intentar de nuevo</button>
+    <div id="calificacion"></div>
+    </div>

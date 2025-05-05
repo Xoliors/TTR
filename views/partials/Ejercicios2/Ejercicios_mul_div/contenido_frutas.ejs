@@ -1,0 +1,34 @@
+<div class="body">
+    <div class="banner"></div>
+    <h1 class="he">¡Reparte las Frutas!</h1>
+    <div class="instructions">Selecciona una fruta y distribúyela entre las personas. Luego, ingresa cuántas frutas le tocan a cada persona.</div>
+    
+    <!-- Selector de frutas -->
+    <div>
+      <label for="fruit-select">Selecciona la fruta:</label>
+      <select id="fruit-select">
+        <option value="manzana">🍎 Manzana</option>
+        <option value="piña">🍍 Piña</option>
+        <option value="kiwi">🥝 Kiwi</option>
+        <option value="fresa">🍓 Fresa</option>
+      </select>
+    </div>
+  
+    <div id="game">
+      <div class="person" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="person" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="person" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="person" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="person" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+  
+    <div id="fruit-bank"></div>
+  
+    <button id="check">Revisar</button>
+  
+    <!-- Pregunta final -->
+    <div class="question">¿Cuántas frutas le tocan a cada persona?</div>
+    <input type="number" id="input-answer" placeholder="Ingresa respuesta" min="0" max="10">
+  
+    <div id="result"></div>
+</div>

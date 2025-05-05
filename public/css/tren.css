@@ -1,0 +1,78 @@
+.body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #e6f0ff;
+    padding: 30px;
+    color: #333;
+    text-align: center;
+  }
+  h2 {
+    font-size: 54px;
+    color: #2b3a67;
+  }
+  p.sd{
+    font-size: 34px;
+    color: #2b3a67;
+  }
+  p.sm{
+    font-size: 24px;
+    color: #2b3a67;
+  }
+  .section {
+    text-align: left;
+    background-color: #ffffff;
+    border: 3px solid #7fa1c4;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .section h3 {
+    margin-top: 0;
+    color: #2b3a67;
+  }
+  input.tr[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+  button.t1 {
+    background-color: #2b3a67;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  button.t1:hover {
+    background-color: #405a89;
+  }
+  .result {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #008000;
+  }
+  .retry-btn {
+    display: none;
+    background-color: #d9534f;
+    margin-top: 15px;
+  }
+  .retry-btn:hover {
+    background-color: #c9302c;
+  }
+  .train {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .exercise {
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #f0f6ff;
+    border-left: 5px solid #7fa1c4;
+    border-radius: 10px;
+  }

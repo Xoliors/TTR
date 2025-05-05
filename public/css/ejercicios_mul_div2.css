@@ -1,0 +1,101 @@
+ /* Estilos generales */
+/* Estilos generales */
+.body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://img.freepik.com/vector-premium/nubes-estrellas-sol-sobre-fondo-azul-ilustracion-vector-ninos-cielo_153074-219.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: brightness(0.8);
+    overflow-x: hidden;
+    height: auto; /* Asegurar que la altura sea completa */
+}
+
+  /* Contenedor principal */
+  .contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 2columnas */
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+   
+    border-radius: 15px;
+    animation: mover 5s infinite alternate ease-in-out;
+  }
+
+  /* Estilos para cada recuadro */
+  .recuadro {
+   
+    background-color: #fff;
+    border-radius: 40px;
+    border: 8px solid #1fc7dd;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+  }
+
+  /* Animación de movimiento de los recuadros */
+  @keyframes mover {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(20px); }
+  }
+
+  /* Estilo para las imágenes dentro de los recuadros */
+  .recuadro img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  /* Efecto al pasar el mouse sobre la imagen */
+  .recuadro img:hover {
+    transform: scale(1.1);
+  }
+
+  /* Hipervínculos */
+  a {
+    text-decoration: none;
+  }
+
+    /* Contenedor para el texto */
+    .texto {
+        
+        font-size: 1.9rem;
+        display: inline-block;
+        transition: color 0.3s ease;
+        color: #333;
+      }
+  
+      /* Efecto de brillo */
+      .texto:hover {
+        color: #5c27fe;
+        animation: brillo 1.5s infinite alternate;
+      }
+  
+      /* Animación de brillo */
+      @keyframes brillo {
+        0% {
+          text-shadow: 0 0 10px #fff, 0 0 20px #5c27fe, 0 0 30px #5c27fe, 0 0 40px #5c27fe;
+          color: #5c27fe;
+        }
+        50% {
+          text-shadow: 0 0 20px #fff, 0 0 30px #5c27fe, 0 0 50px #5c27fe, 0 0 70px #5c27fe;
+          color: #fff;
+        }
+        100% {
+          text-shadow: 0 0 10px #fff, 0 0 20px #5c27fe, 0 0 30px #5c27fe, 0 0 40px #5c27fe;
+          color: #5c27fe;
+        }
+      }
+.item{
+    text-align: center;
+}

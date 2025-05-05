@@ -1,0 +1,72 @@
+.body { 
+    font-family: 'Comic Sans MS', cursive, sans-serif; 
+    background: linear-gradient(to bottom right, #d0f0fd, #a0d8ef); 
+    text-align: center; 
+    padding: 20px; 
+}
+h1.ha{ 
+    color: #01579b; 
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px #81d4fa;
+}
+h2.he{
+    color: #0277bd;
+    margin-top: 20px;
+}
+.barra { 
+    height: 20px; 
+    margin: 10px auto; 
+    border-radius: 10px; 
+    transition: width 0.5s ease; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.verde { background: #43a047; width: 300px; }
+.azul { background: #1565c0; width: 180px; }
+.morado { background: #7e57c2; width: 150px; }
+.naranja { background: #fb8c00; width: 90px; }
+.amarillo { background: #ffee58; width: 30px; }
+.ejercicio { 
+    margin: 30px auto; 
+    padding: 20px; 
+    background: #ffffff; 
+    border-radius: 15px; 
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    max-width: 600px;
+}
+.linea { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 5px; 
+    margin-bottom: 15px; 
+    flex-wrap: wrap; 
+}
+input.sr { 
+    width: 200px; 
+    text-align: center; 
+    margin-top: 5px; 
+    padding: 8px; 
+    border-radius: 8px; 
+    border: 2px solid #81d4fa; 
+    font-size: 16px;
+}
+button.bn { 
+    margin-top: 10px; 
+    padding: 12px 24px; 
+    font-size: 18px; 
+    background: #0288d1; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    color: white; 
+    transition: background 0.3s;
+    margin: 5px;
+}
+button.bn:hover { background: #0277bd; }
+.resultado { 
+    margin-top: 20px; 
+    font-weight: bold; 
+    font-size: 20px; 
+    color: #01579b; 
+}
+#botones { margin-top: 30px; }

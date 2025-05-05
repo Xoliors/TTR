@@ -1,0 +1,75 @@
+<div class="body">
+  <h2 class="he">Observa la figura y selecciona cuáles figuras contiene:</h2>
+
+  <!-- Figura principal -->
+  <svg id="figuraPrincipal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <!-- Tejado: trapecio -->
+    <polygon points="20,60 180,60 160,100 40,100" fill="#ffd54f" stroke="#c79100" stroke-width="2"/>
+    <!-- Tres círculos dentro del trapecio -->
+    <circle cx="60" cy="80" r="8" fill="#90caf9" stroke="#4d8fc1" stroke-width="1.5"/>
+    <circle cx="100" cy="80" r="8" fill="#90caf9" stroke="#4d8fc1" stroke-width="1.5"/>
+    <circle cx="140" cy="80" r="8" fill="#90caf9" stroke="#4d8fc1" stroke-width="1.5"/>
+    <!-- Tejas: 3 triángulos -->
+    <polygon points="50,60 60,40 70,60" fill="#ff8a65" stroke="#c55a33" stroke-width="2"/>
+    <polygon points="90,60 100,40 110,60" fill="#ff8a65" stroke="#c55a33" stroke-width="2"/>
+    <polygon points="130,60 140,40 150,60" fill="#ff8a65" stroke="#c55a33" stroke-width="2"/>
+    <!-- 3 Pentágonos pequeños con cuadrados encima -->
+    <polygon points="50,100 70,100 75,115 60,130 45,115" fill="#a5d6a7" stroke="#5a8f5b" stroke-width="2"/>
+    <rect x="55" y="105" width="10" height="10" fill="#90caf9" stroke="#4d8fc1" stroke-width="1.5"/>
+    <polygon points="90,100 110,100 115,115 100,130 85,115" fill="#a5d6a7" stroke="#5a8f5b" stroke-width="2"/>
+    <rect x="95" y="105" width="10" height="10" fill="#90caf9" stroke="#4d8fc1" stroke-width="1.5"/>
+    <polygon points="130,100 150,100 155,115 140,130 125,115" fill="#a5d6a7" stroke="#5a8f5b" stroke-width="2"/>
+    <rect x="135" y="105" width="10" height="10" fill="#90caf9" stroke="#4d8fc1" stroke-width="1.5"/>
+  </svg>
+  <form id="quizForm">
+    <div class="figuras-container">
+     
+      <div class="figura-opcion">
+        <svg viewBox="0 0 100 100"><polygon points="50,10 90,90 10,90" fill=" #4E342E" stroke=" #4E342E" stroke-width="2"/></svg>
+        <label><input type="checkbox" name="figura" value="Triángulo"> Triángulo</label>
+      </div>
+      <div class="figura-opcion">
+        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="#2196f3"/></svg>
+        <label><input type="checkbox" name="figura" value="Círculo"> Círculo</label>
+      </div>
+      <div class="figura-opcion">
+        <svg viewBox="0 0 100 100"><polygon points="50,10 85,30 85,70 50,90 15,70 15,30" fill="#ffeb3b" stroke="#fbc02d" stroke-width="2"/></svg>
+        <label><input type="checkbox" name="figura" value="Hexágono"> Hexágono</label>
+      </div>
+      <div class="figura-opcion">
+        <svg viewBox="0 0 100 100"><polygon points="50,10 83,25 90,55 70,85 30,85 10,55 17,25" fill="#ff9800" stroke="#ef6c00" stroke-width="2"/></svg>
+        <label><input type="checkbox" name="figura" value="Heptágono"> Heptágono</label>
+      </div>
+      <div class="figura-opcion">
+        <svg viewBox="0 0 100 100"><polygon points="10,10 90,10 90,90 10,90" fill="#8bc34a"/></svg>
+        <label><input type="checkbox" name="figura" value="Cuadrado"> Cuadrado</label>
+      </div>
+      <div class="figura-opcion">
+        <svg viewBox="0 0 100 100"><polygon points="50,10 90,50 50,90 10,50" fill="#F7C5CC" stroke="#F7C5CC" stroke-width="2"/></svg>
+        <label><input type="checkbox" name="figura" value="Rombo"> Rombo</label>
+      </div>
+      <div class="figura-opcion">
+        <svg viewBox="0 0 100 100"><polygon points="20,10 80,10 100,30 100,70 80,90 20,90 0,70 0,30" fill="#4caf50" stroke="#2e7d32" stroke-width="2"/></svg>
+        <label><input type="checkbox" name="figura" value="Octágono"> Octágono</label>
+      </div>
+      <div class="figura-opcion">
+        <svg viewBox="0 0 100 100"><polygon points="30,30 70,30 90,80 10,80" fill="#9c27b0" stroke="#6a1b9a" stroke-width="2"/></svg>
+        <label><input type="checkbox" name="figura" value="Trapecio"> Trapecio</label>
+      </div>
+      <div class="figura-opcion">
+        <svg viewBox="0 0 100 100"><polygon points="50,10 90,30 70,70 30,70 10,30" fill="#f44336" stroke="#c62828" stroke-width="2"/></svg>
+        <label><input type="checkbox" name="figura" value="Pentágono"> Pentágono</label>
+      </div>
+    </div>
+
+    <div style="margin-top: 30px;">
+      <label for="lados">¿Cuántos lados tiene en total la figura mostrada?</label><br>
+      <input type="number" id="lados" name="lados" required><br>
+    </div>
+
+    <button class="bn" type="submit">Verificar</button>
+    <button class="bn" type="button" id="reintentar" style="display:none">Intentar de nuevo</button>
+    <p id="resultado"></p>
+    </form>
+
+    </div>

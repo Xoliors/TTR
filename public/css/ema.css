@@ -1,0 +1,62 @@
+.body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: rgb(180, 217, 231);
+    text-align: center;
+  }
+  .exercise {
+    text-align: left;
+    border: 5px solid #0a3163;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: white;
+  }
+  input.rs[type="text"] {
+    width: 100%;
+    padding: 2px;
+    margin-top: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+    color: #0a3163;
+  }
+  .bn {
+    margin-top: 10px;
+    background-color: #1f59a5;
+    border-radius: 15px;
+    color: white;
+  }
+  .result {
+    margin-top: 10px;
+    font-weight: bold;
+  font-size: 30px;
+  }
+  #finalScore {
+    font-size: 1.2em;
+    color: blue;
+    margin-top: 20px;
+  }
+  #retryBtn {
+    margin-top: 15px;
+    padding: 10px;
+    display: none;
+    background-color: #0a3163;
+  }
+  #retryBtn:hover {
+    margin-top: 15px;
+    padding: 10px;
+    display: none;
+    background-color: #2a63ae;
+  }
+  h3.t3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(16, 16, 128);
+  }
+  p.t4{
+    color: rgb(22, 109, 160);
+    font-size: 30px;
+  }
+ .t5{
+    color: rgb(22, 109, 160);
+    font-size: 30px;
+  }

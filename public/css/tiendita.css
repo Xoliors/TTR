@@ -1,0 +1,60 @@
+.body {
+    font-family: sans-serif;
+    padding: 20px;
+   background-image: url('/images/MATH1.webp');
+ 
+  }
+  .section {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: white;
+  }
+  .input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  .btn-1 {
+    margin-top: 10px;
+    padding: 10px;
+  
+  }
+  .result {
+    font-weight: bold;
+    margin-top: 10px;
+  
+  }
+  .retry-btn {
+    background-color: #1e92bc;  /* azul claro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .retry-btn:hover {
+    background-color: #1982d2;  /* azul más fuerte */
+  }
+  
+  .product-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .product-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+.attempt-result {
+  background-color: white;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 10px 0;
+}

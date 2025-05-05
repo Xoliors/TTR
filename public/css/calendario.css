@@ -1,0 +1,98 @@
+.body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #d9eaff, #ffffff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  h1.he {
+    color: #003366;
+    margin-bottom: 10px;
+  }
+
+  .respuesta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+  .respuesta {
+    background-color: #a3cfff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: grab;
+    font-weight: bold;
+    user-select: none;
+  }
+
+  .calendario {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  .mes {
+    background-color: #e6f2ff;
+    border: 2px solid #99c2ff;
+    border-radius: 10px;
+    padding: 10px;
+    min-height: 140px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .mes h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #003366;
+  }
+
+  .pregunta {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .zona-respuesta {
+    min-height: 40px;
+    background-color: #f0f8ff;
+    border: 2px dashed #66a3ff;
+    border-radius: 6px;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .zona-respuesta .respuesta {
+    background-color: #cce5ff;
+    cursor: default;
+  }
+
+  .correcta {
+    background-color: #b2f2bb !important;
+  }
+
+  .incorrecta {
+    background-color: #f5baba !important;
+  }
+
+  button.bn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  #resultado {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #003366;
+    font-weight: bold;
+  }

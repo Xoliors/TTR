@@ -1,0 +1,107 @@
+.body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(to right, #a2d4f3, #d0eafc);
+    color: #003366;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #005b99;
+  }
+  table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: #e0f3ff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #88c9f9;
+  }
+  th, td {
+    border: 1px solid #88c9f9;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    font-size: 24px;
+  }
+  th {
+    background-color: #b3ddf2;
+    width: 120px;
+  }
+  th img {
+    width: 80px; /* Tamaño fijo para las imágenes */
+    height: 80px;
+    object-fit: contain;
+  }
+  .draggable {
+    cursor: grab;
+    font-size: 36px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .dropzone {
+    border: 2px dashed #3399cc;
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 24px;
+    text-align: center;
+    line-height: 45px;
+    margin: 3px;
+    background-color: #ffffff;
+    border-radius: 6px;
+  }
+  .pregunta {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 30px;
+    color: #004477;
+  }
+  .respuesta {
+    margin: 10px 0 20px 0;
+  }
+  .bc {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .bc:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  .resultado {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #003366;
+  }
+  .zona {
+    display: grid;
+    grid-template-columns: repeat(8, 48px);
+    gap: 6px;
+    background-color: #f0f9ff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px #99ccee;
+    margin-bottom: 20px;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .contenedor {
+    text-align: center;
+  }
+  .intentos {
+    font-size: 18px;
+    color: #003366;
+    margin-top: 10px;
+  }

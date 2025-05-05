@@ -1,0 +1,135 @@
+<div class="body">
+
+    <h2>Juego de Figuras Geométricas</h2>
+    <p>Arrastra la figura correspondiente al nombre.</p>
+
+    <div class="containert" id="contenedorFiguras">
+        <!-- SVG Figures with different colors, now in random order -->
+        <div class="figura" id="cuadrado" draggable="true" ondragstart="drag(event)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="pink">
+                <rect x="10" y="10" width="80" height="80" stroke="green" stroke-width="4" fill="#44D62C"/>
+            </svg>
+        </div>
+        <div class="figura" id="caraCurva" draggable="true" ondragstart="drag(event)" style="display: flex; justify-content: center; align-items: center; ">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="200" height="400" style="margin-top: 20px;">
+                <!-- Cuerpo de la botella -->
+                <rect x="50" y="50" width="100" height="250" fill="lightblue" stroke="black" stroke-width="5" rx="15" ry="15"/>
+                
+                <!-- Cuello de la botella -->
+                <rect x="75" y="30" width="50" height="30" fill="lightblue" stroke="black" stroke-width="5" rx="10" ry="10"/>
+                
+                <!-- Tapa de la botella -->
+                <rect x="70" y="10" width="60" height="20" fill="gray" stroke="black" stroke-width="5" rx="10" ry="10"/>
+                
+                <!-- Etiqueta -->
+                <rect x="75" y="120" width="50" height="100" fill="white" stroke="black" stroke-width="2" rx="10" ry="10"/>
+                
+                <!-- Gota dentro de la etiqueta -->
+                <path d="M100,160 C105,140 115,140 120,160 C125,180 115,200 100,200 C85,200 75,180 80,160 C85,140 95,140 100,160" fill="blue"/>
+            </svg>
+        </div>
+        
+        
+        <div class="figura" id="rombo" draggable="true" ondragstart="drag(event)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="yellow">
+                <polygon points="50,10 90,50 50,90 10,50" stroke="orange" stroke-width="4" fill="yellow"/>
+            </svg>
+        </div>
+        <div class="figura" id="circulo" draggable="true" ondragstart="drag(event)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="purple">
+                <circle cx="50" cy="50" r="40" stroke="#472944" stroke-width="4" fill="#bfb0de"/>
+            </svg>
+        </div>
+        <div class="figura" id="trapecio" draggable="true" ondragstart="drag(event)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="violet">
+                <polygon points="10,80 90,80 70,30 30,30" stroke="purple" stroke-width="4" fill="violet"/>
+            </svg>
+        </div>
+        <div class="figura" id="triangulo" draggable="true" ondragstart="drag(event)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="cyan">
+                <polygon points="50,10 90,90 10,90" stroke="#fe0000" stroke-width="4" fill="#E1523D"/>
+            </svg>
+        </div>
+        <div class="figura" id="rectangulo" draggable="true" ondragstart="drag(event)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="gray">
+                <rect x="10" y="30" width="80" height="40" stroke="#250E62" stroke-width="4" fill="#407EC9"/>
+            </svg>
+            
+        </div>
+        <div class="figura" id="lineaCurva" draggable="true" ondragstart="drag(event)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="red">
+                <path d="M10 50 C 30 20, 70 20, 90 50" stroke="#a11c55" stroke-width="4" fill="transparent"/>
+            </svg>
+            
+        </div>
+        <div class="figura" id="lineaRecta" draggable="true" ondragstart="drag(event)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="blue">
+                <line x1="10" y1="50" x2="90" y2="50" stroke="#EDE939" stroke-width="4" />
+            </svg>
+            
+        </div>
+        <div class="figura" id="vertice" draggable="true" ondragstart="drag(event)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="brown">
+                <circle cx="50" cy="50" r="5" stroke="#8FE2B0" stroke-width="4" fill="#8FE2B0"/>
+            </svg>
+        </div>
+        <div class="figura" id="caraPlana" draggable="true" ondragstart="drag(event)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="200" height="150">
+                <!-- Carro (base) -->
+                <rect x="40" y="50" width="120" height="50" fill="#4CAF50" stroke="black" stroke-width="2"/>
+                
+                <!-- Ruedas -->
+                <circle cx="50" cy="110" r="15" fill="black"/>
+                <circle cx="150" cy="110" r="15" fill="black"/>
+                
+                <!-- Estructura superior -->
+                <rect x="60" y="40" width="80" height="20" fill="#FF9800" stroke="black" stroke-width="2"/>
+            </svg>
+        </div>
+    </div>
+    
+
+    <h3>Casillas de Respuesta</h3>
+
+    <div class="containert">
+        <div class="drop-area" id="dropLineaRecta" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Línea Recta</p>
+        </div>
+        <div class="drop-area" id="dropLineaCurva" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Línea Curva</p>
+        </div>
+        <div class="drop-area" id="dropCaraPlana" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Cara Plana</p>
+        </div>
+        <div class="drop-area" id="dropCaraCurva" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Cara Curva</p>
+        </div>
+        <div class="drop-area" id="dropCirculo" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Círculo</p>
+        </div>
+        <div class="drop-area" id="dropCuadrado" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Cuadrado</p>
+        </div>
+        <div class="drop-area" id="dropRombo" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Rombo</p>
+        </div>
+        <div class="drop-area" id="dropTriangulo" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Triángulo</p>
+        </div>
+        <div class="drop-area" id="dropVertice" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Vértice</p>
+        </div>
+        <div class="drop-area" id="dropTrapecio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Trapecio</p>
+        </div>
+        <div class="drop-area" id="dropRectangulo" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Rectángulo</p>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="las" onclick="calificar()">Calificar</button>
+        <button class="las" onclick="intentarDeNuevo()" id="btnReintentar">Intentar de nuevo</button>
+        <p id="resultado" class="calificacion"></p>
+        <p id="intentosRestantes"></p>
+    </div>

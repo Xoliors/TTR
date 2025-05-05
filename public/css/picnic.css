@@ -1,0 +1,86 @@
+.body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/005/094/041/non_2x/winter-background-with-falling-snowflakes-and-snow-trees-on-blue-background-free-vector.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    color: white;
+}
+.grupo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.grupo img {
+    width: 120px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.grupo img:hover {
+    transform: scale(1.2);
+}
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 15px;
+}
+input.input[type="text"] {
+    padding: 10px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+}
+.but {
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+.but:hover {
+    background-color: #0056b3;
+}
+#resultado {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    display: inline-block;
+}
+#calificacion {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+.footer {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #ddd;
+}
+.c1{
+    color: #0056b3;
+    font-size: 120%;
+
+}
+.p1{
+    color: #05203d;
+    font-size: 180%;
+   font-family: 'Times New Roman', Times, serif;
+}

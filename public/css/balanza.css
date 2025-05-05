@@ -1,0 +1,108 @@
+.body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #aed5e0;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    color: #2c3e50;
+  }
+
+  .instruccion {
+    background-color: #dceeff;
+    border-left: 6px solid #3498db;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 10px;
+  }
+
+  .contenedor-objetos {
+    margin-top: 20px;
+  }
+
+  .objeto {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    display: inline-block;
+    line-height: 60px;
+    font-size: 30px;
+    background-color: #22bfe6;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: grab;
+  }
+
+  .balanza {
+     
+    width: 300px;
+    height: 20px;
+    background: #75601c;
+    margin: 200px auto 30px auto;
+    position: relative;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .plato {
+
+    width: 100px;
+    height: 100px;
+    background: #2766da;
+    border-radius: 50%;
+    position: absolute;
+    top: -60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  #izquierda { left: -110px; }
+  #derecha { right: -110px; }
+
+  .peso {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 5px;
+  }
+
+  .pregunta {
+    color: black;
+    font-size: 30px;
+   margin-top: 160px;
+  }
+
+  .respuesta {
+    margin-top: 110px;
+  }
+
+  select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  .ba {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  #resultadoFinal {
+    font-size: 20px;
+    color: rgb(15, 40, 94);
+    margin-top: 20px;
+    font-weight: bold;
+  }

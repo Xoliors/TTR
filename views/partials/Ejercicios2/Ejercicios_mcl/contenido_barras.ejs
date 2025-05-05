@@ -1,0 +1,79 @@
+<div class="body">
+
+    <h1 class="ha">¿Cuánto miden las barras juntas?</h1>
+
+    <h2 class="he">Barras de referencia</h2>
+    <div class="barra verde"></div><p>Verde = 1 metro (100 cm)</p>
+    <div class="barra azul"></div><p>Azul = 60 cm</p>
+    <div class="barra morado"></div><p>Morado = 50 cm</p>
+    <div class="barra naranja"></div><p>Naranja = 30 cm</p>
+    <div class="barra amarillo"></div><p>Amarillo = 10 cm</p>
+    
+    <hr>
+    
+    <!-- Ejercicios -->
+    <div id="ejercicios">
+    <div class="ejercicio">
+        <h2 class="he">Ejercicio 1</h2>
+        <div class="linea">
+            <div class="barra azul"></div>
+            <div class="barra amarillo"></div>
+            <div class="barra naranja"></div>
+            <div class="barra azul"></div>
+        </div>
+        <input class="sr" type="number" id="respuesta1" placeholder="¿Cuántos cm?">
+    </div>
+    
+    <div class="ejercicio">
+        <h2 class="he">Ejercicio 2</h2>
+        <div class="linea">
+            <div class="barra verde"></div>
+            <div class="barra morado"></div>
+            <div class="barra amarillo"></div>
+            <div class="barra azul"></div>
+        </div>
+        <input class="sr" type="number" id="respuesta2" placeholder="¿Cuántos cm?">
+    </div>
+    
+    <div class="ejercicio">
+        <h2 class="he">Ejercicio 3</h2>
+        <div class="linea">
+            <div class="barra naranja"></div>
+            <div class="barra verde"></div>
+            <div class="barra azul"></div>
+            <div class="barra morado"></div>
+        </div>
+        <input class="sr" type="number" id="respuesta3" placeholder="¿Cuántos cm?">
+    </div>
+    
+    <div class="ejercicio">
+        <h2 class="he">Ejercicio 4</h2>
+        <div class="linea">
+            <div class="barra amarillo"></div>
+            <div class="barra naranja"></div>
+            <div class="barra amarillo"></div>
+            <div class="barra naranja"></div>
+        </div>
+        <input class="sr" type="number" id="respuesta4" placeholder="¿Cuántos cm?">
+    </div>
+    
+    <div class="ejercicio">
+        <h2 class="he">Ejercicio 5</h2>
+        <div class="linea">
+            <div class="barra morado"></div>
+            <div class="barra azul"></div>
+            <div class="barra verde"></div>
+            <div class="barra azul"></div>
+        </div>
+        <input class="sr" type="number" id="respuesta5" placeholder="¿Cuántos cm?">
+    </div>
+    </div>
+    
+    <div id="botones">
+        <button class="bn" onclick="verificarTodo()">Verificar todo</button>
+        <button class="bn" id="reiniciar" onclick="reiniciar()" style="display:none;">Intentar de nuevo</button>
+    </div>
+    
+    <div id="resultadoGeneral" class="resultado"></div>
+    
+    </div>

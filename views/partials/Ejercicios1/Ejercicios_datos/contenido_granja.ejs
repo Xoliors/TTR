@@ -1,0 +1,48 @@
+<div class="body">
+
+    <h2>Pictograma: Gallinas y Cisnes</h2>
+    
+    <table>
+      <tr>
+        <th>Gallinas</th>
+        <td>🐔</td><td>🐔</td><td>🐔</td><td>🐔</td><td>🐔</td>
+        <td>🐔</td><td>🐔</td><td>🐔</td><td>🐔</td><td>🐔</td>
+        <td>🐔</td><td>🐔</td><td>🐔</td><td>🐔</td><td>🐔</td>
+      </tr>
+      <tr>
+        <th>Cisnes</th>
+        <td>🦢</td><td>🦢</td><td>🦢</td><td>🦢</td><td>🦢</td>
+        <td>🦢</td><td>🦢</td><td>🦢</td><td>🦢</td><td>🦢</td>
+        <td>🦢</td><td>🦢</td><td>🦢</td><td>🦢</td><td>🦢</td>
+        <td>🦢</td><td>🦢</td><td>🦢</td><td>🦢</td><td>🦢</td>
+        <td>🦢</td><td>🦢</td><td>🦢</td><td>🦢</td><td>🦢</td>
+      </tr>
+    </table>
+    
+    <div class="contenedor">
+      <div class="pregunta">
+        ¿Cuántas gallinas se salieron del corral si se encontraron 6? <span id="iconGallinas"></span>
+      </div>
+      <div class="respuesta">
+        <div id="gallinaOrigen" class="draggable" draggable="true" ondragstart="drag(event)">🐔</div>
+      </div>
+      <div id="zonaGallinas" class="zona"></div>
+      
+      <div class="pregunta">
+        18 cisnes se fueron al estanque, ¿cuántos cisnes faltan de ir? <span id="iconCisnes"></span>
+      </div>
+      <div class="respuesta">
+        <div id="cisneOrigen" class="draggable" draggable="true" ondragstart="drag(event)">🦢</div>
+      </div>
+      <div id="zonaCisnes" class="zona"></div>
+      
+      <div class="resultado" id="mensajeResultado"></div>
+    
+      <div class="intentos">
+        Intentos restantes: <span id="intentosRestantes">5</span>
+      </div>
+      
+      <button class="bat" id="btnCalificar" onclick="calificar()">Calificar</button>
+      <button class="bat" id="btnReiniciar" onclick="reiniciar()">Intentar de nuevo</button>
+    </div>
+    </div>

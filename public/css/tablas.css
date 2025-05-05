@@ -1,0 +1,159 @@
+.body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background: linear-gradient(to bottom, #cce7ff, #e0f7ff);
+    text-align: center;
+    padding: 20px;
+  }
+
+  h1.he {
+    color: #005ecb;
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  p.tl {
+    font-size: 20px;
+    color: #333;
+  }
+
+  .ct {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  .multiplication,
+  .answers {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .multiplication {
+    width: 360px;
+  }
+
+  .answers {
+    width: 260px;
+  }
+
+  .multiplication h2,
+  .answers h2 {
+    color: #2196f3;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .drop-zone {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 50px;
+    margin-left: 10px;
+    border: 3px dashed #4dabf7;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #e3f2fd;
+    border-radius: 10px;
+    transition: background 0.2s;
+  }
+
+  .drop-zone:hover {
+    background-color: #bbdefb;
+  }
+
+  .number {
+    background: #4dabf7;
+    color: white;
+    padding: 10px;
+    border-radius: 12px;
+    cursor: grab;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    width: 70px;
+    height: 50px;
+    font-weight: bold;
+    user-select: none;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .number:active {
+    cursor: grabbing;
+    transform: scale(1.1);
+  }
+
+  .correct {
+    color: #43a047;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+
+  .incorrect {
+    color: #e53935;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+
+  button.bn {
+    margin-top: 30px;
+    padding: 14px 30px;
+    font-size: 22px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+
+  button.bn:hover {
+    background-color: #1565c0;
+  }
+
+  #score {
+    margin-top: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #0d47a1;
+  }
+
+  @media (max-width: 1024px) {
+    .ct {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .multiplication,
+    .answers {
+      width: 90%;
+      max-width: 500px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .drop-zone,
+    .number {
+      width: 60px;
+      height: 45px;
+      font-size: 18px;
+    }
+
+    button.bn {
+      font-size: 18px;
+      padding: 12px 24px;
+    }
+
+    h1.he {
+      font-size: 28px;
+    }
+  }

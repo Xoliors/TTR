@@ -1,0 +1,37 @@
+<div class="body">
+
+  <h2>🎁 Ejercicio 3: Caja Misteriosa</h2>
+  <p>Saca los objetos de la caja, cuenta cuántos hay, y haz una representación.</p>
+  
+  <div class="section">
+    <h3>🎯 Objetivo:</h3>
+    <p>Saca los objetos de la caja misteriosa, cuenta cuántos hay de cada tipo y representa con símbolos (|).</p>
+  </div>
+  
+  <div class="section">
+    <h3>🔲 Caja Misteriosa:</h3>
+    <p>Haz clic en el botón para sacar los objetos de la caja.</p>
+    <button class="bn" id="sacarBtn" onclick="generateObjects()">Sacar objetos</button>
+    <div id="objects" class="objects"></div>
+  </div>
+  
+  <div class="section" id="questionsSection" style="display:none;">
+    <label>¿Cuántas pelotas de fútbol sacaste? ⚽</label>
+    <input class="rs" type="text" id="countFootballInput" placeholder="Escribe un número">
+  
+    <label>¿Cuántas pelotas de baloncesto sacaste? 🏀</label>
+    <input class="rs" type="text" id="countBasketballInput" placeholder="Escribe un número">
+  
+    <label>¿Cuántas pelotas de béisbol sacaste? ⚾</label>
+    <input class="rs" type="text" id="countBaseballInput" placeholder="Escribe un número">
+  
+    <label>¿Cuántos objetos sacaste en total?</label>
+    <input class="rs" type="text" id="totalObjectsInput" placeholder="Escribe el total de objetos">
+  
+    <button class="bn" onclick="checkAnswers()">✅ Verificar</button>
+    <div class="result" id="resultText"></div>
+    <button class="bn" id="retryBtn" onclick="retry()" style="display: none;">🔄 Volver a Intentar</button>
+  </div>
+  
+  <div id="score" style="font-size: 18px; margin-top: 10px;"></div>
+    </div>

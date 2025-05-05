@@ -1,0 +1,92 @@
+.body {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px;
+    background-color: #e6f0ff;
+    text-align: center;
+}
+h2, h3 {
+  font-size: 54px;
+  color: #2b3a67;
+}
+p.sd{
+  font-size: 34px;
+  color: #2b3a67;
+}
+p.sm{
+  font-size: 24px;
+  color: #2b3a67;
+}
+
+  .section {
+    text-align: left;
+    border: 2px solid #99c2ff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 51, 102, 0.1);
+  }
+
+  .table-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .table-cell {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border: 1px solid #b3d1ff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    transition: background-color 0.3s ease;
+  }
+
+  .colored-red {
+    background-color: #ff9999 !important;
+  }
+
+  .colored-blue {
+    background-color: #99ccff !important;
+  }
+
+  .colored-green {
+    background-color: #99e699 !important;
+  }
+
+  .result {
+    font-weight: bold;
+    color: #003366;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #d9ecff;
+    border-radius: 10px;
+  }
+
+  button.bn, .retry-btn {
+    background-color: #4da6ff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+
+  button.bn:hover {
+    background-color: #3399ff;
+  }
+
+  .retry-btn {
+    display: none;
+  }

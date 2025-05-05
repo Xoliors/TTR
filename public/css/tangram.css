@@ -1,0 +1,101 @@
+.body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+  }
+  h2.he, label {
+    color: #0d47a1;
+    padding-top:  30px;
+  }
+  .figuras-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+   
+  }
+  .figura-opcion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  svg {
+    width: 140px;
+    height: 140px;
+  }
+  #figuraPrincipal {
+    width: 700px;
+      height: auto;
+      margin: 0 auto;
+   
+  }
+  button.bn {
+    margin-top: 15px;
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button.bn:hover {
+    background-color: #1976d2;
+  }
+  input[type="number"] {
+    padding: 8px;
+    border: 2px solid #64b5f6;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  input[type="checkbox"] {
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    border: 2px solid #2196f3;
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-right: 8px;
+  }
+  input[type="checkbox"]::before {
+    content: "✔";
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 4px;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: #2196f3;
+    border-color: #1976d2;
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+  }
+  #resultado {
+    font-weight: bold;
+    color: #0d47a1;
+    font-size: 20px;
+  }

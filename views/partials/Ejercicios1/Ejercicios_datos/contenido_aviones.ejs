@@ -1,0 +1,49 @@
+<div class="body">
+    <h1>Gráfica de ventas de aviones ✈️</h1>
+  
+    <div class="chart-container">
+      <div class="y-axis">
+        <div>0</div>
+        <div>10</div>
+        <div>20</div>
+        <div>30</div>
+        <div>40</div>
+        <div>50</div>
+      </div>
+  
+      <div id="barChart" class="bar-chart">
+        <!-- Nuevos valores actualizados -->
+        <div class="bar" data-count="15"><div class="label">Ene</div></div>
+        <div class="bar" data-count="20"><div class="label">Feb</div></div>
+        <div class="bar" data-count="7"><div class="label">Mar</div></div>
+        <div class="bar" data-count="18"><div class="label">Abr</div></div>
+        <div class="bar" data-count="22"><div class="label">May</div></div>
+        <div class="bar" data-count="13"><div class="label">Jun</div></div>
+      </div>
+    </div>
+  
+    <!-- Preguntas -->
+    <div class="question">
+      1. ¿Cuántos aviones se vendieron en marzo y abril juntos?
+      <input type="number" id="p1">
+    </div>
+  
+    <div class="question">
+      2. ¿Cuántos aviones se vendieron en cada uno de los meses?<br>
+      Ene: <input type="number" id="m1">
+      Feb: <input type="number" id="m2">
+      Mar: <input type="number" id="m3">
+      Abr: <input type="number" id="m4">
+      May: <input type="number" id="m5">
+      Jun: <input type="number" id="m6">
+    </div>
+  
+    <div class="question">
+      3. ¿Cuántos aviones más se vendieron en mayo en comparación con junio?
+      <input type="number" id="p3">
+    </div>
+  
+    <button onclick="calificar()">Terminar</button>
+  
+    <div id="resultado"></div>
+    </div>

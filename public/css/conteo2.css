@@ -1,0 +1,138 @@
+.body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 20px;
+    background-color: #f0f9ff;
+    color: #1f4e79;
+}
+h1, h3 {
+    text-align: center;
+    color: #1f4e79;
+}
+.recuadro {
+    width: 1600px;
+    min-height: 500px;
+    height: auto;
+    border: 3px solid #1f75fe;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 10px;
+    position: relative;
+    background-color: #cce7ff;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.item {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.contenedor div:last-child {
+    width: 200px;
+    margin-left: 5px;
+    justify-content: center;
+    padding: 15px;
+    background-color: #e8f5ff;
+    border-radius: 15px;
+    margin-top: 200px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    margin-left: 350px;
+}
+
+.lado {
+    width: 200px;
+    margin-right: 115px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mensaje {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1f4e79;
+}
+
+.eliminar {
+    margin-top: 10px;
+    background-color: #1f75fe;
+    color: white;
+    padding: 35px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.eliminar:hover {
+    background-color: #115ab0;
+}
+
+.boton-eliminar {
+    display: block;
+    margin-top: 5px;
+    background-color: #1f75fe;
+    color: white;
+    padding: 3px 8px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.boton-eliminar:hover {
+    background-color: #115ab0;
+}
+
+#verificarBtn {
+    background-color: #1f75fe;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#verificarBtn:hover {
+    background-color: #115ab0;
+}
+
+.boton-intentar {
+    display: none;
+    background-color: #1f75fe;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.boton-intentar:hover {
+    background-color: #115ab0;
+}
+
+.bloqueado {
+    pointer-events: none;
+    opacity: 0.5;
+}

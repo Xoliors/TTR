@@ -1,0 +1,38 @@
+
+<div class="body">
+
+<div class="section">
+    <h2 style="text-align: center;">🛍 La Tiendita</h2>
+
+  <h3>🎯 Objetivo:</h3>
+  <p>Suma el precio de los productos, luego paga con monedas y, si es necesario, da el cambio.</p>
+</div>
+
+<div class="section">
+  <h3>🛒 Productos:</h3>
+  <div id="productList" class="products">
+    <!-- Lista de productos generada por JavaScript -->
+  </div>
+  <p><strong>Total:</strong> <span id="totalPrice">0</span> pesos.</p>
+</div>
+
+<div class="section">
+  <h3>💰 Pago:</h3>
+  <label for="paymentInput">¿Cuánto pagas con monedas?</label>
+  <input class="input" type="text" id="paymentInput" placeholder="Escribe la cantidad que pagas">
+  <label for="changeInput">¿Cuánto es el cambio?</label>
+  <input class="input" type="text" id="changeInput" placeholder="Escribe el cambio que debes dar">
+  <button class="btn-1" onclick="checkPayment()">Verificar Pago</button>
+  
+  <div class="result" id="resultText">
+    
+  </div>
+  <div id="attemptsResults" >
+
+    <button id="retryBtn" class="retry-btn"  onclick="retry()">🔄 Volver a Intentar</button>
+    </div>
+</div>
+
+
+</div>
+

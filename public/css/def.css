@@ -1,0 +1,101 @@
+.body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #b3e0ff, #e6f7ff);
+    margin: 0;
+    padding-top: 20px;
+}
+h1.he {
+    font-size: 30px;
+    color: #003366;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.instructions {
+    font-size: 18px;
+    color: #003366;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.ct {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 140, 255, 0.3);
+    position: relative;
+    border: 4px solid #99ccff;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 45%;
+}
+.item {
+    padding: 12px;
+    background: #99ccff;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    color: #003366;
+    box-shadow: 2px 2px 5px rgba(0, 102, 204, 0.3);
+    transition: transform 0.2s;
+}
+.item:hover {
+    background: #80bfff;
+    transform: scale(1.05);
+}
+button.bn {
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 25px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+button.bn:hover {
+    background-color: #005fa3;
+}
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    width: 90%;
+    max-width: 800px;
+    text-align: left;
+    background-color: #e6f0ff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px dashed #66a3ff;
+    color: #003366;
+    overflow: visible;
+    height: auto;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+line {
+    stroke: #3399ff;
+    stroke-width: 3;
+}

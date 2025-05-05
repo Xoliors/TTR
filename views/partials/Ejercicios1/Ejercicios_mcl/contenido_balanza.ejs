@@ -1,0 +1,55 @@
+<div class="body">
+
+    <h1>Comparar peso con una balanza</h1>
+    
+    <div class="instruccion" id="instruccion">
+      1. Arrastra la 🍎 Manzana  y la 🍉 Sandía a los platos para pesarlas.
+    </div>
+    
+    <div class="contenedor-objetos" id="zona-objetos">
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="5" id="manzana">🍉</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="2" id="sandia">🍎</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="3" id="mango">🥭</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="1" id="lapiz">✏️</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="4" id="libro">📘</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="3" id="trofeo">🏆</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="6" id="perro">🐶</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="1" id="pajaro">🐦</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="20" id="vaca">🐄</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="15" id="puerco">🐖</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="35" id="caballo">🐎</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="35" id="camello">🐫</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="5" id="gato">🐈</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="1" id="raton">🐀</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="70" id="persona">🧍</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="120" id="ballena">🐋</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="100" id="elefante">🐘</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="100" id="auto">🚗</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="2" id="kiwi">🥝</div>
+      <div class="objeto" draggable="true" ondragstart="drag(event)" data-peso="4" id="uvas">🍇</div>
+    </div>
+    
+    <div class="balanza" id="balanza">
+      <div class="plato" id="izquierda" ondrop="drop(event, 'left')" ondragover="allowDrop(event)">
+        <div class="peso" id="pesoLeft">0 kg</div>
+      </div>
+      <div class="plato" id="derecha" ondrop="drop(event, 'right')" ondragover="allowDrop(event)">
+        <div class="peso" id="pesoRight">0 kg</div>
+      </div>
+    </div>
+    
+    <div class="pregunta">¿Cuál pesa más?</div>
+    <div class="respuesta">
+      <select id="respuesta">
+        <option value="">Elige una opción</option>
+        <option value="izquierda">El de la izquierda</option>
+        <option value="derecha">El de la derecha</option>
+        <option value="igual">Pesan igual</option>
+      </select>
+    </div>
+    
+    <button class="ba" onclick="anterior()">← Atrás</button>
+    <button class="ba" onclick="siguiente()">Siguiente →</button>
+    
+    <div id="resultadoFinal"></div>
+    </div>

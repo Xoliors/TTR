@@ -1,0 +1,37 @@
+<div class="body">
+
+    <h2>🛒 Vamos al Mercado</h2>
+    <p>Cuenta, agrupa y representa los objetos:</p>
+    
+    <div class="section">
+      <h3>🎯 Objetivo:</h3>
+      <p>Cuenta cuántas frutas hay, agrupa de 5 en 5 y de 10 en 10, y represéntalas con palitos (|).</p>
+    </div>
+    
+    <div class="section">
+      <h3>🍎 Frutas en el mercado:</h3>
+      <div id="fruits" class="objects"></div>
+    </div>
+    
+    <div class="section">
+      <label>¿Cuántas frutas hay?</label>
+      <input class="irs" type="text" id="countInput" placeholder="Ej: 15">
+    
+      <label>¿Cuántos grupos de 5 hay?</label>
+      <input class="irs" type="text" id="group5Input" placeholder="Ej: 3">
+    
+      <label>¿Cuántos grupos de 10 hay?</label>
+      <input class="irs" type="text" id="group10Input" placeholder="Ej: 1">
+    
+      <label>Representación con palitos:</label>
+      <input class="irs" type="text" id="stickInput" placeholder="Ej: |||||||||||||||">
+    
+      <button class="mer" onclick="checkAnswers()">✅ Verificar</button>
+      <div class="result" id="resultText"></div>
+    
+      <!-- Botón de "Volver a Intentar" dentro del recuadro -->
+      <button class="mer" id="retryBtn" onclick="retry()" style="display: none;">🔄 Volver a Intentar</button>
+    </div>
+    
+    <div id="score"></div>
+    </div>

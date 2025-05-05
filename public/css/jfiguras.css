@@ -1,0 +1,110 @@
+.body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #e6f3ff; /* azul muy claro */
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+h2, h3 {
+    color: #1c4e80; /* azul oscuro vibrante */
+}
+
+p {
+    font-size: 18px;
+}
+
+.figura {
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    background-color: #ffffff;
+    border: 3px solid #66b3ff; /* azul claro */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: grab;
+    transition: transform 0.2s;
+}
+
+.figura:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.containert {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.drop-area {
+    width: 150px;
+    height: 150px;
+    border: 3px dashed #1e90ff; /* azul medio */
+    background-color: #d6ecff; /* azul pastel */
+    border-radius: 12px;
+    margin: 10px;
+    text-align: center;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.drop-area:hover {
+    background-color: #c2e0ff; /* azul más fuerte al pasar el mouse */
+}
+
+.drop-area p {
+    margin: 0;
+    color: #007acc; /* texto azul brillante */
+}
+
+svg {
+    pointer-events: none;
+}
+
+.button-container {
+    margin-top: 30px;
+}
+
+button.las {
+    background-color: #3399ff; /* azul vibrante */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.las:hover:not(:disabled) {
+    background-color: #0073e6;
+}
+
+button.las:disabled {
+    background-color: #a0c4e3;
+    cursor: not-allowed;
+}
+
+.calificacion {
+    font-size: 20px;
+    color: #ff4500;
+    margin-top: 10px;
+}
+
+#intentosRestantes {
+    font-size: 18px;
+    color: #1c4e80;
+}

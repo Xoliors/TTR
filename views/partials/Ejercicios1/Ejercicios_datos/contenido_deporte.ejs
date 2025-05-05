@@ -1,0 +1,71 @@
+<div class="body">
+
+    <h2>Pictograma: Barcelona y Real Madrid</h2>
+    
+    <div class="contenedor">
+      <table>
+        <tr>
+          <th><img src="/images/barca.png" alt="Logo Barcelona"></th>
+          <th>Barcelona</th>
+          <td>⚽️</td><td>⚽️</td><td>⚽️</td><td>⚽️</td><td>⚽️</td><td>⚽️</td><td>⚽️</td>
+        </tr>
+        <tr>
+          <th><img src="/images/madrid.png" alt="Logo Real Madrid"></th>
+          <th>Real Madrid</th>
+          <td>⚽️</td><td>⚽️</td>
+        </tr>
+      </table>
+    
+      <div class="pregunta">
+        ¿Cuántos goles le faltaron al Real Madrid para ganarle al Barcelona? <span id="iconGallinas"></span>
+      </div>
+      <div class="respuesta">
+        <div id="gallinaOrigen" class="draggable" draggable="true" ondragstart="drag(event)">⚽️</div>
+      </div>
+      <div id="zonaGallinas" class="zona"></div>
+    
+      <div class="pregunta">
+        ¿Cuántos goles hicieron en total los dos equipos? <span id="iconCisnes"></span>
+      </div>
+      <div class="respuesta">
+        <div id="cisneOrigen" class="draggable" draggable="true" ondragstart="drag(event)">⚽️</div>
+      </div>
+      <div id="zonaCisnes" class="zona"></div>
+      <table>
+        <tr>
+          <th><img src="https://static.vecteezy.com/system/resources/thumbnails/009/314/143/small/tree-bench-lamp-and-trash-can-in-the-park-vector-illustration-free-png.png" alt="Logo Barcelona"></th>
+          <th>Árboles</th>
+          <td>🌳</td><td>🌳</td><td>🌳</td><td>🌳</td><td>🌳</td><td>🌳</td><td>🌳</td><td>🌳</td><td>🌳</td><td>🌳</td><td>🌳</td><td>🌳</td><td>🌳</td>
+        </tr>
+        <tr>
+          <th><img src="https://static.vecteezy.com/system/resources/thumbnails/009/314/143/small/tree-bench-lamp-and-trash-can-in-the-park-vector-illustration-free-png.png" alt="Logo Real Madrid"></th>
+          <th>Flores</th>
+          <td>🌸</td><td>🌸</td><td>🌸</td><td>🌸</td><td>🌸</td><td>🌸</td><td>🌸</td><td>🌸</td><td>🌸</td><td>🌸</td><td>🌸</td><td>🌸</td><td>🌸</td><td>🌸</td><td>🌸</td>
+        </tr>
+      </table>
+      <div class="pregunta">
+        Se talaron 8 árboles del parque , ¿Cuántos quedaron en total? <span id="iconArboles"></span>
+      </div>
+      <div class="respuesta">
+        <div id="arbolOrigen" class="draggable" draggable="true" ondragstart="drag(event)">🌳</div>
+      </div>
+      <div id="zonaArboles" class="zona"></div>
+    
+      <div class="pregunta">
+        Un niño arranco del arbusto 11 flores, ¿Cuántas quedaron? <span id="iconFlores"></span>
+      </div>
+      <div class="respuesta">
+        <div id="florOrigen" class="draggable" draggable="true" ondragstart="drag(event)">🌸</div>
+      </div>
+      <div id="zonaFlores" class="zona"></div>
+    
+      <div class="resultado" id="mensajeResultado"></div>
+    
+      <div class="intentos">
+        Intentos restantes: <span id="intentosRestantes">5</span>
+      </div>
+    
+      <button class="bc" id="btnCalificar" onclick="calificar()">Calificar</button>
+      <button class="bc" id="btnReiniciar" onclick="reiniciar()">Intentar de nuevo</button>
+    </div>
+</div>

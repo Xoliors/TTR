@@ -1,0 +1,82 @@
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #c7dce9;
+    text-align: center;
+    padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+h1.he {
+    font-size: 30px;
+    color: #12467a;
+}
+.question {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #12467a;
+}
+  /* Agrega aquí tus estilos para la página */
+  .bascula-container {
+    margin: 20px;
+    display: flex;
+    justify-content: center
+    
+}
+
+.bascula {
+    width: 200px;
+    height: 50px;
+    border: 2px solid #02000002;
+    text-align: center;
+    line-height: 50px;
+    background-color: rgb(44, 152, 206);
+    color: #ffff;
+}
+.object {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+    border: 1px solid #729cf8;
+    border-radius: 5px;
+    background-color: #85e3f0;
+}
+.peso {
+    display: block;
+    font-size: 12px;
+    margin-top: 0px;
+}
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+.verificar, .reiniciar {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+}
+.result {
+   padding-top: 20px;
+   padding-bottom: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.reiniciar, .verificar {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.reiniciar:hover, .verificar:hover {
+    background-color: #2980b9;
+}

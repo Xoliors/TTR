@@ -1,0 +1,95 @@
+.body {
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(to top, #d0eaff, #ffffff);
+    padding: 20px;
+    margin: 0;
+  }
+
+  h1 {
+    text-align: center;
+    color: #004080;
+  }
+
+  #zona-instrucciones {
+    text-align: center;
+    background-color: #b3daff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .zona-clasificacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .zona {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px dashed #0077cc;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: #e6f3ff;
+    min-height: 200px;
+    min-width: 250px;
+  }
+
+  .zona h3 {
+    margin-top: 0;
+    color: #003366;
+  }
+
+  .objeto {
+    width: 100px;
+    padding: 5px;
+    margin: 10px;
+    border: 2px solid #3399ff;
+    border-radius: 8px;
+    background-color: #ccf2ff;
+    cursor: grab;
+    text-align: center;
+  }
+
+  .objeto img {
+    width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  #objetos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  #calificacion {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #006600;
+  }
+
+  button.bien {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  button.bien:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }

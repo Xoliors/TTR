@@ -1,0 +1,142 @@
+.body {
+    font-family: 'Segoe UI', sans-serif;
+   background-color: #7babde;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  .malt {
+    color: #1a237e;
+    text-shadow: 2px 2px 4px #90caf9;
+  }
+  .sub {
+    color: #3640b1;
+    text-shadow: 2px 2px 4px #90caf9;
+  }
+
+
+  #exercises {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    background: #e3f2fd;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .exercise {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .question {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .drop-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .drop-zone {
+    width: 100px;
+    height: 40px;
+    border: 2px dashed #1e88e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    background-color: #e3f2fd;
+    border-radius: 5px;
+  }
+
+  .result-icon {
+    font-size: 1.5em;
+  }
+
+  .choices {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .draggable {
+    background-color: #bbdefb;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: grab;
+    font-size: 1em;
+    transition: transform 0.2s;
+  }
+
+  .draggable:active {
+    cursor: grabbing;
+  }
+
+  .draggable:hover {
+    transform: scale(1.1);
+  }
+
+  #submit, #retry {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    background-color: #1e88e5;
+    color: white;
+    cursor: pointer;
+  }
+
+  #submit:hover, #retry:hover {
+    background-color: #1565c0;
+  }
+
+  #score {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #1a237e;
+  }
+
+  .correct {
+    color: green;
+  }
+
+  .incorrect {
+    color: red;
+  }
+  .dm{
+    border-radius: 15px;
+    margin-left: 10px;
+    width: 600px;
+    height: auto;
+     padding: 20px;
+    text-align: center;
+    background-color:  #cce6ff;
+    margin-bottom: 20px;
+   
+  }
+  .ds {
+    margin-top: 20px; /* separa 20px del div anterior */
+  }
+  .score{
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    background-color: #bbdefb;
+    color: #1a237e;
+  }

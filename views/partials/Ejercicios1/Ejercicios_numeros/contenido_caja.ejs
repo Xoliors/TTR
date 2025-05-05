@@ -1,0 +1,31 @@
+<div class="body">
+
+    <h2>🎁 La Caja Misteriosa</h2>
+    <p>Saca los objetos de la caja, cuenta cuántos hay, y haz una representación.</p>
+    
+    <div class="section">
+      <h3>🎯 Objetivo:</h3>
+      <p>Saca los objetos de la caja misteriosa, cuenta cuántos hay y representa con símbolos (|).</p>
+    </div>
+    
+    <div class="section">
+      <h3>🎁 Caja Misteriosa:</h3>
+      <p>Haz clic en el botón para sacar los objetos de la caja.</p>
+      <button class="cs" id="sacarBtn" onclick="generateObjects()">Sacar objetos</button>
+      <div id="objects" class="objects"></div>
+    </div>
+    
+    <div class="section" id="questionsSection" style="display:none;">
+      <label>¿Cuántos objetos sacaste?</label>
+      <input class="caj" type="text" id="countInput" placeholder="Escribe un número">
+    
+      <label>Representación con símbolos (Ej: |||):</label>
+      <input class="caj" type="text" id="stickInput" placeholder="Escribe una representación">
+    
+      <button class="cs" onclick="checkAnswers()">✅ Verificar</button>
+      <div class="result" id="resultText"></div>
+      <button class="cs" id="retryBtn" onclick="retry()" style="display: none;">🔄 Volver a Intentar</button>
+    </div>
+    
+    <div id="score" style="font-size: 18px; margin-top: 10px;"></div>
+    </div>

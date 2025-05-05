@@ -1,0 +1,60 @@
+<div class="body">
+
+  <h2 class="he">ANIMALES FAVORITOS</h2>
+  <div class="actividad">
+    <p>Diego preguntó a sus amigos cuál es su animal favorito. Observa los resultados:</p>
+    <table class="tabla">
+      <thead>
+        <tr id="animal-head"></tr>
+      </thead>
+      <tbody>
+        <tr id="animal-data"></tr>
+      </tbody>
+    </table>
+
+    <div class="preguntas" id="preguntas-animales">
+      <p>a) ¿A cuántos niños se preguntó en total? <input data-preg="total"></p>
+      <p>b) ¿Cuál fue el animal más popular? <input class="respuesta-grande" data-preg="mas_popular" placeholder="Escribe el nombre del animal"></p>
+      <p>c) ¿Cuántos prefirieron el 🐬? <input data-preg="delfín"></p>
+      <p>d) ¿Cuántos prefirieron el 🐒? <input data-preg="mono"></p>
+      <p>e) ¿Cuántos prefirieron el 🐅? <input data-preg="tigre"></p>
+      <p>f) ¿Cuántos prefirieron el 🦉? <input data-preg="búho"></p>
+      <p>g) ¿Cuántos prefirieron el 🐘? <input data-preg="elefante"></p>
+      <p>h) ¿Cuántos prefirieron el 🦍? <input data-preg="gorila"></p>
+      <p>i) ¿Cuántos prefirieron el 🐍? <input data-preg="serpiente"></p>
+    </div>
+  </div>
+
+  <h2>ACTIVIDAD 2: HELADOS FAVORITOS</h2>
+  <div class="actividad">
+    <p>Rocío preguntó a sus amigos qué sabor de helado les gusta más. Cuenta las marcas y escribe el total.</p>
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>🍫 CHOCOLATE</th>
+          <th>🍦 VAINILLA</th>
+          <th>🍓 FRUTILLA</th>
+          <th>TOTAL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="chocolate"></td>
+          <td id="vainilla"></td>
+          <td id="frutilla"></td>
+          <td>
+            <input id="total-chocolate" data-preg="chocolate">
+            <input id="total-vainilla" data-preg="vainilla">
+            <input id="total-frutilla" data-preg="frutilla">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="text-align:center;">
+    <button class="bn" onclick="verificar()" id="btn-verificar">Verificar</button>
+    <button class="bn" id="btn-intentar" style="display: none;" onclick="intentarDeNuevo()">Intentar de nuevo</button>
+    <div id="resultado"></div>
+  </div>
+    </div>

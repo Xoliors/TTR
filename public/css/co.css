@@ -1,0 +1,55 @@
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #b2d4e7;
+    margin: 0;
+    padding: 20px;
+}
+.ct {
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 18px;
+ 
+   
+}
+.image-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 20px;
+}
+.rule {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    height: 100%;
+}
+.image {
+    width: 100px;
+}
+.answer-box {
+    text-align: center;
+}
+.result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    color: #225096;
+}
+.cm {
+    padding: 10px 20px;
+    background-color: #316fb6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cm:hover {
+    background-color: #225096;
+}
+.image[data-size="small"] {
+    width: 80px;
+}
+.image[data-size="large"] {
+    width: 150px;
+}

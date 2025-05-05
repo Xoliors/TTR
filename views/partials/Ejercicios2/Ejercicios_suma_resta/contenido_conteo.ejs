@@ -1,0 +1,76 @@
+
+<div class="body">
+    <h1>Ejercicio de Conteo</h1>
+    <h1>Arrastra los Objetos según sea necesario para completar las Sumas</h1>
+
+    <div id="inciso1">
+        <h3>1. Juan tiene 150 manzanas y necesita completar 200 manzanas. ¿Cuántas manzanas debe agregar?</h3>
+        <div class="contenedor">
+            <div class="recuadro" id="recuadro1" ondrop="drop(event, 'recuadro1', 50)" ondragover="allowDrop(event)"></div>
+            <div class="lado">
+                <img src="https://images.vexels.com/media/users/3/145460/isolated/preview/d08a1157100d2e42f31b4a752e71c33b-ilustracion-de-manzana.png" class="item" id="manzana" draggable="true" ondragstart="drag(event)">
+                <p>Arrastra manzanas</p>
+                <button class="boton-eliminar" onclick="eliminarElemento('recuadro1')">Eliminar elemento</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="inciso2">
+        <h3>2. En un árbol hay 173 plátanos y necesita completar 226. ¿Cuántos plátanos debe agregar?</h3>
+        <div class="contenedor">
+            <div class="recuadro" id="recuadro2" ondrop="drop(event, 'recuadro2', 53)" ondragover="allowDrop(event)"></div>
+            <div class="lado">
+                <img src="https://png.pngtree.com/png-vector/20240528/ourmid/pngtree-cartoon-style-banana-fruit-vector-png-image_12540774.png" class="item" id="banana" draggable="true" ondragstart="drag(event)">
+                <p>Arrastra bananas</p>
+                <button class="boton-eliminar" onclick="eliminarElemento('recuadro2')">Eliminar elemento</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="inciso3">
+        <h3>3. En un restaurante hay 198 zanahorias y se necesitan completar 260. ¿Cuántas zanahorias debe agregar?</h3>
+        <div class="contenedor">
+            <div class="recuadro" id="recuadro3" ondrop="drop(event, 'recuadro3', 62)" ondragover="allowDrop(event)"></div>
+            <div class="lado">
+                <img src="https://png.pngtree.com/png-clipart/20230330/original/pngtree-carrot-cartoon-illustration-png-image_9012203.png" class="item" id="zanahoria" draggable="true" ondragstart="drag(event)">
+                <p>Arrastra zanahorias</p>
+                <button class="boton-eliminar" onclick="eliminarElemento('recuadro3')">Eliminar elemento</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="inciso4">
+        <h3>4. En una pastelería hay 250 pasteles y se necesitan completar 300. ¿Cuántos pasteles debe agregar?</h3>
+        <div class="contenedor">
+            <div class="recuadro" id="recuadro4" ondrop="drop(event, 'recuadro4', 50)" ondragover="allowDrop(event)"></div>
+            <div class="lado">
+                <img src="https://images.vexels.com/media/users/3/147028/isolated/preview/38b0452cddde763cfcd49cd00e404658-dibujos-animados-de-pastel-de-cumpleanos-de-cereza.png" class="item" id="pastel" draggable="true" ondragstart="drag(event)">
+                <p>Arrastra pasteles</p>
+                <button class="boton-eliminar" onclick="eliminarElemento('recuadro4')">Eliminar elemento</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="inciso5">
+        <h3>5. Hay 320 pasteles y se necesitan completar 360. ¿Cuántos pasteles debe agregar?</h3>
+        <div class="contenedor">
+            <div class="recuadro" id="recuadro5" ondrop="drop(event, 'recuadro5', 40)" ondragover="allowDrop(event)"></div>
+            <div class="lado">
+                <img src="https://images.vexels.com/media/users/3/147028/isolated/preview/38b0452cddde763cfcd49cd00e404658-dibujos-animados-de-pastel-de-cumpleanos-de-cereza.png" class="item" id="pastel" draggable="true" ondragstart="drag(event)">
+                <p>Arrastra pasteles</p>
+                <button class="boton-eliminar" onclick="eliminarElemento('recuadro5')">Eliminar elemento</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="boton">
+        <button id="verificarBtn" onclick="verificar()">Verificar respuestas</button>
+    </div>
+
+    <div class="mensaje" id="mensaje"></div>
+
+    <div class="boton">
+        <button id="intentarBtn" class="boton-intentar" onclick="reiniciar()">Intentar de nuevo</button>
+    </div>
+
+</div>
