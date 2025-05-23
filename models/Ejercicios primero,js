@@ -1,0 +1,47 @@
+const {  contarIntentos,
+         guardarCalificacion } = require('../models/calificacionesModel');
+
+// Controlador para mostrar el ejercicio
+const mostrarEjercicio1 = async (req, res) => {
+  const id_usuario = req.session.userId;
+  const id_ejercicio = 1;
+
+  try {
+    const intentos = await contarIntentos(id_usuario, id_ejercicio);
+    if (intentos >= 5) {
+      return res.send('Has alcanzado el número máximo de intentos. Intenta de nuevo en una semana.');
+    }
+
+    res.render('ejercicio'); // o res.sendFile() si usas HTML plano
+  } catch (error) {
+    console.error('Error al mostrar ejercicio:', error);
+    res.status(500).send('Error interno del servidor');
+  }
+};
+
+// Controlador para guardar la calificación
+const guardarCalificacion1 = async (req, res) => {
+  const { intento, calificacion, id_ejercicio, fecha, id_insignia } = req.body;
+  const id_usuario = req.session.userId;
+
+  try {
+    const intentos = await contarIntentos(id_usuario, id_ejercicio);
+    if (intentos >= 5) {
+      return res.status(403).json({ message: 'Has alcanzado el límite de intentos. Espera una semana para volver a intentarlo.' });
+    }
+
+    await guardarCalificacion(
+      intento, calificacion, id_ejercicio, id_usuario, id_insignia, fecha
+    );
+
+    res.json({ message: 'Calificación guardada' });
+  } catch (error) {
+    console.error('Error al guardar calificación:', error);
+    res.status(500).json({ message: 'Error al guardar calificación' });
+  }
+};
+
+module.exports = {
+  mostrarEjercicio1,
+  guardarCalificacion1
+};

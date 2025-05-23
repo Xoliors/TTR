@@ -33,7 +33,7 @@ function drawLines() {
     connections.forEach((definition, term) => {
         let termRect = term.getBoundingClientRect();
         let defRect = definition.getBoundingClientRect();
-        let containerRect = document.querySelector(".container").getBoundingClientRect();
+        let containerRect = document.getElementById("ejercicio").getBoundingClientRect();
 
         let x1 = termRect.right - containerRect.left;
         let y1 = termRect.top + termRect.height / 2 - containerRect.top;
