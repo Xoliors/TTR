@@ -10,6 +10,7 @@ const LoginUsuarios = (req, res) => {
         }
 
         if (result.length > 0) {
+            req.session.id_usuario = result[0].id;
             req.session.usuario = result[0].usuario;
             req.session.nombre = result[0].nombre;
             req.session.correo = result[0].correo;

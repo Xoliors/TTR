@@ -1,5 +1,7 @@
 const MAX_ATTEMPTS = 5;
-let globalAttempts = 0;
+let globalAttempts = Number(localStorage.getItem('globalAttemptsCaja'));
+if (isNaN(globalAttempts)) globalAttempts = 0;
+
 let correctAnswers = 0;
 let objectCount = 0;
 
@@ -7,12 +9,12 @@ let objectCount = 0;
 function generateObjects() {
   if (globalAttempts < MAX_ATTEMPTS) {
     objectCount = Math.floor(Math.random() * 16) + 5; // entre 5 y 20 objetos
-    const objectsArray = Array.from({ length: objectCount }, (_, i) => "<span>🪀</span>"); // cajas misteriosas
+    const objectsArray = Array.from({ length: objectCount }, () => "<span>🪀</span>");
     const objectsDiv = document.getElementById("objects");
     objectsDiv.innerHTML = objectsArray.join(" ");
     document.getElementById("questionsSection").style.display = "block";
     resetInputs();
-    document.getElementById("sacarBtn").disabled = true; // Desactivar el botón después de sacar objetos
+    document.getElementById("sacarBtn").disabled = true;
   }
 }
 
@@ -33,31 +35,69 @@ function checkAnswers() {
 
   const grade = Math.round((correct / 2) * 10);
   globalAttempts++;
+  localStorage.setItem('globalAttemptsCaja', globalAttempts);
 
   document.getElementById("resultText").innerHTML =
     `✅ Respuestas correctas: ${correct}/2<br>📊 Calificación: <strong>${grade}/10</strong><br>Intento ${globalAttempts} de ${MAX_ATTEMPTS}`;
 
-  // Si el alumno aún tiene intentos disponibles
+  // Enviar calificación
+  const id_ejercicio = 4; // ID que decidas asignar
+  const fecha = new Date().toISOString().split('T')[0];
+
+  fetch('/ejercicios_numeros/caja/guardar-calificacion', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      intento: globalAttempts,
+      calificacion: grade,
+      id_ejercicio,
+      fecha
+    })
+  })
+  .then(response => {
+    if (!response.ok) {
+      return response.json().then(data => {
+        throw new Error(data.message || 'Error al guardar la calificación');
+      });
+    }
+    return response.json();
+  })
+  .then(data => {
+    Swal.fire({
+      icon: 'success',
+      title: '¡Calificación registrada!',
+      text: `Tu calificación fue de ${grade}/10.`,
+      confirmButtonText: 'Aceptar'
+    });
+  })
+  .catch(error => {
+    console.error('Error:', error.message);
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: error.message,
+      confirmButtonText: 'Aceptar'
+    });
+  });
+
   if (globalAttempts < MAX_ATTEMPTS) {
     document.getElementById("retryBtn").style.display = "inline-block";
   } else {
     document.getElementById("retryBtn").style.display = "none";
     document.getElementById("resultText").innerHTML += "<br>🚫 Ya no puedes volver a intentarlo.";
     disableInputs();
+    localStorage.removeItem('globalAttemptsCaja'); // Limpia si ya no hay más intentos
   }
 }
 
-// Bloquea las entradas después de 5 intentos
 function disableInputs() {
   ["countInput", "stickInput"].forEach(id => {
     document.getElementById(id).disabled = true;
   });
 }
 
-// Vuelve a habilitar los inputs y permite otro intento
 function retry() {
   if (globalAttempts < MAX_ATTEMPTS) {
-    // Habilitar los inputs para intentar de nuevo
     document.getElementById("sacarBtn").disabled = false;
     resetInputs();
     document.getElementById("questionsSection").style.display = "none";

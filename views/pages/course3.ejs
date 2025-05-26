@@ -23,15 +23,33 @@
     
     <!-- Customized Bootstrap Stylesheet -->
     <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/tren.css" rel="stylesheet">
+    <link href="/css/ejercicios_figuras.css" rel="stylesheet">
+
+    <script>
+      window.onpageshow = function(){
+        fetch('/validar')
+        .then(result => result.json())
+        .then(rs => {
+          var usuario = rs.usuario
+          if(!usuario){
+            window.location=`/`
+          }
+        }) 
+        .catch(error => {
+          console.log("Error: ", error)
+        })
+      }
+    </script>
  
 </head>
 <body>
-    <%- include('../../../partials/usuario1/header_usuario1') %>
-    <%- include('../../../partials/usuario1/nav_usuario1') %>
-    <%- include('../../../partials/ejercicios1_numeros/header_numeros') %>
-    <%- include('../../../partials/Ejercicios1/Ejercicios_numeros/contenido_tren') %>
-    <%- include('../../../partials/usuario1/footer_usuario1') %>
+     
+
+    <%- include('../partials/usuario1/header_usuario1') %>
+    <%- include('../partials/usuario1/nav_usuario1') %>
+    <%- include('../partials/calificaciones/calificaciones') %>
+    <%- include('../partials/calificaciones/calif_tables') %>
+    <%- include('../partials/usuario1/footer_usuario1') %>
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
     <!-- JavaScript Libraries -->
@@ -42,8 +60,9 @@
     <!-- Contact Javascript File -->
     <script src="/mail/jqBootstrapValidation.min.js"></script>
     <script src="/mail/contact.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>
-    <script src="/js/tren.js"></script>
    
+      
+</body>
+</html>

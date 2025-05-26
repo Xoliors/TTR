@@ -1,5 +1,7 @@
-const MAX_ATTEMPTS = 5;
-  let globalAttempts = 0;
+ const MAX_ATTEMPTS = 5;
+  let globalAttempts = Number(localStorage.getItem('globalAttemptsMultiplos'));
+  if (isNaN(globalAttempts)) globalAttempts = 0;
+
   let correctAnswers2 = 0, correctAnswers5 = 0, correctAnswers10 = 0;
 
   // Genera la tabla de números del 1 al 100
@@ -14,16 +16,9 @@ const MAX_ATTEMPTS = 5;
       cell.id = `${tableId}-cell-${i}`;
       tableContainer.appendChild(cell);
 
-      // Event listener para permitir colorear las celdas
-      cell.addEventListener('click', function() {
-        // Colorea las celdas si están dentro del patrón que corresponde
+      cell.addEventListener('click', function () {
         if (i % multiple === 0) {
-          // Alternar entre colorear o quitar el color
-          if (cell.classList.contains(colorClass)) {
-            cell.classList.remove(colorClass);
-          } else {
-            cell.classList.add(colorClass);
-          }
+          cell.classList.toggle(colorClass);
         }
       });
     }
@@ -31,7 +26,19 @@ const MAX_ATTEMPTS = 5;
 
   // Verifica los patrones coloreados por el alumno
   function checkPatterns() {
+    if (globalAttempts >= MAX_ATTEMPTS) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Límite de intentos alcanzado',
+        text: 'Ya no puedes volver a intentarlo.',
+        confirmButtonText: 'Aceptar'
+      });
+      return;
+    }
+
     globalAttempts++;
+    localStorage.setItem('globalAttemptsMultiplos', globalAttempts);
+
     let correctAnswers = 0;
 
     // Verificar múltiplos de 2
@@ -61,12 +68,10 @@ const MAX_ATTEMPTS = 5;
       }
     }
 
-    // Calificación total
     const totalCorrect = correctAnswers2 + correctAnswers5 + correctAnswers10;
-    const totalQuestions = (100 / 2) + (100 / 5) + (100 / 10); // Total de preguntas de múltiplos de 2, 5 y 10
+    const totalQuestions = (100 / 2) + (100 / 5) + (100 / 10);
     const score = Math.round((totalCorrect / totalQuestions) * 10);
 
-    // Mostrar calificación total después de cada intento
     document.getElementById("resultText").innerHTML = `
       <strong>Resultado del intento ${globalAttempts}:</strong><br>
       Múltiplos de 2: ${correctAnswers2} correctos<br>
@@ -75,14 +80,55 @@ const MAX_ATTEMPTS = 5;
       Calificación: ${score}/10
     `;
 
+    // Enviar calificación al backend
+    const id_ejercicio = 6;
+    const fecha = new Date().toISOString().split('T')[0];
+
+    fetch('/ejercicios_numeros/en/guardar-calificacion', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        intento: globalAttempts,
+        calificacion: score,
+        id_ejercicio,
+        fecha
+      })
+    })
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then(data => {
+          throw new Error(data.message || 'Error al guardar la calificación');
+        });
+      }
+      return response.json();
+    })
+    .then(data => {
+      Swal.fire({
+        icon: 'success',
+        title: '¡Calificación registrada!',
+        text: `Tu calificación fue de ${score}/10.`,
+        confirmButtonText: 'Aceptar'
+      });
+    })
+    .catch(error => {
+      console.error('Error:', error.message);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: error.message,
+        confirmButtonText: 'Aceptar'
+      });
+    });
+
     if (globalAttempts < MAX_ATTEMPTS) {
       document.getElementById("retryBtn").style.display = 'inline-block';
     } else {
       document.getElementById("retryBtn").style.display = 'none';
+      document.getElementById("resultText").innerHTML += "<br>🚫 Ya no puedes volver a intentarlo.";
+      localStorage.removeItem('globalAttemptsMultiplos');
     }
   }
 
-  // Vuelve a habilitar las entradas para un nuevo intento
   function retry() {
     if (globalAttempts < MAX_ATTEMPTS) {
       generateTable("tableContainer2", 2, 'colored-red');
@@ -93,7 +139,7 @@ const MAX_ATTEMPTS = 5;
     }
   }
 
-  // Inicializar el ejercicio
+  // Inicializa las tablas al cargar la página
   generateTable("tableContainer2", 2, 'colored-red');
   generateTable("tableContainer5", 5, 'colored-blue');
   generateTable("tableContainer10", 10, 'colored-green');

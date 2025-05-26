@@ -1,4 +1,7 @@
-let globalAttempts = 0;
+// Intenta obtener el número de intentos globales del almacenamiento local
+let globalAttempts = Number(localStorage.getItem('globalAttempts'));
+if (isNaN(globalAttempts)) globalAttempts = 0;
+
 const maxGlobalAttempts = 5;
 let currentCompleted = {};
 let verifiedCount = 0;
@@ -49,6 +52,7 @@ function checkSequence(limit) {
 
   if (verifiedCount === 4) {
     globalAttempts++;
+    localStorage.setItem('globalAttempts', globalAttempts);  // Guarda correctamente
     showScore();
   }
 }
@@ -60,18 +64,7 @@ function showScore() {
   const id_ejercicio = 1; // ID fijo del ejercicio
   const fecha = new Date().toISOString().split('T')[0];
 
-  // Determinar insignia según calificación
-  let id_insignia;
-  if (grade === 10) {
-    id_insignia = 1; // Oro
-  } else if (grade >= 7) {
-    id_insignia = 2; // Plata
-  } else if (grade >= 4 && grade <= 6) {
-    id_insignia = 3; // Bronce
-  }
-
-  // Enviar datos al backend
-  fetch('/guardar-calificacion', {
+  fetch('/ejercicios_numeros/ema/guardar-calificacion', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -80,8 +73,7 @@ function showScore() {
       intento: globalAttempts,
       calificacion: grade,
       id_ejercicio,
-      fecha,
-      id_insignia
+      fecha
     })
   })
   .then(response => {
@@ -93,14 +85,23 @@ function showScore() {
     return response.json();
   })
   .then(data => {
-    console.log('✅ Calificación guardada:', data.message);
+    Swal.fire({
+      icon: 'success',
+      title: '¡Calificación registrada!',
+      text: `Tu calificación fue de ${grade}/10.`,
+      confirmButtonText: 'Aceptar'
+    });
   })
   .catch(error => {
-    console.error('❌ Error:', error.message);
-    document.getElementById("finalScore").innerHTML += `<br><span style="color:red;">${error.message}</span>`;
+    console.error('Error:', error.message);
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: error.message,
+      confirmButtonText: 'Aceptar'
+    });
   });
 
-  // Mostrar mensaje al usuario
   let message = `Intento ${globalAttempts} de ${maxGlobalAttempts}. Calificación: <strong>${grade}/10</strong> (${score} de 4 ejercicios correctos).`;
   document.getElementById("finalScore").innerHTML = message;
 
@@ -109,6 +110,10 @@ function showScore() {
   } else {
     document.getElementById("retryBtn").style.display = "none";
     document.getElementById("finalScore").innerHTML += "<br>❌ Ya no puedes volver a intentar.";
+  }
+
+  if (globalAttempts >= maxGlobalAttempts) {
+    localStorage.removeItem('globalAttempts');  // Limpia si ya no hay más intentos
   }
 }
 

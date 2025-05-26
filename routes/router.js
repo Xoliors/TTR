@@ -9,6 +9,7 @@ const registro = require('../controllers/registro')
 const primeroRouter = require('./primero');
 const segundoRouter = require('./segundo');
 const ejercicios1Router = require('./ejercicios_primer')
+const ejercicios_numeros = require('./ejercicios_numeros')
 
 const session = require('express-session');
 
@@ -28,8 +29,30 @@ router.get("/about", (req, res) => {
     res.render("pages/about"); // Renderiza la vista 'about.ejs'
 });
 
-router.get("/course", (req, res) => {
-    res.render("pages/course"); // Renderiza la vista 'courses.ejs'
+router.get("/calificaciones", (req, res) => {
+    const grado = req.session.grado_id;
+    const username = req.session.usuario;
+    const foto_perfil = req.session.foto_perfil;
+
+    console.log(foto_perfil)
+
+    if (!grado || !username) {
+        return res.redirect('/');
+    }
+
+    switch (grado) {
+        case 1:
+            res.render("pages/course", { username, grado, foto_perfil });
+            break;
+        case 2:
+            res.render("pages/course2", { username, grado, foto_perfil });
+            break;
+        case 3:
+            res.render("pages/course3", { username, grado, foto_perfil });
+            break;
+        default:
+            res.redirect("/");
+    }
 });
 
 router.get("/register", (req, res) => {
@@ -77,6 +100,7 @@ router.get("/home", (req, res) => {
 router.use('/', primeroRouter);
 router.use('/', segundoRouter);
 router.use('/', ejercicios1Router);
+router.use('/ejercicios_numeros', ejercicios_numeros);
 
 
 //2do de Primaria
