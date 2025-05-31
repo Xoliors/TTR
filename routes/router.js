@@ -10,6 +10,9 @@ const primeroRouter = require('./primero');
 const segundoRouter = require('./segundo');
 const ejercicios1Router = require('./ejercicios_primer')
 const ejercicios_numeros = require('./ejercicios_numeros')
+const ejercicios2Router = require('./ejercicios_segundo')
+const ejercicios_segundo = require('./ejercicios_route_segundo')
+const calificaciones = require('./calificaciones')
 
 const session = require('express-session');
 
@@ -101,162 +104,9 @@ router.use('/', primeroRouter);
 router.use('/', segundoRouter);
 router.use('/', ejercicios1Router);
 router.use('/ejercicios_numeros', ejercicios_numeros);
-
-
-//2do de Primaria
-router.get('/ejercicios_numeros2/:username/ema2', (req, res) => {
-    const username = req.params.username;
-    res.render('ema2', { username });
-});
-router.get('/ejercicios_numeros2/:username/emd2', (req, res) => {
-    const username = req.params.username;
-    res.render('emd2', { username });
-});
-router.get('/ejercicios_numeros2/:username/mercado2', (req, res) => {
-    const username = req.params.username;
-    res.render('mercado2', { username });
-});
-router.get('/ejercicios_numeros2/:username/caja2', (req, res) => {
-    const username = req.params.username;
-    res.render('caja2', { username });
-});
-router.get('/ejercicios_numeros2/:username/tren2', (req, res) => {
-    const username = req.params.username;
-    res.render('tren2', { username });
-});
-router.get('/ejercicios_numeros2/:username/en2', (req, res) => {
-    const username = req.params.username;
-    res.render('en2', { username });
-});
-router.get('/ejercicios_suma_resta2/:username/La_tiendita2', (req, res) => {
-    const username = req.params.username;
-    res.render('La_tiendita2', { username });
-});
-router.get('/ejercicios_suma_resta2/:username/sume2', (req, res) => {
-    const username = req.params.username;
-    res.render('sume2', { username });
-});
-router.get('/ejercicios_suma_resta2/:username/conteo2', (req, res) => {
-    const username = req.params.username;
-    res.render('conteo2', { username });
-});
-router.get('/ejercicios_suma_resta2/:username/smv2', (req, res) => {
-    const username = req.params.username;
-    res.render('smv2', { username });
-});
-router.get('/ejercicios_suma_resta2/:username/rv2', (req, res) => {
-    const username = req.params.username;
-    res.render('rv2', { username });
-});
-router.get('/ejercicios_suma_resta2/:username/cartas2', (req, res) => {
-    const username = req.params.username;
-    res.render('cartas2', { username });
-});
-router.get('/ejercicios_suma_resta2/:username/sr2', (req, res) => {
-    const username = req.params.username;
-    res.render('sr2', { username });
-});
-router.get('/ejercicios_mul_div2/:username/tabla1', (req, res) => {
-    const username = req.params.username;
-    res.render('tabla1', { username });
-});
-router.get('/ejercicios_mul_div2/:username/tabla2', (req, res) => {
-    const username = req.params.username;
-    res.render('tabla2', { username });
-});
-router.get('/ejercicios_mul_div2/:username/tabla3', (req, res) => {
-    const username = req.params.username;
-    res.render('tabla3', { username });
-});
-router.get('/ejercicios_mul_div2/:username/tabla4', (req, res) => {
-    const username = req.params.username;
-    res.render('tabla4', { username });
-});
-router.get('/ejercicios_mul_div2/:username/tabla5', (req, res) => {
-    const username = req.params.username;
-    res.render('tabla5', { username });
-});
-router.get('/ejercicios_mul_div2/:username/tabla6', (req, res) => {
-    const username = req.params.username;
-    res.render('tabla6', { username });
-});
-router.get('/ejercicios_mul_div2/:username/tabla7', (req, res) => {
-    const username = req.params.username;
-    res.render('tabla7', { username });
-});
-router.get('/ejercicios_mul_div2/:username/tabla8', (req, res) => {
-    const username = req.params.username;
-    res.render('tabla8', { username });
-});
-router.get('/ejercicios_mul_div2/:username/tabla9', (req, res) => {
-    const username = req.params.username;
-    res.render('tabla9', { username });
-});
-router.get('/ejercicios_mul_div2/:username/tabla10', (req, res) => {
-    const username = req.params.username;
-    res.render('tabla10', { username });
-});
-router.get('/ejercicios_mul_div2/:username/frutas', (req, res) => {
-    const username = req.params.username;
-    res.render('frutas', { username });
-});
-router.get('/ejercicios_mul_div2/:username/globos', (req, res) => {
-    const username = req.params.username;
-    res.render('globos', { username });
-});
-router.get('/ejercicios_figuras2/:username/def', (req, res) => {
-    const username = req.params.username;
-    res.render('def', { username });
-});
-router.get('/ejercicios_figuras2/:username/figuras', (req, res) => {
-    const username = req.params.username;
-    res.render('figuras', { username });
-});
-router.get('/ejercicios_figuras2/:username/lados', (req, res) => {
-    const username = req.params.username;
-    res.render('lados', { username });
-});
-router.get('/ejercicios_figuras2/:username/tangram', (req, res) => {
-    const username = req.params.username;
-    res.render('tangram', { username });
-});
-router.get('/ejercicios_mcl2/:username/botellas', (req, res) => {
-    const username = req.params.username;
-    res.render('botellas', { username });
-});
-router.get('/ejercicios_mcl2/:username/bascula', (req, res) => {
-    const username = req.params.username;
-    res.render('bascula', { username });
-});
-router.get('/ejercicios_mcl2/:username/barras', (req, res) => {
-    const username = req.params.username;
-    res.render('barras', { username });
-});
-router.get('/ejercicios_tiempo2/:username/historia', (req, res) => {
-    const username = req.params.username;
-    res.render('historia', { username });
-});
-router.get('/ejercicios_tiempo2/:username/ct2', (req, res) => {
-    const username = req.params.username;
-    res.render('ct2', { username });
-});
-router.get('/ejercicios_tiempo2/:username/calendario', (req, res) => {
-    const username = req.params.username;
-    res.render('calendario', { username });
-});
-router.get('/ejercicios_datos2/:username/insectos', (req, res) => {
-    const username = req.params.username;
-    res.render('insectos', { username });
-});
-router.get('/ejercicios_datos2/:username/animales', (req, res) => {
-    const username = req.params.username;
-    res.render('animales', { username });
-});
-router.get('/ejercicios_datos2/:username/divisiones', (req, res) => {
-    const username = req.params.username;
-    res.render('divisiones', { username });
-});
-
+router.use('/', ejercicios2Router);
+router.use('/ejercicios_segundo', ejercicios_segundo)
+router.use('/calificaciones', calificaciones);
 
 //Métodos
 

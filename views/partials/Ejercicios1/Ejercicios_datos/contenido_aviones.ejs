@@ -4,11 +4,11 @@
     <div class="chart-container">
       <div class="y-axis">
         <div>0</div>
+        <div>5</div>
         <div>10</div>
+        <div>5</div>
         <div>20</div>
-        <div>30</div>
-        <div>40</div>
-        <div>50</div>
+        <div>25</div>
       </div>
   
       <div id="barChart" class="bar-chart">
@@ -43,7 +43,13 @@
       <input type="number" id="p3">
     </div>
   
-    <button onclick="calificar()">Terminar</button>
+    <button class="bc" id="btnCalificar" onclick="calificar()">Terminar</button>
+    <button class="bc" id="btnReiniciar" onclick="reiniciar()">Intentar de nuevo</button>
   
     <div id="resultado"></div>
+
+    <div class="intentos">
+      Intentos restantes: <span id="intentosRestantes">5</span>
+    </div>
+
     </div>

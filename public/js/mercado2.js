@@ -1,9 +1,18 @@
+const id_ejercicio = 3;
 const MAX_ATTEMPTS = 5;
-let globalAttempts = 0;
+let today = new Date().toISOString().split("T")[0];
+let lastAttemptDate = localStorage.getItem(`lastAttemptDate_${id_ejercicio}`) || "";
+let globalAttempts = parseInt(localStorage.getItem(`globalAttempts_${id_ejercicio}`)) || 0;
+
+if (lastAttemptDate !== today) {
+  globalAttempts = 0;
+  localStorage.setItem(`lastAttemptDate_${id_ejercicio}`, today);
+  localStorage.setItem(`globalAttempts_${id_ejercicio}`, globalAttempts);
+}
+
 let fruitCount = 0;
 
 function generateFruits() {
-  // Generar un número aleatorio de manzanas entre 100 y 400
   fruitCount = Math.floor(Math.random() * (400 - 100 + 1)) + 100;
   const fruitsDiv = document.getElementById("fruits");
   fruitsDiv.innerHTML = "";
@@ -11,7 +20,6 @@ function generateFruits() {
   let remainingFruits = fruitCount;
   let boxNumber = 1;
 
-  // Generar al menos dos contenedores
   while (remainingFruits > 0 || boxNumber <= 2) {
     const fruitBoxWrapper = document.createElement("div");
     fruitBoxWrapper.classList.add("fruit-box-wrapper");
@@ -44,6 +52,16 @@ function generateFruits() {
 }
 
 function checkAnswers() {
+  if (globalAttempts >= MAX_ATTEMPTS) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Sin intentos disponibles',
+      text: 'Ya has utilizado todos tus intentos para hoy.',
+      confirmButtonText: 'Aceptar'
+    });
+    return;
+  }
+
   const count = parseInt(document.getElementById("countInput").value.trim());
   const group50 = parseInt(document.getElementById("group50Input").value.trim());
   const group20 = parseInt(document.getElementById("group20Input").value.trim());
@@ -59,9 +77,31 @@ function checkAnswers() {
 
   const grade = Math.round((correct / 5) * 10);
   globalAttempts++;
+  localStorage.setItem(`globalAttempts_${id_ejercicio}`, globalAttempts);
+
+  const fecha = today;
+
+  fetch("/ejercicios_segundo/mercado2/guardar-calificacion", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      intento: globalAttempts,
+      calificacion: grade,
+      id_ejercicio,
+      fecha
+    }),
+  });
+
+  Swal.fire({
+    icon: 'success',
+    title: '¡Calificación registrada!',
+    text: `Tu calificación fue de ${grade}/10.`,
+    confirmButtonText: 'Aceptar'
+  });
 
   let result = `✅ Respuestas correctas: ${correct}/5<br>📊 Calificación: <strong>${grade}/10</strong><br>Intento ${globalAttempts} de ${MAX_ATTEMPTS}`;
-
   if (grade === 10) {
     result += "<br>🎉 ¡Excelente! ¡Eres un experto contando frutas! 🍎🍎🍎";
   }

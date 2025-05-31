@@ -11,8 +11,21 @@ const respuestas = {
     obj10: 'curva'
   };
 
-  let intentos = 0;
   const maxIntentos = 5;
+  const id_ejercicio = 16;
+  const ruta = '/ejercicios_numeros/clo/guardar-calificacion';
+
+  let lastAttemptDate = localStorage.getItem(`lastAttemptDate_${id_ejercicio}`) || "";
+  let globalAttempts = parseInt(localStorage.getItem(`globalAttempts_${id_ejercicio}`)) || 0;
+
+  const today = new Date().toISOString().split('T')[0];
+  
+  if (lastAttemptDate !== today) {
+    globalAttempts = 0;
+    // Al guardar
+    localStorage.setItem(`lastAttemptDate_${id_ejercicio}`, today);
+    localStorage.setItem(`globalAttempts_${id_ejercicio}`, globalAttempts);
+  }
 
   function crearObjetos() {
     const objetos = [
@@ -48,17 +61,17 @@ const respuestas = {
   }
 
   function allowDrop(ev) {
-    if (intentos >= maxIntentos) return;
+    if (globalAttempts >= maxIntentos) return;
     ev.preventDefault();
   }
 
   function drag(ev) {
-    if (intentos >= maxIntentos) return;
+    if (globalAttempts >= maxIntentos) return;
     ev.dataTransfer.setData("text", ev.target.id);
   }
 
   function drop(ev) {
-    if (intentos >= maxIntentos) return;
+    if (globalAttempts >= maxIntentos) return;
     ev.preventDefault();
     const data = ev.dataTransfer.getData("text");
     const el = document.getElementById(data);
@@ -68,7 +81,15 @@ const respuestas = {
   }
 
   function calificar() {
-    if (intentos >= maxIntentos) return;
+    if (globalAttempts >= maxIntentos) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Límite de intentos alcanzado',
+        text: 'Ya no tienes más intentos disponibles por hoy.',
+        confirmButtonText: 'Aceptar'
+      });
+      return;
+    }
 
     let correctos = 0;
     const total = Object.keys(respuestas).length;
@@ -81,20 +102,53 @@ const respuestas = {
     }
 
     let nota = (correctos / total) * 10;
-    intentos++;
-    document.getElementById("calificacion").textContent = `Intento ${intentos}: Obtuviste ${nota.toFixed(1)} de 10`;
+    globalAttempts++;
+    localStorage.setItem('globalAttempts', globalAttempts);
 
-    if (intentos < maxIntentos) {
-      document.getElementById("intentarBtn").style.display = "block";
-    } else {
-      document.getElementById("calificarBtn").disabled = true;
-      document.getElementById("intentarBtn").style.display = "none";
-      document.getElementById("calificacion").textContent += "\nHas alcanzado el máximo de intentos.";
-    }
+    const fecha = new Date().toISOString().split('T')[0];
+
+    fetch(ruta, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        intento: globalAttempts,
+        calificacion: nota.toFixed(1),
+        id_ejercicio,
+        fecha
+      })
+    })
+    .then(res => res.json())
+    .then(() => {
+      Swal.fire({
+        icon: 'success',
+        title: '¡Calificación registrada!',
+        text: `Tu calificación fue de ${nota.toFixed(1)}/10.`,
+        confirmButtonText: 'Aceptar'
+      });
+
+      document.getElementById("calificacion").textContent = `Intento ${globalAttempts}: Obtuviste ${nota.toFixed(1)} de 10`;
+
+      if (globalAttempts < maxIntentos) {
+        document.getElementById("intentarBtn").style.display = "block";
+      } else {
+        document.getElementById("calificarBtn").disabled = true;
+        document.getElementById("intentarBtn").style.display = "none";
+        document.getElementById("calificacion").textContent += "\nHas alcanzado el máximo de intentos.";
+      }
+    })
+    .catch(error => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No se pudo registrar la calificación. Intenta más tarde.',
+        confirmButtonText: 'Aceptar'
+      });
+      console.error(error);
+    });
   }
 
   function intentarDeNuevo() {
-    if (intentos >= maxIntentos) return;
+    if (globalAttempts >= maxIntentos) return;
 
     document.getElementById("plana").innerHTML = "<h3>Objetos con cara plana</h3>";
     document.getElementById("curva").innerHTML = "<h3>Objetos con cara curva</h3>";

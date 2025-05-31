@@ -6,7 +6,7 @@ const contarIntentos = (id_usuario, id_ejercicio, callback) => {
     `SELECT COUNT(*) AS intentos 
      FROM calificaciones 
      WHERE id_usuario = ? AND id_ejercicio = ? 
-     AND fecha >= DATE_SUB(NOW(), INTERVAL 7 DAY)`,
+     AND DATE(fecha) = CURDATE();`,
     [id_usuario, id_ejercicio],
     (err, results) => {
       if (err) return callback(err);

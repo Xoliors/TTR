@@ -3,9 +3,20 @@ const calendario = document.getElementById('calendario');
 const guardarBtn = document.getElementById('guardar');
 const reiniciarBtn = document.getElementById('reiniciar');
 const calificacionTexto = document.getElementById('calificacion');
-let intentos = 0;
 
 const diasSemana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+const id_ejercicio = 23;
+const today = new Date().toISOString().split("T")[0];
+
+let lastAttemptDate = localStorage.getItem(`lastAttemptDate_${id_ejercicio}`) || "";
+let globalAttempts = parseInt(localStorage.getItem(`globalAttempts_${id_ejercicio}`)) || 0;
+
+// Si la fecha ha cambiado, reinicia los intentos
+if (lastAttemptDate !== today) {
+  globalAttempts = 0;
+  localStorage.setItem(`lastAttemptDate_${id_ejercicio}`, today);
+  localStorage.setItem(`globalAttempts_${id_ejercicio}`, globalAttempts);
+}
 
 // Crear inputs para cada día
 diasSemana.forEach((nombre, i) => {
@@ -17,13 +28,24 @@ diasSemana.forEach((nombre, i) => {
     input.type = 'text';
     input.placeholder = `Actividad ${j}`;
     input.dataset.dia = i;
-    input.classList.add('caja'); // Clase agregada para aplicar estilos en CSS
+    input.classList.add('caja');
     diaDiv.appendChild(input);
   }
   diasContainer.appendChild(diaDiv);
 });
 
 function evaluarActividades() {
+  // Verifica si aún hay intentos
+  if (globalAttempts >= 5) {
+    Swal.fire({
+      icon: 'error',
+      title: '¡Sin intentos disponibles!',
+      text: 'Ya has usado los 5 intentos del día. Intenta nuevamente mañana.',
+      confirmButtonText: 'Aceptar'
+    });
+    return;
+  }
+
   const inputs = document.querySelectorAll('input[type="text"]');
   const actividadesPorDia = Array(diasSemana.length).fill(0);
 
@@ -36,6 +58,8 @@ function evaluarActividades() {
 
   const diasCompletos = actividadesPorDia.filter(act => act >= 1).length;
   const calificacion = (diasCompletos / diasSemana.length) * 10;
+  const fecha = today;
+
   calificacionTexto.textContent = `📊 Calificación: ${calificacion.toFixed(1)} / 10`;
 
   // Mostrar resumen
@@ -56,18 +80,43 @@ function evaluarActividades() {
     calendario.appendChild(div);
   });
 
-  if (diasCompletos < diasSemana.length) {
-    intentos++;
-    if (intentos < 5) {
+  // Actualiza contador y almacenamiento
+  globalAttempts++;
+  localStorage.setItem(`globalAttempts_${id_ejercicio}`, globalAttempts);
+
+  // Enviar calificación al backend
+  fetch('/ejercicios_numeros/dia/guardar-calificacion', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      intento: globalAttempts,
+      calificacion: calificacion.toFixed(1),
+      id_ejercicio,
+      fecha
+    })
+  }).then(() => {
+    Swal.fire({
+      icon: 'success',
+      title: '¡Calificación registrada!',
+      text: `Tu calificación fue de ${calificacion.toFixed(1)}/10.`,
+      confirmButtonText: 'Aceptar'
+    });
+
+    if (globalAttempts < 5 && diasCompletos < diasSemana.length) {
       reiniciarBtn.style.display = 'inline-block';
     } else {
-      guardarBtn.disabled = true;
       reiniciarBtn.style.display = 'none';
-      calificacionTexto.textContent += ' 🔒 Ya no puedes intentar más veces.';
+      guardarBtn.disabled = true;
     }
-  } else {
-    reiniciarBtn.style.display = 'none';
-  }
+  }).catch(error => {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Hubo un problema al guardar la calificación.',
+      confirmButtonText: 'Aceptar'
+    });
+    console.error(error);
+  });
 }
 
 function reiniciar() {
