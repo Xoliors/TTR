@@ -31,11 +31,12 @@ const { obtenerCalificacionesJSON, obtenerCalificacionesJSONED, obtenerCalificac
      }
  });
 
-router.get('/calificaciones_primero/EMA', obtenerCalificacionesJSON);
-router.get('/calificaciones_primero/ED', obtenerCalificacionesJSONED);
-router.get('/calificaciones_primero/M', obtenerCalificacionesJSONM);
-router.get('/calificaciones_primero/CM', obtenerCalificacionesJSONCM);
-router.get('/calificaciones_primero/TN', obtenerCalificacionesJSONTN);
-router.get('/calificaciones_primero/EN', obtenerCalificacionesJSONEN);
+router.get('/calificaciones_primero/tienda', obtenerCalificacionesJSON);
+router.get('/calificaciones_primero/picnic', obtenerCalificacionesJSONED);
+router.get('/calificaciones_primero/conteo', obtenerCalificacionesJSONM);
+router.get('/calificaciones_primero/detective', obtenerCalificacionesJSONCM);
+router.get('/calificaciones_primero/fiesta', obtenerCalificacionesJSONTN);
+router.get('/calificaciones_primero/ladron', obtenerCalificacionesJSONEN);
+router.get('/calificaciones_primero/syr', obtenerCalificacionesJSONEN);
 
 module.exports = router;

@@ -12,7 +12,13 @@ const ejercicios1Router = require('./ejercicios_primer')
 const ejercicios_numeros = require('./ejercicios_numeros')
 const ejercicios2Router = require('./ejercicios_segundo')
 const ejercicios_segundo = require('./ejercicios_route_segundo')
+
 const calificaciones = require('./calificaciones')
+const calificacionessr = require('./calificaciones_sr')
+const calificacionescfg = require('./calificaciones_cfg')
+const calificacioneslmc = require('./calificaciones_lmc')
+const calificacionest = require('./calificaciones_t')
+const calificacionesd = require('./calificaciones_d')
 
 const session = require('express-session');
 
@@ -30,32 +36,6 @@ router.get("/", (req, res) => {
 
 router.get("/about", (req, res) => {
     res.render("pages/about"); // Renderiza la vista 'about.ejs'
-});
-
-router.get("/calificaciones", (req, res) => {
-    const grado = req.session.grado_id;
-    const username = req.session.usuario;
-    const foto_perfil = req.session.foto_perfil;
-
-    console.log(foto_perfil)
-
-    if (!grado || !username) {
-        return res.redirect('/');
-    }
-
-    switch (grado) {
-        case 1:
-            res.render("pages/course", { username, grado, foto_perfil });
-            break;
-        case 2:
-            res.render("pages/course2", { username, grado, foto_perfil });
-            break;
-        case 3:
-            res.render("pages/course3", { username, grado, foto_perfil });
-            break;
-        default:
-            res.redirect("/");
-    }
 });
 
 router.get("/register", (req, res) => {
@@ -106,7 +86,14 @@ router.use('/', ejercicios1Router);
 router.use('/ejercicios_numeros', ejercicios_numeros);
 router.use('/', ejercicios2Router);
 router.use('/ejercicios_segundo', ejercicios_segundo)
+
+
 router.use('/calificaciones', calificaciones);
+router.use('/calificacionessr', calificaciones);
+router.use('/calificacionescfg', calificaciones);
+router.use('/calificacioneslmc', calificaciones);
+router.use('/calificacionest', calificaciones);
+router.use('/calificacionesd', calificaciones);
 
 //Métodos
 

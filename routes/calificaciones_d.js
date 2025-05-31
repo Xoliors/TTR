@@ -31,11 +31,8 @@ const { obtenerCalificacionesJSON, obtenerCalificacionesJSONED, obtenerCalificac
      }
  });
 
-router.get('/calificaciones_primero/EMA', obtenerCalificacionesJSON);
-router.get('/calificaciones_primero/ED', obtenerCalificacionesJSONED);
-router.get('/calificaciones_primero/M', obtenerCalificacionesJSONM);
-router.get('/calificaciones_primero/CM', obtenerCalificacionesJSONCM);
-router.get('/calificaciones_primero/TN', obtenerCalificacionesJSONTN);
-router.get('/calificaciones_primero/EN', obtenerCalificacionesJSONEN);
+router.get('/calificaciones_primero/granja', obtenerCalificacionesJSON);
+router.get('/calificaciones_primero/deporteynaturaleza', obtenerCalificacionesJSONED);
+router.get('/calificaciones_primero/aviones', obtenerCalificacionesJSONM);
 
 module.exports = router;
