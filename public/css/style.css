@@ -9989,9 +9989,18 @@ label[for="profilePic"] {
 .d-block{
   color: #FFFFFF;
 }
-.rain{
-  background: url(../images/MATH2.jfif), no-repeat center center;
+.rain {
+  background: url(../images/parque.jpeg) no-repeat center center;
   background-size: cover;
   justify-content: center;
-
+}
+.rain-2 {
+  background: url(../images/animales2.gif) no-repeat center center;
+  background-size: cover;
+  justify-content: center;
+}
+.rain-3 {
+  background: url(../images/ciudad.gif) no-repeat center center;
+  background-size: cover;
+  justify-content: center;
 }

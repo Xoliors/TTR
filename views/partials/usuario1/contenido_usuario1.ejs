@@ -1,23 +1,60 @@
-
 <!-- Header Start -->
-<div class=" page-header" >
-    <div class="container">
-        <div class="d-flex flex-column justify-content-center" style="min-height: 200px">
-            <h3 class="display-4 text-white text-uppercase">Blog</h3>
-            <div class="d-inline-flex text-white">
-                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
-                <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                <p class="m-0 text-uppercase">Blog</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Header End -->
+<div class="page-header" 
+     style="background: linear-gradient(135deg, #239db9, #166190); overflow: hidden; position: relative; padding: 40px 0;  opacity: .4">
 
+  <!-- Globos animados -->
+  <div style="position: absolute; top: 80%; left: 10%; width: 30px; height: 50px; background: red; border-radius: 50%; animation: subir 6s infinite ease-in;"></div>
+  <div style="position: absolute; top: 90%; left: 80%; width: 30px; height: 50px; background: yellow; border-radius: 50%; animation: subir 8s infinite ease-in;"></div>
+
+  <!-- Nube animada -->
+  <div style="position: absolute; top: 10%; left: -120px; width: 150px; height: 60px; background: white; border-radius: 50px; opacity: 0.7; animation: nube 25s linear infinite;"></div>
+
+  <!-- Estrellas brillantes -->
+  <div style="position: absolute; top: 25px; right: 30px; font-size: 24px; color: gold; animation: brillo 1.5s infinite alternate;">★</div>
+  <div style="position: absolute; top: 55px; left: 60px; font-size: 20px; color: gold; animation: brillo 2s infinite alternate;">★</div>
+
+  <div class="container">
+    <div class="d-flex flex-column justify-content-center" style="min-height: 200px;">
+      
+      <h3 class="display-4 text-white text-uppercase" 
+          style="opacity: 0;  transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; text-shadow: 2px 2px 5px rgba(0,0,0,0.3); "
+          id="comenzarTitulo">
+        Comencemos
+      </h3>
+
+      <!-- NUEVO: mensaje "Bienvenido a 1° de Primaria" -->
+      <h4 id="primariaBienvenida"
+          style="font-size: 2rem; color: #ffeb3b; text-shadow: 1px 1px 4px rgba(0,0,0,0.4); opacity: 0; transform: scale(0.5); transition: all 1.2s ease; margin-top: 10px;">
+        ¡Bienvenido a 1° DE PRIMARIA!
+      </h4>
+
+      <!-- NUEVO: Subtítulo animado -->
+      <p id="mensajeDiversion"
+         style="color: white; font-size: 1.2rem; margin-top: 10px; opacity: 0; transform: translateY(20px); transition: all 1s ease;">
+        Juegos, retos y mucha diversión te esperan 🎉
+      </p>
+
+      <div class="d-inline-flex text-white" 
+           style="opacity: 0; transform: translateX(-30px); transition: opacity 1.5s ease, transform 1.5s ease; margin-top: 15px;"
+           id="mensajeAccion">
+        
+        <p class="m-0 text-uppercase" style="margin-right: 10px; color: white;  transition: color 0.3s ease;" 
+           onmouseover="this.style.color='#ffcc00'" 
+           onmouseout="this.style.color='white'">
+          Aprende
+        </p>
+        
+        <i class="fa fa-angle-double-right pt-1 px-3" style="line-height: 1.1;"></i>
+        
+        <p class="m-0 text-uppercase">Diviértete</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Blog Start -->
-<div class="rain py-5" style="min-height: 1200px" >
-    <div class="container py-5">
-        
-    </div>
+<div class="rain py-5" style="min-height: 1500px;">
+  <div class="container py-5">
+    
+  </div>
 </div>
