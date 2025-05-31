@@ -4,7 +4,7 @@
         <div class="row border-top px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a class="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none" data-toggle="collapse" href="#navbar-vertical" style="height: 67px; padding: 0 30px;">
-                    <h5 class="text-primary m-0"><i class="fa fa-book-open mr-2"></i>Temas 2° de Primaria</h5>
+                    <h5 class="text-primary m-0"><i class="fa fa-book-open mr-2"></i>Temas 3° de Primaria</h5>
                     <i class="fa fa-angle-down text-primary"></i>
                 </a>
                 <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 9;">
@@ -12,27 +12,23 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link " data-toggle="dropdown">1er Periodo<i class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0 ">
-                                <a href="" class="dropdown-item ">Estudio de los numeros</a>
-                                <a href="" class="dropdown-item">Suma y Resta</a>
+                                <a href="/usuario3/<%= username %>/tema14" class="dropdown-item ">Estudio de los numeros</a>
+                                <a href="/usuario3/<%= username %>/tema15" class="dropdown-item">Suma y Resta</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link" data-toggle="dropdown">2do Periodo<i class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">Multiplicación y División</a>
-                                <a href="" class="dropdown-item ">Cuerpos Geométricos</a>
-                                <a href="" class="dropdown-item">Figuras Geométricas</a>
-                                
-                                
-                                
+                                <a href="/usuario3/<%= username %>/tema16" class="dropdown-item">Multiplicación y División</a>
+                                <a href="/usuario3/<%= username %>/tema17" class="dropdown-item ">Cuerpos y Figuras Geométricas</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link" data-toggle="dropdown">3er Periodo<i class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">Medición de Longitud, Masa y Capacidad</a>
-                                <a href="" class="dropdown-item ">Medición del Tiempo</a>
-                                <a href="" class="dropdown-item">Organización e Interpretación de Datos</a>
+                                <a href="/usuario3/<%= username %>/tema18" class="dropdown-item">Medición de Longitud, Masa y Capacidad</a>
+                                <a href="/usuario3/<%= username %>/tema19" class="dropdown-item ">Medición del Tiempo</a>
+                                <a href="/usuario3/<%= username %>/tema20" class="dropdown-item">Organización e Interpretación de Datos</a>
                             </div>
                         </div>
                     </div>
@@ -42,40 +38,24 @@
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
-                            <a href="/usuario2/<%= username %>" class="nav-item nav-link active"><h5 class="text-primary m-0"><i class="fa fa-house mr-2 "></i>Inicio</h5></a>
+                            <a href="/usuario3/<%= username %>" class="nav-item nav-link active"><h5 class="text-primary m-0"><i class="fa fa-house mr-2 "></i>Inicio</h5></a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sharp fa-solid fa-pencil mr-2"></i>Ejercicios</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="/usuario2/<%= username %>/ejercicios1" class="dropdown-item"><i class="fa fa-sharp fa-solid fas fa-1 mr-2"  style="color: #3ea4d3;"></i><i class="fa fa-sharp fa-solid fas fa-2 mr-2"  style="color: #3ea4d3;"></i><i class="fa fa-sharp fa-solid fas fa-3 mr-2"  style="color: #3ea4d3;"></i> Estudio de los Números</a>
-                                    <a href="/usuario2/<%= username %>/ejercicios2" class="dropdown-item"><i class="fa fa-sharp fa-solid fas fa-plus mr-2"  style="color: #3ea4d3;"></i>/ <i class="fas fa-sharp fa-solid fa-minus mr-2"  style="color: #3ea4d3;"></i> Suma y Resta</a>
-                                    <a href="/usuario2/<%= username %>/ejercicios2" class="dropdown-item"><i class="fa fa-sharp fa-solid fas fa-xmark mr-2"  style="color: #3ea4d3;"></i>/ <i class="fas fa-sharp fa-solid fa-divide mr-2"  style="color: #3ea4d3;"></i> Multiplicación y División</a>
-                                    <a href="/usuario2/<%= username %>/ejercicios3" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" style="width: 20px; height: 20px;">
-                                        <path d="M0,25 Q50,0 100,25 T200,25"
-                                              fill="transparent"
-                                              stroke="#3ea4d3"
-                                              stroke-width="4"
-                                              vector-effect="non-scaling-stroke"/>
-                                      </svg>
-                                      
-                                      / <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" style="width: 20px; height: 20px;">
-                                        <line x1="0" y1="25" x2="200" y2="25"
-                                              stroke="#3ea4d3"
-                                              stroke-width="4"
-                                              vector-effect="non-scaling-stroke"/>
-                                      </svg>
-                                      
-                                      </i> Cuerpos Geométricos</a>
-                                    <a href="/usuario2/<%= username %>/ejercicios3" class="dropdown-item"><i class="fa fa-sharp fa-solid fa-square  mr-2" style="color: #3ea4d3;"></i> / <i class="bi bi-circle-fill mr-2" style="color: #3ea4d3;"></i> / <i class="bi bi-triangle-fill mr-2" style="color: #3ea4d3;"></i> Figuras Geométricas</a>
-                                    <a href="/usuario2/<%= username %>/ejercicios3" class="dropdown-item"><i class="fa fa-sharp fa-solid fa-ruler mr-2" style="color: #3ea4d3;"></i>Medición de Longitud, Masa y Capacidad</a>
-                                    <a href="/usuario2/<%= username %>/ejercicios3" class="dropdown-item"><i class="fa fa-sharp fa-solid fa-clock mr-2" style="color: #3ea4d3;"></i> Medición del Tiempo</a>
-                                    <a href="/usuario2/<%= username %>/ejercicios3" class="dropdown-item"><i class="fa fa-sharp fa-solid fa-table  mr-2" style="color: #3ea4d3;"></i>Organización e Interpretación de Datos</a>
+                                    <a href="/usuario3/<%= username %>/ejercicios_numeros3" class="dropdown-item"><i class="fa fa-sharp fa-solid fas fa-1 mr-2"  style="color: #3ea4d3;"></i><i class="fa fa-sharp fa-solid fas fa-2 mr-2"  style="color: #3ea4d3;"></i><i class="fa fa-sharp fa-solid fas fa-3 mr-2"  style="color: #3ea4d3;"></i> Estudio de los Números</a>
+                                    <a href="/usuario3/<%= username %>/ejercicios_suma_resta3" class="dropdown-item"><i class="fa fa-sharp fa-solid fas fa-plus mr-2"  style="color: #3ea4d3;"></i>/ <i class="fas fa-sharp fa-solid fa-minus mr-2"  style="color: #3ea4d3;"></i> Suma y Resta</a>
+                                    <a href="/usuario3/<%= username %>/ejercicios_mul_div3" class="dropdown-item"><i class="fa fa-sharp fa-solid fas fa-xmark mr-2"  style="color: #3ea4d3;"></i>/ <i class="fas fa-sharp fa-solid fa-divide mr-2"  style="color: #3ea4d3;"></i> Multiplicación y División</a>
+                                    <a href="/usuario3/<%= username %>/ejercicios_figuras3" class="dropdown-item"><i class="fa fa-sharp fa-solid fa-square  mr-2" style="color: #3ea4d3;"></i> / <i class="bi bi-circle-fill mr-2" style="color: #3ea4d3;"></i> / <i class="bi bi-triangle-fill mr-2" style="color: #3ea4d3;"></i>Cuerpos y Figuras Geométricas</a>
+                                    <a href="/usuario3/<%= username %>/ejercicios_mcl3" class="dropdown-item"><i class="fa fa-sharp fa-solid fa-ruler mr-2" style="color: #3ea4d3;"></i>Medición de Longitud, Masa y Capacidad</a>
+                                    <a href="/usuario3/<%= username %>/ejercicios_tiempo3" class="dropdown-item"><i class="fa fa-sharp fa-solid fa-clock mr-2" style="color: #3ea4d3;"></i> Medición del Tiempo</a>
+                                    <a href="/usuario3/<%= username %>/ejercicios_datos3" class="dropdown-item"><i class="fa fa-sharp fa-solid fa-table  mr-2" style="color: #3ea4d3;"></i>Organización e Interpretación de Datos</a>
                                 </div>
                             </div>
                             <a href="/about" class="nav-item nav-link"><i class="fa fa-solid fa-list-check mr-2"></i>Progreso</a>
                             <a href="/course" class="nav-item nav-link"><i class="fa fa-solid fa-graduation-cap mr-2"></i>Calificaciones</a>
                             <a href="/contact" class="nav-item nav-link"><i class="fa fa-solid fa-medal mr-2"></i>Insignias</a>
                         </div>
-                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="/logout">Cerrar Sesión</a>
+                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="/">Cerrar Sesión</a>
                     </div>
                 </nav>
             </div>

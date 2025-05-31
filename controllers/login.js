@@ -10,14 +10,12 @@ const LoginUsuarios = (req, res) => {
         }
 
         if (result.length > 0) {
+            req.session.id_usuario = result[0].id;
             req.session.usuario = result[0].usuario;
             req.session.nombre = result[0].nombre;
             req.session.correo = result[0].correo;
             req.session.grado_id = result[0].grado_id;
             req.session.foto_perfil = result[0].foto_perfil;
-
-            console.log(result[0]); // <-- esto te dirá si `foto_perfil` existe y su valor
-
 
             return res.json({ success: true, usuario: result[0].nombre });
         } else {
