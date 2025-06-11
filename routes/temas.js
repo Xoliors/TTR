@@ -99,6 +99,14 @@ router.get('/tema20', verificarSesion, (req, res) => {
     res.render('pages/tema20');
 });
 
+router.get('/tema21', verificarSesion, (req, res) => {
+    res.render('pages/tema21');
+});
+
+router.get('/tema22', verificarSesion, (req, res) => {
+    res.render('pages/tema22');
+});
+
 
 
 
