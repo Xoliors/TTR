@@ -26,9 +26,11 @@ function cargarTablaConFetch(tableId, url) {
 }
 
 // Llamadas
-cargarTablaConFetch('#table1', '/calificaciones/calificaciones_primero/EMA');
-cargarTablaConFetch('#table2', '/calificaciones/calificaciones_primero/ED');
-cargarTablaConFetch('#table3', '/calificaciones/calificaciones_primero/M');
-cargarTablaConFetch('#table4', '/calificaciones/calificaciones_primero/CM');
-cargarTablaConFetch('#table5', '/calificaciones/calificaciones_primero/TN');
-cargarTablaConFetch('#table6', '/calificaciones/calificaciones_primero/EN');
+cargarTablaConFetch('#table1', '/calificacionessr/calificaciones_primero/tienda');
+cargarTablaConFetch('#table2', '/calificacionessr/calificaciones_primero/picnic');
+cargarTablaConFetch('#table3', '/calificacionessr/calificaciones_primero/conteo');
+cargarTablaConFetch('#table4', '/calificacionessr/calificaciones_primero/detective');
+cargarTablaConFetch('#table5', '/calificacionessr/calificaciones_primero/fiesta');
+cargarTablaConFetch('#table6', '/calificacionessr/calificaciones_primero/ladron');
+cargarTablaConFetch('#table7', '/calificacionessr/calificaciones_primero/syr');
+

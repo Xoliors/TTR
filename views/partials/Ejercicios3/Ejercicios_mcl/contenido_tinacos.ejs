@@ -1,0 +1,41 @@
+<div class="body">
+
+  <h2>Llena los tres tinacos con los litros correctos</h2>
+  <p>Arrastra los litros hacia cada tinaco. Cada tinaco indica cuántos litros debe tener, pero la capacidad total es de 5000L, así que el agua no se llena por completo.</p>
+  
+  <div class="opciones">
+    <div class="litro" draggable="true" data-valor="1">1L</div>
+    <div class="litro" draggable="true" data-valor="10">10L</div>
+    <div class="litro" draggable="true" data-valor="100">100L</div>
+    <div class="litro" draggable="true" data-valor="300">300L</div>
+    <div class="litro" draggable="true" data-valor="500">500L</div>
+  </div>
+  
+  <div class="contenedor">
+    <div class="tinaco-container">
+      <div class="tinaco" id="tinaco1" data-meta="1560" ondragover="allowDrop(event)" ondrop="drop(event, 1)">
+        <div class="llenado" id="llenado1" style="height:0%"></div>
+      </div>
+      <div class="litros" id="litros1">0 L</div>
+      <div class="meta">Debe tener: 1560 L</div>
+    </div>
+    <div class="tinaco-container">
+      <div class="tinaco" id="tinaco2" data-meta="2340" ondragover="allowDrop(event)" ondrop="drop(event, 2)">
+        <div class="llenado" id="llenado2" style="height:0%"></div>
+      </div>
+      <div class="litros" id="litros2">0 L</div>
+      <div class="meta">Debe tener: 2340 L</div>
+    </div>
+    <div class="tinaco-container">
+      <div class="tinaco" id="tinaco3" data-meta="3691" ondragover="allowDrop(event)" ondrop="drop(event, 3)">
+        <div class="llenado" id="llenado3" style="height:0%"></div>
+      </div>
+      <div class="litros" id="litros3">0 L</div>
+      <div class="meta">Debe tener: 3691 L</div>
+    </div>
+  </div>
+  
+  <button class="bn" onclick="verificar()">Verificar</button>
+  <button class="bn"  id="reiniciar" onclick="reiniciar()">Intentar de nuevo</button>
+  <div class="resultado" id="resultado"></div>
+    </div>

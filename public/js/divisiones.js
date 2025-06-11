@@ -1,7 +1,40 @@
-let intentos = 0;
+const id_ejercicio = 38;
+const today = new Date().toISOString().split("T")[0];
+const keyDate = `lastAttemptDate_${id_ejercicio}`;
+const keyAttempts = `globalAttempts_${id_ejercicio}`;
+let lastAttemptDate = localStorage.getItem(keyDate) || "";
+let globalAttempts = parseInt(localStorage.getItem(keyAttempts)) || 0;
 const maxIntentos = 5;
 
+// Reiniciar intentos si es un nuevo día
+if (lastAttemptDate !== today) {
+  globalAttempts = 0;
+  localStorage.setItem(keyDate, today);
+  localStorage.setItem(keyAttempts, globalAttempts);
+}
+
+// Si ya se alcanzaron los intentos, bloquear campos
+if (globalAttempts >= maxIntentos) {
+  Swal.fire({
+    icon: 'info',
+    title: 'Has alcanzado el máximo de intentos por hoy.',
+    text: 'Podrás intentarlo nuevamente mañana.',
+    confirmButtonText: 'Aceptar'
+  });
+  bloquearCampos();
+}
+
 function verificar() {
+  if (globalAttempts >= maxIntentos) {
+    Swal.fire({
+      icon: 'warning',
+      title: '¡Sin intentos disponibles!',
+      text: 'Has alcanzado el número máximo de intentos para hoy.',
+      confirmButtonText: 'Aceptar'
+    });
+    return;
+  }
+
   let total = 0;
   let correctos = 0;
 
@@ -23,14 +56,39 @@ function verificar() {
     });
   });
 
-  let calificacion = Math.round((correctos / total) * 10);
-  document.getElementById('resultado').textContent = `Intento ${intentos + 1}: Tu calificación es ${calificacion} / 10`;
+  const finalScore = Math.round((correctos / total) * 10);
+  const fecha = today;
 
-  intentos++;
+  Swal.fire({
+    icon: 'success',
+    title: '¡Calificación registrada!',
+    text: `Tu calificación fue de ${finalScore}/10.`,
+    confirmButtonText: 'Aceptar'
+  });
+
+  // Enviar calificación al servidor
+  fetch("/ejercicios_segundo/divisiones/guardar-calificacion", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      intento: globalAttempts + 1,
+      calificacion: finalScore,
+      id_ejercicio,
+      fecha
+    })
+  });
+
+  globalAttempts++;
+  localStorage.setItem(keyAttempts, globalAttempts);
+
+  document.getElementById('resultado').textContent = `Intento ${globalAttempts}: Tu calificación es ${finalScore} / 10`;
+
   document.getElementById('verificarBtn').disabled = true;
-  document.getElementById('intentarBtn').style.display = (intentos < maxIntentos) ? "block" : "none";
+  document.getElementById('intentarBtn').style.display = (globalAttempts < maxIntentos) ? "block" : "none";
 
-  if (intentos >= maxIntentos) {
+  if (globalAttempts >= maxIntentos) {
     bloquearCampos();
     document.getElementById('resultado').textContent += " — Has alcanzado el número máximo de intentos.";
   }

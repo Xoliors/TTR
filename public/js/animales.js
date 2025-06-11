@@ -1,28 +1,25 @@
+const id_ejercicio = 37;
+const today = new Date().toISOString().split("T")[0];
+let lastAttemptDate = localStorage.getItem(`lastAttemptDate_${id_ejercicio}`) || "";
+let globalAttempts = parseInt(localStorage.getItem(`globalAttempts_${id_ejercicio}`)) || 0;
+
+// Reiniciar intentos si es un nuevo día
+if (lastAttemptDate !== today) {
+  globalAttempts = 0;
+  localStorage.setItem(`lastAttemptDate_${id_ejercicio}`, today);
+  localStorage.setItem(`globalAttempts_${id_ejercicio}`, globalAttempts);
+}
+
 const animales = ['🐅','🐢','🐍','🦉','🦅','🐒','🦇','🐙','🐬','🦈','🐊','🦍','🦒','🦏','🦘','🐘','🐋'];
 const nombresAnimales = {
-  '🐅': 'tigre',
-  '🐢': 'tortuga',
-  '🐍': 'serpiente',
-  '🦉': 'búho',
-  '🦅': 'águila',
-  '🐒': 'mono',
-  '🦇': 'murciélago',
-  '🐙': 'pulpo',
-  '🐬': 'delfín',
-  '🦈': 'tiburón',
-  '🐊': 'cocodrilo',
-  '🦍': 'gorila',
-  '🦒': 'jirafa',
-  '🦏': 'rinoceronte',
-  '🦘': 'canguro',
-  '🐘': 'elefante',
-  '🐋': 'ballena'
+  '🐅': 'tigre', '🐢': 'tortuga', '🐍': 'serpiente', '🦉': 'búho', '🦅': 'águila', '🐒': 'mono',
+  '🦇': 'murciélago', '🐙': 'pulpo', '🐬': 'delfín', '🦈': 'tiburón', '🐊': 'cocodrilo',
+  '🦍': 'gorila', '🦒': 'jirafa', '🦏': 'rinoceronte', '🦘': 'canguro', '🐘': 'elefante', '🐋': 'ballena'
 };
 const animalHead = document.getElementById("animal-head");
 const animalData = document.getElementById("animal-data");
 const conteos = {};
 let totalAnimales = 0;
-let intentos = 0;
 
 function makeTally(n) {
   let s = "";
@@ -81,7 +78,13 @@ document.getElementById("vainilla").textContent = makeTally(vainilla);
 document.getElementById("frutilla").textContent = makeTally(frutilla);
 
 function verificar() {
-  if (intentos >= 5) {
+  if (globalAttempts >= 5) {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Límite de intentos',
+      text: 'Ya has alcanzado el número máximo de intentos para hoy.',
+      confirmButtonText: 'Aceptar'
+    });
     document.getElementById("btn-verificar").disabled = true;
     document.getElementById("btn-intentar").disabled = true;
     return;
@@ -126,7 +129,33 @@ function verificar() {
 
   const calificacion = (aciertos / 12) * 10;
   document.getElementById("resultado").textContent = `Tu calificación es: ${calificacion.toFixed(2)}`;
-  intentos++;
+
+  // Incrementa y guarda el intento
+  globalAttempts++;
+  localStorage.setItem(`globalAttempts_${id_ejercicio}`, globalAttempts);
+
+  fetch("/ejercicios_segundo/animales/guardar-calificacion", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      intento: globalAttempts,
+      calificacion: calificacion.toFixed(2),
+      id_ejercicio,
+      fecha: today
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    Swal.fire({
+      icon: 'success',
+      title: '¡Calificación registrada!',
+      text: `Tu calificación fue de ${calificacion.toFixed(2)}/10.`,
+      confirmButtonText: 'Aceptar'
+    });
+  });
+
   document.getElementById("btn-verificar").style.display = "none";
   document.getElementById("btn-intentar").style.display = "inline";
 }
@@ -135,5 +164,4 @@ function intentarDeNuevo() {
   document.getElementById("btn-verificar").style.display = "inline";
   document.getElementById("btn-intentar").style.display = "none";
   document.getElementById("resultado").textContent = "";
-  intentos = 0;
 }

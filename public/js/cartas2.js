@@ -1,4 +1,24 @@
-const animales = [
+const id_ejercicio = 12;
+const today = new Date().toISOString().split("T")[0];
+let lastAttemptDate = localStorage.getItem(`lastAttemptDate_${id_ejercicio}`) || "";
+let globalAttempts = parseInt(localStorage.getItem(`globalAttempts_${id_ejercicio}`)) || 0;
+const maxReintentos = 5;
+
+if (lastAttemptDate !== today) {
+  globalAttempts = 0;
+  localStorage.setItem(`lastAttemptDate_${id_ejercicio}`, today);
+  localStorage.setItem(`globalAttempts_${id_ejercicio}`, globalAttempts);
+}
+
+if (globalAttempts >= maxReintentos) {
+  Swal.fire({
+    icon: 'error',
+    title: 'No tienes más intentos disponibles hoy',
+    text: `Ya realizaste ${maxReintentos} intentos hoy. Intenta de nuevo mañana.`,
+    confirmButtonText: 'Aceptar'
+  });
+} else {
+  const animales = [
     "cebra.png", "loro.png", "jirafa.png", "tigre.png", "cocodrilo.png", 
     "venado.webp", "pulpo.png", "cheetah.png", "delfin.webp", "tiburon.webp", "mono.webp"
   ];
@@ -13,7 +33,6 @@ const animales = [
   let total = animales.length;
   let tiempo = 180;
   let reinicios = 0;
-  const maxReintentos = 5;
 
   function generarResta() {
     let a = Math.floor(Math.random() * 50 + 50);
@@ -43,9 +62,9 @@ const animales = [
     input.type = "number";
     const boton = document.createElement("button");
     boton.innerText = "Comprobar";
-    boton.className = "bn"
+    boton.className = "bn";
 
-    boton.onclick = () => {
+    boton.onclick = async () => {
       let respuesta = parseInt(input.value);
       if (respuesta === resta.r) {
         aciertos++;
@@ -54,7 +73,9 @@ const animales = [
       intentos++;
       actualizarResultado();
       card.remove();
-      if (document.querySelectorAll(".card").length === 0) mostrarReinicio();
+      if (document.querySelectorAll(".card").length === 0) {
+        mostrarReinicio();
+      }
     };
 
     back.appendChild(operacion);
@@ -77,8 +98,8 @@ const animales = [
     contenedor.className = "tarjeta-ganada";
     const imagen = document.createElement("img");
     imagen.src = `/images/${nombre}`;
-    imagen.alt = nombre;  // Asegúrate de que el alt sea el nombre para accesibilidad
-    contenedor.appendChild(imagen);  // Solo agregamos la imagen, no el texto
+    imagen.alt = nombre;
+    contenedor.appendChild(imagen);
     ganadas.appendChild(contenedor);
   }
 
@@ -88,12 +109,13 @@ const animales = [
   }
 
   function iniciarTemporizador() {
-    let intervalo = setInterval(() => {
+    let intervalo = setInterval(async () => {
       let min = Math.floor(tiempo / 60);
       let seg = tiempo % 60;
       document.getElementById("timer").textContent = `Tiempo: ${min}:${seg < 10 ? '0' : ''}${seg}`;
       if (tiempo <= 0 || document.querySelectorAll(".card").length === 0) {
         clearInterval(intervalo);
+        await guardarCalificacion();
         mostrarReinicio();
       }
       tiempo--;
@@ -102,6 +124,43 @@ const animales = [
 
   function mostrarReinicio() {
     reiniciarBtn.style.display = reinicios < maxReintentos - 1 ? "inline-block" : "none";
+  }
+
+  async function guardarCalificacion() {
+    const calificacion = ((aciertos / total) * 10).toFixed(1);
+    globalAttempts++;
+    localStorage.setItem(`globalAttempts_${id_ejercicio}`, globalAttempts);
+    localStorage.setItem(`lastAttemptDate_${id_ejercicio}`, today);
+
+    try {
+      const response = await fetch('/ejercicios_segundo/cartas2/guardar-calificacion', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          intento: globalAttempts,
+          calificacion,
+          id_ejercicio,
+          fecha: today
+        })
+      });
+
+      if (!response.ok) throw new Error("Error en la respuesta del servidor");
+
+      await Swal.fire({
+        icon: 'success',
+        title: '¡Calificación guardada!',
+        text: `Tu calificación fue de ${calificacion}/10.`,
+        confirmButtonText: 'Aceptar'
+      });
+
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error al guardar',
+        text: 'No se pudo guardar la calificación. Intenta más tarde.',
+        confirmButtonText: 'Aceptar'
+      });
+    }
   }
 
   function iniciarEjercicio() {
@@ -123,3 +182,4 @@ const animales = [
   }
 
   iniciarEjercicio();
+}

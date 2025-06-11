@@ -103,14 +103,91 @@ function removeLine(item) {
     drawLines();
 }
 
+const id_ejercicio = 26;
+const today = new Date().toISOString().split("T")[0];
+let lastAttemptDate = localStorage.getItem(`lastAttemptDate_${id_ejercicio}`) || "";
+let globalAttempts = parseInt(localStorage.getItem(`globalAttempts_${id_ejercicio}`)) || 0;
+
+if (lastAttemptDate !== today) {
+  globalAttempts = 0;
+  localStorage.setItem(`lastAttemptDate_${id_ejercicio}`, today);
+  localStorage.setItem(`globalAttempts_${id_ejercicio}`, globalAttempts);
+}
+
 function calificarEjercicio() {
-    let correctCount = 0;
-    connections.forEach((def, term) => {
-        if (term.dataset.pair === def.dataset.pair) correctCount++;
+  if (globalAttempts >= 5) {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Límite de intentos alcanzado',
+      text: 'Ya no tienes más intentos disponibles hoy.',
+      confirmButtonText: 'Aceptar'
     });
-    const total = terms.length;
-    const score = (correctCount/total)*10;
+    return;
+  }
+
+  let correctCount = 0;
+  connections.forEach((def, term) => {
+    if (term.dataset.pair === def.dataset.pair) correctCount++;
+  });
+
+  const total = terms.length;
+  const score = (correctCount / total) * 10;
+  globalAttempts++;
+
+  localStorage.setItem(`globalAttempts_${id_ejercicio}`, globalAttempts);
+
+  fetch("/ejercicios_segundo/def/guardar-calificacion", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      intento: globalAttempts,
+      calificacion: score,
+      id_ejercicio,
+      fecha: today
+    })
+  })
+  .then(res => res.json())
+  .then(() => {
+    Swal.fire({
+      icon: 'success',
+      title: '¡Calificación registrada!',
+      text: `Tu calificación fue de ${score.toFixed(1)}/10.`,
+      confirmButtonText: 'Aceptar'
+    });
     document.getElementById('result').innerText =
-        `Respuestas correctas: ${correctCount} de ${total}\n`+
-        `Calificación: ${score.toFixed(1)}/10`;
+      `Respuestas correctas: ${correctCount} de ${total}\n` +
+      `Calificación: ${score.toFixed(1)}/10`;
+  })
+  .catch(err => {
+    console.error(err);
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Ocurrió un error al guardar la calificación.',
+      confirmButtonText: 'Aceptar'
+    });
+  });
+}
+
+// Botón de reinicio
+const resultDiv = document.getElementById("result");
+const retryButton = document.createElement("button");
+retryButton.id = "retryBtn";
+retryButton.className = "retry-btn";
+retryButton.textContent = "🔄 Volver a Intentar";
+retryButton.onclick = retry;
+resultDiv.insertAdjacentElement("afterend", retryButton);
+
+function retry() {
+  connections.clear();
+  drawLines();
+  document.getElementById('result').innerText = "";
+  Swal.fire({
+    icon: 'info',
+    title: 'Reinicio',
+    text: 'Puedes volver a intentar el ejercicio.',
+    confirmButtonText: 'Aceptar'
+  });
 }

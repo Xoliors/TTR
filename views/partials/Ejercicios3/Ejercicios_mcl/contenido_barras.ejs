@@ -1,0 +1,68 @@
+<div class="body">
+  <h1 class="he">Gráfica de Altura de Edificios</h1>
+
+  <div class="chart-container">
+    <div class="y-axis">
+        <div>0</div>
+        <div>500</div>
+        <div>1000</div>
+        <div>1600</div>
+        <div>2200</div>
+        <div>2780</div>
+    </div>
+
+    <div class="bar-chart">
+      <div class="bar" data-altura="1540">
+        <div class="label">A</div>
+        <div class="building" style="font-size: calc(1540 * 0.16px);">🏘️</div>
+        <div class="height">1540 m</div>
+      </div>
+      <div class="bar" data-altura="2102">
+        <div class="label">B</div>
+        <div class="building" style="font-size: calc(2100 * 0.12px);">🏢</div>
+        <div class="height">2102 m</div>
+      </div>
+      <div class="bar" data-altura="1420">
+        <div class="label">C</div>
+        <div class="building" style="font-size: calc(1420 * 0.12px);">🕌</div>
+        <div class="height">1420 m</div>
+      </div>
+      <div class="bar" data-altura="2500">
+        <div class="label">D</div>
+        <div class="building" style="font-size: calc(2500 * 0.14px);">🏩</div>
+        <div class="height">2500 m</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preguntas -->
+  <div class="question">
+    1. ¿Cuál es el edificio más alto?
+    <input type="text" id="p1" placeholder="Letra (A-D)">
+  </div>
+
+  <div class="question">
+    2. ¿Cuánta diferencia hay entre el edificio A y el D?
+    <input type="number" id="p2">
+  </div>
+
+  <div class="question">
+    3. ¿Cuánto le falta al edificio C para alcanzar al B?
+    <input type="number" id="p3">
+  </div>
+
+  <div class="question">
+    4. ¿Cuál es el edificio más bajo?
+    <input type="text" id="p4" placeholder="Letra (A-D)">
+  </div>
+
+  <div class="question">
+    5. ¿Cuánto suman las alturas de todos los edificios?
+    <input type="number" id="p5">
+  </div>
+
+  <button class="bn" onclick="calificar()">Terminar</button>
+  <button class="bn" id="reiniciar" style="display: none;">Intentar de nuevo</button>
+  <div id="resultado"></div>
+  <div id="intentos"></div>
+</div>

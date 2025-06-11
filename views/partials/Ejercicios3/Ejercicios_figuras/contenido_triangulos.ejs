@@ -1,0 +1,52 @@
+<div class="body">
+    <div class="ct">
+        <h2>Verificación de Triángulos</h2>
+    
+        <!-- Triángulo Escaleno -->
+        <div class="triangulo">
+    
+          <svg width="300" height="200">
+            <polygon points="50,150 250,150 250,50" fill="#cce6ff" stroke="#003366" stroke-width="2"/>
+            <text x="45" y="165" fill="#003366" font-size="16">A</text>
+            <text x="255" y="165" fill="#003366" font-size="16">B</text>
+            <text x="255" y="45" fill="#003366" font-size="16">C</text>
+          </svg>
+          <label for="nombre1">¿Qué tipo de triángulo es?</label>
+          <input class="sr" type="text" id="nombre1">
+        </div>
+    
+        <!-- Triángulo Isósceles -->
+        <div class="triangulo">
+        
+          <svg width="300" height="260">
+            <polygon points="150,20 100,220 200,220" fill="#cce6ff" stroke="#003366" stroke-width="2"/>
+            <text x="145" y="15">A</text>
+            <text x="85" y="230">B</text>
+            <text x="205" y="230">C</text>
+          </svg>
+          <label for="nombre2">¿Qué tipo de triángulo es?</label>
+          <input class="sr" type="text" id="nombre2">
+        </div>
+    
+        <!-- Triángulo Equilátero -->
+        <div class="triangulo">
+       
+          <svg width="300" height="250">
+            <polygon points="150,50 250,200 50,200" fill="#cce6ff" stroke="#003366" stroke-width="2"/>
+            <text x="45" y="215" fill="#003366" font-size="16">A</text>
+            <text x="245" y="215" fill="#003366" font-size="16">B</text>
+            <text x="150" y="40" fill="#003366" font-size="16">C</text>
+          </svg>
+          <label for="nombre3">¿Qué tipo de triángulo es?</label>
+          <input class="sr" type="text" id="nombre3">
+        </div>
+    
+        <!-- Botones -->
+        <button class="bn" onclick="verificar()">Verificar</button>
+        <button class="bn" id="reiniciar">Intentar de nuevo</button>
+
+        <!-- Resultados -->
+        <div class="result" id="resultado"></div>
+        <div id="intentos"></div>
+      </div>
+</div>

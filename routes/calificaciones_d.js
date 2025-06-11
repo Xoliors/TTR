@@ -1,9 +1,8 @@
 // archivo: routes/calificaciones.js
 const express = require('express');
 const router = express.Router();
-const { obtenerCalificacionesJSON, obtenerCalificacionesJSONED, obtenerCalificacionesJSONM, obtenerCalificacionesJSONTN,
-    obtenerCalificacionesJSONCM, obtenerCalificacionesJSONEN
- } = require('../controllers/calificaciones');
+const { obtenerCalificacionesJSONG, obtenerCalificacionesJSOND, obtenerCalificacionesJSONA
+ } = require('../controllers/calificaciones_d');
 
  router.get("/", (req, res) => {
      const grado = req.session.grado_id;
@@ -18,21 +17,21 @@ const { obtenerCalificacionesJSON, obtenerCalificacionesJSONED, obtenerCalificac
  
      switch (grado) {
          case 1:
-             res.render("pages/course", { username, grado, foto_perfil });
+             res.render("pages/course_d", { username, grado, foto_perfil });
              break;
          case 2:
-             res.render("pages/course2", { username, grado, foto_perfil });
+             res.render("pages/course_d2", { username, grado, foto_perfil });
              break;
          case 3:
-             res.render("pages/course3", { username, grado, foto_perfil });
+             res.render("pages/course_d3", { username, grado, foto_perfil });
              break;
          default:
              res.redirect("/");
      }
  });
 
-router.get('/calificaciones_primero/granja', obtenerCalificacionesJSON);
-router.get('/calificaciones_primero/deporteynaturaleza', obtenerCalificacionesJSONED);
-router.get('/calificaciones_primero/aviones', obtenerCalificacionesJSONM);
+router.get('/calificaciones_primero/granja', obtenerCalificacionesJSONG);
+router.get('/calificaciones_primero/deporteynaturaleza', obtenerCalificacionesJSOND);
+router.get('/calificaciones_primero/aviones', obtenerCalificacionesJSONA);
 
 module.exports = router;

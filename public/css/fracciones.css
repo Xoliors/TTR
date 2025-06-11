@@ -1,0 +1,80 @@
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f7;
+    color: #333;
+    text-align: center;
+    padding: 40px;
+  }
+
+  h2.he {
+    color: #0277bd;
+    font-size: 2em;
+  }
+
+  h3.hi{
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #0288d1;
+  }
+
+  .svg-container {
+    display: inline-block;
+    margin: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    cursor: pointer;
+    stroke: black;
+    filter: drop-shadow(0 0 5px blue);
+  }
+
+  svg {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .figura {
+    cursor: pointer;
+  }
+
+  button.bn {
+    background-color: #0288d1;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin: 20px 0;
+    width: 200px;
+  }
+
+  button.bn:disabled {
+    background-color: #b0bec5;
+    cursor: not-allowed;
+  }
+
+  p.pi {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #555;
+  }
+
+  #reiniciarBtn {
+    display: none;
+  }
+
+  #intentos {
+    margin-top: 10px;
+    font-size: 1.1em;
+  }
+
+  .centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }

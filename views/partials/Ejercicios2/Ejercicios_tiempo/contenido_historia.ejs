@@ -38,10 +38,13 @@
     <div class="meses" id="contenedorMeses4"></div>
   </div>
 
-  <button class="bn" onclick="verificar()">Verificar</button>
-  <button class="bn" onclick="reiniciar()">Intentar de nuevo</button>
+<div id="botones">
+  <button class="bn" onclick="verificarTodo()">Verificar todo</button>
+  <button class="bn" id="reiniciar" onclick="reiniciar()" style="display:none;">Intentar de nuevo</button>
+</div>
 
-  <div id="resultado"></div>
+  <div id="resultadoGeneral" class="resultado"></div>
+  <div id="attempts">Intentos hoy: 0</div>
 
 </div>
     

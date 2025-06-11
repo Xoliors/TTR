@@ -6,7 +6,7 @@ const {
 // Mostrar ejercicio
 const mostrarEjercicio1 = (req, res) => {
   const id_usuario = req.session.userId;
-  const id_ejercicio = 1;
+  const id_ejercicio = 7;
 
   contarIntentos(id_usuario, id_ejercicio, (err, intentos) => {
     if (err) {
@@ -53,7 +53,7 @@ const guardarCalificacion1 = (req, res) => {
 // Mostrar ejercicio
 const mostrarEjercicio2 = (req, res) => {
   const id_usuario = req.session.userId;
-  const id_ejercicio = 2;
+  const id_ejercicio = 8;
 
   contarIntentos(id_usuario, id_ejercicio, (err, intentos) => {
     if (err) {
@@ -100,7 +100,7 @@ const guardarCalificacion2 = (req, res) => {
 // Mostrar ejercicio
 const mostrarEjercicio3 = (req, res) => {
   const id_usuario = req.session.userId;
-  const id_ejercicio = 3;
+  const id_ejercicio = 9;
 
   contarIntentos(id_usuario, id_ejercicio, (err, intentos) => {
     if (err) {
@@ -147,7 +147,7 @@ const guardarCalificacion3 = (req, res) => {
 // Mostrar ejercicio
 const mostrarEjercicio4 = (req, res) => {
   const id_usuario = req.session.userId;
-  const id_ejercicio = 4;
+  const id_ejercicio = 10;
 
   contarIntentos(id_usuario, id_ejercicio, (err, intentos) => {
     if (err) {
@@ -194,7 +194,7 @@ const guardarCalificacion4 = (req, res) => {
 // Mostrar ejercicio
 const mostrarEjercicio5 = (req, res) => {
   const id_usuario = req.session.userId;
-  const id_ejercicio = 5;
+  const id_ejercicio = 11;
 
   contarIntentos(id_usuario, id_ejercicio, (err, intentos) => {
     if (err) {
@@ -241,7 +241,7 @@ const guardarCalificacion5 = (req, res) => {
 // Mostrar ejercicio
 const mostrarEjercicio6 = (req, res) => {
   const id_usuario = req.session.userId;
-  const id_ejercicio = 6;
+  const id_ejercicio = 12;
 
   contarIntentos(id_usuario, id_ejercicio, (err, intentos) => {
     if (err) {
@@ -288,7 +288,7 @@ const guardarCalificacion6 = (req, res) => {
 // Mostrar ejercicio
 const mostrarEjercicio7 = (req, res) => {
   const id_usuario = req.session.userId;
-  const id_ejercicio = 7;
+  const id_ejercicio = 13;
 
   contarIntentos(id_usuario, id_ejercicio, (err, intentos) => {
     if (err) {

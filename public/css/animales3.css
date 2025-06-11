@@ -1,0 +1,98 @@
+.body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    color: #333;
+  }
+
+  h2 {
+    text-align: center;
+    color: #5a4ea3;
+    font-size: 36px;
+  }
+
+  .actividad {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+  }
+
+  .tabla th, .tabla td {
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 22px;
+  }
+
+  .tabla th {
+    background-color: #5c6bc0;
+    color: #fff;
+  }
+
+  .tabla td {
+    background-color: #e3f2fd;
+  }
+
+  .preguntas p {
+    font-size: 18px;
+    margin: 15px 0;
+  }
+
+  input.sr {
+    width: 120px;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid #00796b;
+    transition: 0.3s;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: #00796b;
+  }
+
+  .respuesta-grande {
+    width: 200px;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid #00796b;
+    transition: 0.3s;
+  }
+
+  button.bn {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    background-color: #5c6bc0;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button.bn:hover {
+    background-color: #3f51b5;
+  }
+
+  #resultado {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: #388e3c;
+  }
+
+  .animal-icon {
+    font-size: 40px;
+    margin: 5px;
+  }

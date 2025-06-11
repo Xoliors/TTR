@@ -1,0 +1,39 @@
+<div class="body">
+
+  <h2 class="ha">🛒 Bloque 2: Vamos al Mercado</h2>
+  <p>Cuenta, agrupa y representa los objetos:</p>
+  
+  <div class="section">
+    <h3 class="he">🎯 Objetivo:</h3>
+    <p>Cuenta cuántas frutas hay, agrupa de 100 en 100, de 50 en 50, de 25 en 25 y de 10 en 10.</p>
+  </div>
+  
+  <div class="section">
+    <h3 class="he">🍎 Frutas en el mercado:</h3>
+    <div id="fruits" class="fruit-grid"></div>
+  </div>
+  
+  <div class="section">
+    <label>¿Cuántas manzanas compraste en el mercado?</label>
+    <input class="rs" type="text" id="countInput" placeholder="Ej: 200">
+  
+    <label>¿Cuántos grupos de 100 hay?</label>
+    <input class="rs" type="text" id="group100Input" placeholder="Ej: 2">
+  
+    <label>¿Cuántos grupos de 50 hay?</label>
+    <input class="rs" type="text" id="group50Input" placeholder="Ej: 4">
+  
+    <label>¿Cuántos grupos de 25 hay?</label>
+    <input class="rs" type="text" id="group25Input" placeholder="Ej: 8">
+  
+    <label>¿Cuántos grupos de 10 hay?</label>
+    <input class="rs" type="text" id="group10Input" placeholder="Ej: 20">
+  
+    <button class="bn" onclick="checkAnswers()">✅ Verificar</button>
+    <div class="result" id="resultText"></div>
+    <button class="bn" id="retryBtn" onclick="retry()" style="display: none;">🔄 Volver a Intentar</button>
+  </div>
+  
+  <div id="score"></div>
+  
+    </div>

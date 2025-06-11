@@ -1,0 +1,111 @@
+.body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #E8F8FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+  }
+
+  h1.he {
+    color: #2980B9;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .ct {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .exercise-column {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .exercise {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #2980B9;
+    text-align: center;
+    position: relative;
+  }
+
+  .question {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #2980B9;
+  }
+
+  input[type="number"] {
+    padding: 10px;
+    width: 80%;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: 2px solid #2980B9;
+    box-sizing: border-box;
+    margin-top: 10px;
+    background-color: #f4f4f4;
+    color: #2980B9;
+  }
+
+  input[type="number"]:focus {
+    outline: none;
+    border-color: #3498DB;
+  }
+
+  .icon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.8em;
+  }
+
+  .correct-icon {
+    color: green;
+  }
+
+  .incorrect-icon {
+    color: red;
+  }
+
+  .buttons {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  button.bn {
+    background-color: #3498DB;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+  }
+
+  button.bn:hover {
+    background-color: #2980B9;
+  }
+
+  #score {
+    font-size: 1.4em;
+    color: #2980B9;
+    margin-top: 30px;
+    font-weight: bold;
+  }

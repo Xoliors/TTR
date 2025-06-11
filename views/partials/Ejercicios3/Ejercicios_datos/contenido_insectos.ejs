@@ -1,0 +1,56 @@
+<div class="body">
+  <div class="ejercicio">
+
+    <div class="top">
+      <div class="insectos" id="insectos"></div>
+
+      <div class="tabla">
+        <h2>Tabla de Conteo</h2>
+        <table>
+          <thead>
+            <tr><th>Insecto</th><th>¿Cuántos?</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>🐝</td><td><input id="c1" type="number" min="0"></td><td><span id="check1" class="check"></span></td></tr>
+            <tr><td>🐞</td><td><input id="c2" type="number" min="0"></td><td><span id="check2" class="check"></span></td></tr>
+            <tr><td>🐌</td><td><input id="c3" type="number" min="0"></td><td><span id="check3" class="check"></span></td></tr>
+            <tr><td>🦋</td><td><input id="c4" type="number" min="0"></td><td><span id="check4" class="check"></span></td></tr>
+            <tr><td>🐛</td><td><input id="c5" type="number" min="0"></td><td><span id="check5" class="check"></span></td></tr>
+            <tr><td>🦂</td><td><input id="c6" type="number" min="0"></td><td><span id="check6" class="check"></span></td></tr>
+            <tr><td>🕷️</td><td><input id="c7" type="number" min="0"></td><td><span id="check7" class="check"></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="preguntas">
+      <p>1. ¿Cuál insecto se repite más? <input id="r1" type="text"><span id="check8" class="check"></span></p>
+      <p>2. ¿Cuál insecto se repite menos? <input id="r2" type="text"><span id="check9" class="check"></span></p>
+      <p>3. ¿Cuántos caracoles y catarinas hay? <input id="r3" type="number" min="0"><span id="check10" class="check"></span></p>
+      <p>4. ¿Hay más mariposas que arañas?
+        <select id="r4">
+          <option value="">--</option><option value="sí">Sí</option><option value="no">No</option>
+        </select><span id="check11" class="check"></span>
+      </p>
+      <p>5. ¿Cuántos insectos en total hay? <input id="r5" type="number" min="0"><span id="check12" class="check"></span></p>
+      <p>6. ¿Cuántos gusanos y alacranes hay en total? <input id="r6" type="number" min="0"><span id="check13" class="check"></span></p>
+      <p>7. ¿Hay más catarinas que caracoles?
+        <select id="r7">
+          <option value="">--</option><option value="sí">Sí</option><option value="no">No</option>
+        </select><span id="check14" class="check"></span>
+      </p>
+      <p>8. ¿Cuántos gusanos y mariposas hay en total? <input id="r8" type="number" min="0"><span id="check15" class="check"></span></p>
+      <p>9. ¿Hay más gusanos que abejas?
+        <select id="r9">
+          <option value="">--</option><option value="sí">Sí</option><option value="no">No</option>
+        </select><span id="check16" class="check"></span>
+      </p>
+    </div>
+
+    <div class="botones">
+      <button id="verifBtn" onclick="verificar()">Verificar</button>
+      <button id="reinBtn" onclick="reiniciar()" style="display:none;">Intentar de nuevo</button>
+    </div>
+    <div id="nota"></div>
+  </div>
+    </div>

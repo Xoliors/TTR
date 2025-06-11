@@ -1,0 +1,57 @@
+
+<div class="body">
+<div class="contenedor">
+    <h2>Clasifica las Figuras según sus Lados o Caras</h2>
+    <div class="figuras" id="figuras">
+        <img src="/images/equilatero.png" class="figura" draggable="true" data-clasificacion="3">
+        <img src="/images/isosceles.png" class="figura" draggable="true" data-clasificacion="3">
+        <img src="/images/escaleno.webp" class="figura" draggable="true" data-clasificacion="3">
+        <img src="/images/cuadrado.png" class="figura" draggable="true" data-clasificacion="4">
+        <img src="/images/rectangulo.png" class="figura" draggable="true" data-clasificacion="4">
+        <img src="/images/rombo.png" class="figura" draggable="true" data-clasificacion="4">
+        <img src="/images/trapecio.png" class="figura" draggable="true" data-clasificacion="4">
+        <img src="/images/pentagono.png" class="figura" draggable="true" data-clasificacion="5">
+        <img src="/images/triangular.png" class="figura" draggable="true" data-clasificacion="5">
+        <img src="/images/hexagono.png" class="figura" draggable="true" data-clasificacion="6">
+        <img src="/images/rectangular.png" class="figura" draggable="true" data-clasificacion="6">
+        <img src="/images/cilindro.png" class="figura" draggable="true" data-clasificacion="3caras">
+        <img src="/images/ovalo.png" class="figura" draggable="true" data-clasificacion="0">
+        <img src="/images/circulo.png" class="figura" draggable="true" data-clasificacion="0">
+        <img src="/images/esfera.png" class="figura" draggable="true" data-clasificacion="0">
+      </div>
+    
+    <div class="categorias">
+      <div class="categoria" data-clasificacion="0" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <h3>0 lados</h3>
+      </div>
+      <div class="categoria" data-clasificacion="3" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <h3>3 lados</h3>
+      </div>
+      <div class="categoria" data-clasificacion="4" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <h3>4 lados</h3>
+      </div>
+      <div class="categoria" data-clasificacion="5" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <h3>5 lados</h3>
+      </div>
+      <div class="categoria" data-clasificacion="6" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <h3>6 lados</h3>
+      </div>
+      <div class="categoria" data-clasificacion="3caras" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <h3>3 caras</h3>
+      </div>
+    </div>
+    
+    <!-- Botones -->
+    <div style="text-align: center;">
+      <button class="bn" onclick="verificar()">Verificar</button>
+      <button class="bn" id="reiniciar" onclick="reiniciarJuego()">Intentar de nuevo</button>
+    </div>
+
+    <!-- Calificación -->
+    <div id="resultado"></div>
+
+    <!-- Intentos restantes -->
+    <div id="intentos"></div>
+
+</div>
+</div>

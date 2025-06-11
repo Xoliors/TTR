@@ -8,10 +8,16 @@ const registro = require('../controllers/registro')
 
 const primeroRouter = require('./primero');
 const segundoRouter = require('./segundo');
+const terceroRouter = require('./tercero');
+
+const temas = require('./temas');
+
 const ejercicios1Router = require('./ejercicios_primer')
 const ejercicios_numeros = require('./ejercicios_numeros')
 const ejercicios2Router = require('./ejercicios_segundo')
 const ejercicios_segundo = require('./ejercicios_route_segundo')
+const ejercicios3Router = require('./ejercicios_tercero')
+const ejercicios_tercero = require('./ejercicios_route_tercero')
 
 const calificaciones = require('./calificaciones')
 const calificacionessr = require('./calificaciones_sr')
@@ -19,6 +25,10 @@ const calificacionescfg = require('./calificaciones_cfg')
 const calificacioneslmc = require('./calificaciones_lmc')
 const calificacionest = require('./calificaciones_t')
 const calificacionesd = require('./calificaciones_d')
+const calificacionesT = require('./calificaciones_Tablas')
+const calificacionesd2 = require('./calificaciones_d2')
+
+const insignias = require('./insignias')
 
 const session = require('express-session');
 
@@ -80,22 +90,43 @@ router.get("/home", (req, res) => {
     }
 });
 
+router.use('/', temas);
+
 router.use('/', primeroRouter);
 router.use('/', segundoRouter);
+router.use('/', terceroRouter)
 router.use('/', ejercicios1Router);
 router.use('/ejercicios_numeros', ejercicios_numeros);
 router.use('/', ejercicios2Router);
-router.use('/ejercicios_segundo', ejercicios_segundo)
+router.use('/ejercicios_segundo', ejercicios_segundo);
+router.use('/', ejercicios3Router);
+router.use('/ejercicios_tercero', ejercicios_tercero);
 
 
 router.use('/calificaciones', calificaciones);
-router.use('/calificacionessr', calificaciones);
-router.use('/calificacionescfg', calificaciones);
-router.use('/calificacioneslmc', calificaciones);
-router.use('/calificacionest', calificaciones);
-router.use('/calificacionesd', calificaciones);
+router.use('/calificacionessr', calificacionessr);
+router.use('/calificacionescfg', calificacionescfg);
+router.use('/calificacioneslmc', calificacioneslmc);
+router.use('/calificacionest', calificacionest);
+router.use('/calificacionesd', calificacionesd);
+
+router.use('/calificacionesd2', calificacionesd2)
+router.use('/calificaciones_mul_div', calificacionesT)
+
+router.use('/insignias', insignias)
 
 //Métodos
+
+
+// routes/router.js
+const reportes = require('./reportes');
+const reportes2 = require('./reportes2');
+const reportes3 = require('./reportes3');
+
+router.use('/reportes', reportes);
+router.use('/reportes2', reportes2);
+router.use('/reportes3', reportes3);
+
 
 router.post('/auth', usuarios.LoginUsuarios)
 router.get('/logout', Usession.LogOutUsuarios)

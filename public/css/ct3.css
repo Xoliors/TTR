@@ -1,0 +1,15 @@
+.body { font-family: 'Comic Sans MS', cursive; background-color: #e3f2fd; padding: 20px; color: #01579b; text-align: center;}
+h1.he, h2.he { text-align: center; color: #0288d1; }
+#contenedor-meses, #contenedor-slots, #contenedor-numeros, #tabla-tiempo { display: flex; justify-content: center; gap: 10px; margin: 20px 0; flex-wrap: wrap; }
+.mes, .slot, .numero, td { width: 140px; height: 50px; line-height: 50px; text-align: center; border: 2px solid #64b5f6; border-radius: 8px; background-color: #bbdefb; user-select: none; }
+.slot { background-color: #e1f5fe; border-style: dashed; }
+.numero { background-color: #bbdefb; cursor: move; }
+.slot.over, .td.over { background-color: #b3e5fc; }
+table { border-collapse: collapse; margin: auto; }
+th, td { width: 200px; height: 40px; border: 2px dashed #64b5f6; text-align: center; vertical-align: middle; font-weight: bold; }
+th { background-color: #bbdefb; }
+button.bn { display: block; margin: 10px auto; padding: 10px 20px; background-color: #0288d1; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
+button.bn:disabled { background-color: #90caf9; cursor: default; }
+#reiniciar { display: none; background-color: #0277bd; }
+#resultado { text-align: center; font-size: 18px; margin-top: 10px; }
+#intentos { text-align: center; font-size: 16px; margin-top: 5px; }

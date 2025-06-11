@@ -6,7 +6,7 @@ const {
 // Mostrar ejercicio
 const mostrarEjercicio1 = (req, res) => {
   const id_usuario = req.session.userId;
-  const id_ejercicio = 1;
+  const id_ejercicio = 30;
 
   contarIntentos(id_usuario, id_ejercicio, (err, intentos) => {
     if (err) {
@@ -53,7 +53,7 @@ const guardarCalificacion1 = (req, res) => {
 // Mostrar ejercicio
 const mostrarEjercicio2 = (req, res) => {
   const id_usuario = req.session.userId;
-  const id_ejercicio = 2;
+  const id_ejercicio = 31;
 
   contarIntentos(id_usuario, id_ejercicio, (err, intentos) => {
     if (err) {
@@ -100,7 +100,7 @@ const guardarCalificacion2 = (req, res) => {
 // Mostrar ejercicio
 const mostrarEjercicio3 = (req, res) => {
   const id_usuario = req.session.userId;
-  const id_ejercicio = 3;
+  const id_ejercicio = 32;
 
   contarIntentos(id_usuario, id_ejercicio, (err, intentos) => {
     if (err) {

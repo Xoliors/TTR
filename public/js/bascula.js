@@ -1,111 +1,162 @@
+const id_ejercicio = 31;
+const today = new Date().toISOString().split("T")[0];
+let lastAttemptDate = localStorage.getItem(`lastAttemptDate_${id_ejercicio}`) || "";
+let globalAttempts = parseInt(localStorage.getItem(`globalAttempts_${id_ejercicio}`)) || 0;
+
+// Reinicia intentos si es un nuevo día
+if (lastAttemptDate !== today) {
+  globalAttempts = 0;
+  localStorage.setItem(`lastAttemptDate_${id_ejercicio}`, today);
+  localStorage.setItem(`globalAttempts_${id_ejercicio}`, globalAttempts);
+}
+
+document.getElementById("attempts").textContent = `Intentos hoy: ${globalAttempts}`;
+
 const objetos = {
-    huevo: 30, // gramos
-    sandia: 4000, // gramos
-    pan: 50, // gramos
-    carne: 3000, // gramos
-    champagne: 500, // gramos
-    lapiz: 1, // gramo
-    chile: 25, // gramos
-    queso: 100, // gramos
-    agua: 1000 // gramos
+  huevo: 30,
+  sandia: 4000,
+  pan: 50,
+  carne: 3000,
+  champagne: 500,
+  lapiz: 1,
+  chile: 25,
+  queso: 100,
+  agua: 1000
 };
 
-let intentos = 0;
 const respuestas = {
-    bascula1: 11655, // gramos
-    bascula2: 15000, // gramos
-    bascula3: 2700, // gramos
-    bascula4: 17175, // gramos
-    bascula5: 6830  // gramos
+  bascula1: 11655,
+  bascula2: 15000,
+  bascula3: 2700,
+  bascula4: 17175,
+  bascula5: 6830
 };
 
 let pesosActuales = {
+  bascula1: 0,
+  bascula2: 0,
+  bascula3: 0,
+  bascula4: 0,
+  bascula5: 0
+};
+
+let objetosColocados = {
+  bascula1: [],
+  bascula2: [],
+  bascula3: [],
+  bascula4: [],
+  bascula5: []
+};
+
+function permitirArrastre(event) {
+  event.dataTransfer.setData("text", event.target.id);
+}
+
+function permitirSoltar(event) {
+  event.preventDefault();
+}
+
+function soltarObjeto(event, basculaId) {
+  event.preventDefault();
+  let objetoId = event.dataTransfer.getData("text");
+  let peso = objetos[objetoId];
+
+  pesosActuales[`bascula${basculaId}`] += peso;
+  objetosColocados[`bascula${basculaId}`].push(objetoId);
+
+  actualizarPeso(basculaId);
+}
+
+function actualizarPeso(basculaId) {
+  const pesoElemento = document.getElementById(`peso${basculaId}`);
+  if (pesoElemento) {
+    const peso = pesosActuales[`bascula${basculaId}`];
+    pesoElemento.textContent = peso >= 1000
+      ? (peso / 1000).toFixed(3) + "kg"
+      : peso + "g";
+  }
+}
+
+function verificarRespuestas() {
+  if (globalAttempts >= 5) {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Límite alcanzado',
+      text: 'Has alcanzado el número máximo de intentos para hoy.',
+      confirmButtonText: 'Aceptar'
+    });
+    return;
+  }
+
+  globalAttempts++;
+  localStorage.setItem(`globalAttempts_${id_ejercicio}`, globalAttempts);
+  document.getElementById("attempts").textContent = `Intentos hoy: ${globalAttempts}`;
+
+  let calificacion = 0;
+
+  Object.keys(respuestas).forEach(bascula => {
+    const diferencia = Math.abs(respuestas[bascula] - pesosActuales[bascula]);
+    if (diferencia < 100) calificacion++;
+  });
+
+  const calificacionFinal = (calificacion / 5) * 10;
+  document.getElementById("resultado").textContent = `Calificación: ${calificacionFinal.toFixed(1)} / 10`;
+
+  // Enviar datos al servidor
+  fetch("/ejercicios_segundo/bascula/guardar-calificacion", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      intento: globalAttempts,
+      calificacion: calificacionFinal,
+      id_ejercicio,
+      fecha: today
+    })
+  })
+  .then(res => res.json())
+  .then(() => {
+    Swal.fire({
+      icon: 'success',
+      title: '¡Calificación registrada!',
+      text: `Tu calificación fue de ${calificacionFinal.toFixed(1)}/10.`,
+      confirmButtonText: 'Aceptar'
+    });
+  })
+  .catch(err => {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error al guardar',
+      text: 'Ocurrió un error al guardar tu calificación.',
+      confirmButtonText: 'Aceptar'
+    });
+  });
+}
+
+function reiniciarEjercicio() {
+  pesosActuales = {
     bascula1: 0,
     bascula2: 0,
     bascula3: 0,
     bascula4: 0,
     bascula5: 0
-};
-
-let objetosColocados = {
+  };
+  objetosColocados = {
     bascula1: [],
     bascula2: [],
     bascula3: [],
     bascula4: [],
     bascula5: []
-};
+  };
 
-function permitirArrastre(event) {
-    event.dataTransfer.setData("text", event.target.id);
-}
+  document.getElementById("resultado").textContent = '';
+  for (let i = 1; i <= 5; i++) {
+    actualizarPeso(i);
+  }
 
-function permitirSoltar(event) {
-    event.preventDefault();
-}
-
-function soltarObjeto(event, basculaId) {
-    event.preventDefault();
-    let objetoId = event.dataTransfer.getData("text");
-    let peso = objetos[objetoId];
-
-    // Sumamos el peso del objeto en la báscula seleccionada
-    pesosActuales[`bascula${basculaId}`] += peso;
-    objetosColocados[`bascula${basculaId}`].push(objetoId);
-
-    // Actualizamos el peso mostrado en la báscula
-    actualizarPeso(basculaId);
-}
-
-function actualizarPeso(basculaId) {
-    const pesoElemento = document.getElementById(`peso${basculaId}`);
-    if (pesoElemento) {
-        // Convertimos los pesos a kg cuando son mayores o iguales a 1000 gramos
-        if (pesosActuales[`bascula${basculaId}`] >= 1000) {
-            pesoElemento.textContent = (pesosActuales[`bascula${basculaId}`] / 1000).toFixed(3) + "kg";
-        } else {
-            pesoElemento.textContent = pesosActuales[`bascula${basculaId}`] + "g";
-        }
-    }
-}
-
-function verificarRespuestas() {
-    if (intentos >= 5) {
-        document.getElementById("resultado").textContent = "Has alcanzado el número máximo de intentos.";
-        return;
-    }
-
-    intentos++;
-    let calificacion = 0;
-
-    Object.keys(respuestas).forEach(bascula => {
-        const diferencia = Math.abs(respuestas[bascula] - pesosActuales[bascula]);
-        if (diferencia < 100) calificacion++; // Permite una pequeña diferencia de 100 gramos
-    });
-
-    const calificacionFinal = (calificacion / 5) * 10;
-    document.getElementById("resultado").textContent = `Calificación: ${calificacionFinal.toFixed(1)} / 10`;
-}
-
-function reiniciarEjercicio() {
-    // Restablecemos los valores de las básculas
-    pesosActuales = {
-        bascula1: 0,
-        bascula2: 0,
-        bascula3: 0,
-        bascula4: 0,
-        bascula5: 0
-    };
-    objetosColocados = {
-        bascula1: [],
-        bascula2: [],
-        bascula3: [],
-        bascula4: [],
-        bascula5: []
-    };
-    document.getElementById("resultado").textContent = '';
-    
-    // Reiniciamos los pesos en las básculas
-    for (let i = 1; i <= 5; i++) {
-        actualizarPeso(i);
-    }
+  Swal.fire({
+    icon: 'info',
+    title: 'Reinicio',
+    text: 'Puedes intentar nuevamente.',
+    confirmButtonText: 'Aceptar'
+  });
 }

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ECOURSES - Online Courses HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <!-- Favicon -->
+    <link href="/images/favicon.ico" rel="icon">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="/lib/owlcarousel/assets/owl.carousel.min.css">
+    
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/temas.css" rel="stylesheet">
+
+    <style>
+      .grid-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-left: 10%;
+      }
+
+      .insignia-item {
+        width: 30%; /* 3 por fila */
+        border: 10px solid #ccc;
+        padding: 100px;
+        box-sizing: border-box;
+        text-align: center;
+        border-color: #3ea4d3;
+        border-radius: 20px;
+      }
+    </style>
+
+    <script>
+      window.onpageshow = function(){
+        fetch('/validar')
+        .then(result => result.json())
+        .then(rs => {
+          var usuario = rs.usuario
+          if(!usuario){
+            window.location=`/`
+          }
+        }) 
+        .catch(error => {
+          console.log("Error: ", error)
+        })
+      }
+    </script>
+ 
+</head>
+<body>
+    <%- include('../partials/usuario3/header_usuario3') %>
+    <%- include('../partials/usuario3/nav_usuario3') %>
+    <h1 style="padding: 20px">Insignias Obtenidas</h1>
+    <div id="contenedor-insignias" class="grid-container"></div>
+
+    <br>
+
+    <%- include('../partials/usuario3/footer_usuario3') %>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Contact Javascript File -->
+    <script src="/mail/jqBootstrapValidation.min.js"></script>
+    <script src="/mail/contact.js"></script>
+    <!-- Template Javascript -->
+    <script src="/js/main.js"></script>
+    <script>
+    fetch('/insignias/insignias-promedio3')
+  .then(response => response.json())
+  .then(data => {
+    const contenedor = document.getElementById('contenedor-insignias');
+    contenedor.innerHTML = '';
+
+    data.insignias.forEach(insignia => {
+      const div = document.createElement('div');
+      div.classList.add('insignia-item');
+
+      const nombrePersonalizado = `insignia${insignia.id}`;
+      const rutaImagen = `${insignia.nombre}`;
+
+      div.innerHTML = `
+        <p><strong>${nombrePersonalizado}</strong></p>
+        <img src="${rutaImagen}" alt="${nombrePersonalizado}" width="250">
+      `;
+
+      contenedor.appendChild(div);
+    });
+  })
+  .catch(error => {
+    console.error('Error al obtener insignias:', error);
+  });
+
+  </script>
+
+  
+   

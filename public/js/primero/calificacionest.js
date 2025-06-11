@@ -26,9 +26,7 @@ function cargarTablaConFetch(tableId, url) {
 }
 
 // Llamadas
-cargarTablaConFetch('#table1', '/calificaciones/calificaciones_primero/EMA');
-cargarTablaConFetch('#table2', '/calificaciones/calificaciones_primero/ED');
-cargarTablaConFetch('#table3', '/calificaciones/calificaciones_primero/M');
-cargarTablaConFetch('#table4', '/calificaciones/calificaciones_primero/CM');
-cargarTablaConFetch('#table5', '/calificaciones/calificaciones_primero/TN');
-cargarTablaConFetch('#table6', '/calificaciones/calificaciones_primero/EN');
+cargarTablaConFetch('#table1', '/calificacionest/calificaciones_primero/itienrario');
+cargarTablaConFetch('#table2', '/calificacionest/calificaciones_primero/Ctiempo');
+cargarTablaConFetch('#table3', '/calificacionest/calificaciones_primero/dia');
+

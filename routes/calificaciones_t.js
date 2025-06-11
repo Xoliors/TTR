@@ -1,9 +1,10 @@
 // archivo: routes/calificaciones.js
 const express = require('express');
 const router = express.Router();
-const { obtenerCalificacionesJSON, obtenerCalificacionesJSONED, obtenerCalificacionesJSONM, obtenerCalificacionesJSONTN,
-    obtenerCalificacionesJSONCM, obtenerCalificacionesJSONEN
- } = require('../controllers/calificaciones');
+const { obtenerCalificacionesJSONI, obtenerCalificacionesJSONCT, obtenerCalificacionesJSOND } = require('../controllers/calificaciones_t');
+const { obtenerCalificaciones2JSONH, obtenerCalificaciones2JSONCT, obtenerCalificaciones2JSONCL } = require('../controllers/calificaciones_t2')
+const { obtenercalificaciones3JSONH, obtenercalificaciones3JSONCT, obtenercalificaciones3JSONCL } = require('../controllers/calificaciones_t3')
+
 
  router.get("/", (req, res) => {
      const grado = req.session.grado_id;
@@ -18,21 +19,29 @@ const { obtenerCalificacionesJSON, obtenerCalificacionesJSONED, obtenerCalificac
  
      switch (grado) {
          case 1:
-             res.render("pages/course", { username, grado, foto_perfil });
+             res.render("pages/course_t", { username, grado, foto_perfil });
              break;
          case 2:
-             res.render("pages/course2", { username, grado, foto_perfil });
+             res.render("pages/course_t2", { username, grado, foto_perfil });
              break;
          case 3:
-             res.render("pages/course3", { username, grado, foto_perfil });
+             res.render("pages/course_t3", { username, grado, foto_perfil });
              break;
          default:
              res.redirect("/");
      }
  });
 
-router.get('/calificaciones_primero/itienrario', obtenerCalificacionesJSON);
-router.get('/calificaciones_primero/Ctiempo', obtenerCalificacionesJSONED);
-router.get('/calificaciones_primero/dia', obtenerCalificacionesJSONM);
+router.get('/calificaciones_primero/itienrario', obtenerCalificacionesJSONI);
+router.get('/calificaciones_primero/Ctiempo', obtenerCalificacionesJSONCT);
+router.get('/calificaciones_primero/dia', obtenerCalificacionesJSOND);
+
+router.get('/calificaciones_segundo/H', obtenerCalificaciones2JSONH);
+router.get('/calificaciones_segundo/Ctiempo', obtenerCalificaciones2JSONCT);
+router.get('/calificaciones_segundo/calendario', obtenerCalificaciones2JSONCL);
+
+router.get('/calificaciones_tercero/H', obtenercalificaciones3JSONH);
+router.get('/calificaciones_tercero/Ctiempo', obtenercalificaciones3JSONCT);
+router.get('/calificaciones_tercero/calendario', obtenercalificaciones3JSONCL);
 
 module.exports = router;

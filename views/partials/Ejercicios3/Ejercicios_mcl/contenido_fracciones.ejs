@@ -1,0 +1,43 @@
+<div class="body">
+    <h2 class="he">Ejercicio de Colorear Fracciones</h2>
+    <div class="centered">
+      <!-- Círculo 5/8 -->
+      <h3 class="hi">Círculo: Colorea 5/8 en rojo</h3>
+      <div class="svg-container">
+        <svg width="200" height="200" viewBox="0 0 200 200">
+          <g id="circleParts"></g>
+        </svg>
+      </div>
+  
+      <!-- Rectángulo 9/16 -->
+      <h3 class="hi">Rectángulo: Colorea 9/16 en verde</h3>
+      <div class="svg-container">
+        <svg width="200" height="100">
+          <g id="rectParts"></g>
+        </svg>
+      </div>
+  
+      <!-- Cuadrado 2/4 -->
+      <h3 class="hi">Cuadrado: Colorea 2/4 en azul</h3>
+      <div class="svg-container">
+        <svg width="200" height="200">
+          <g id="squareParts"></g>
+        </svg>
+      </div>
+  
+      <!-- Triángulo 1/2 -->
+      <h3 class="hi">Triángulo: Colorea 1/2 en naranja</h3>
+      <div class="svg-container">
+        <svg width="200" height="200">
+          <polygon id="tri-left" class="figura" points="100,0 0,200 100,200" fill="white" stroke="black"/>
+          <polygon id="tri-right" class="figura" points="100,0 100,200 200,200" fill="white" stroke="black"/>
+        </svg>
+      </div>
+  
+      <button class="bn" onclick="verificarFracciones()" id="verificarBtn">Verificar</button>
+      <button class="bn" onclick="reiniciarEjercicio()" id="reiniciarBtn">Intentar de nuevo</button>
+      <p class="pi" id="resultado"></p>
+      <p class="pi" id="intentos">Intentos: 0/5</p>
+      <p class="pi" id="calificacion"></p>
+    </div>
+    </div>

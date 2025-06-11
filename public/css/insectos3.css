@@ -1,0 +1,129 @@
+.body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: #e3f2fd;
+    margin: 0;
+    padding: 20px;
+    color: #01579b;
+  }
+  .ejercicio {
+    max-width: 2000px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  }
+  .top {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .insectos {
+display: grid;
+grid-template-columns: repeat(25, 32px);
+grid-template-rows: repeat(25, 32px);
+gap: 4px;
+width: max-content;
+height: max-content;
+background: #bbdefb;
+padding: 10px;
+border-radius: 12px;
+border: 2px solid #64b5f6;
+}
+
+.insectos span {
+width: 32px;
+height: 32px;
+font-size: 24px;
+line-height: 32px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+  .insectos span:hover {
+    transform: scale(1.6);
+    text-shadow: 0 0 8px #42a5f5;
+  }
+  .tabla {
+    flex: 1;
+    min-width: 260px;
+  }
+  .tabla h2 {
+    margin-top: 0;
+    color: #0277bd;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  th, td {
+    border: 2px solid #64b5f6;
+    padding: 8px;
+    font-size: 18px;
+  }
+  th {
+    background: #90caf9;
+    color: #01579b;
+  }
+  td input {
+    width: 60px;
+    font-size: 16px;
+    text-align: center;
+    padding: 4px;
+    border: 2px solid #42a5f5;
+    border-radius: 6px;
+  }
+  .check {
+    display: inline-block;
+    width: 24px;
+    font-size: 20px;
+    vertical-align: middle;
+  }
+  .preguntas {
+    margin-top: 20px;
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px dashed #64b5f6;
+  }
+  .preguntas p {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  .preguntas input,
+  .preguntas select {
+    width: 100px;
+    font-size: 16px;
+    text-align: center;
+    padding: 4px;
+    border: 2px solid #42a5f5;
+    border-radius: 6px;
+  }
+  .botones {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .botones button {
+    margin: 0 10px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background: #42a5f5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background 0.2s ease;
+  }
+  .botones button:hover {
+    background: #1e88e5;
+  }
+  #nota {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+    font-weight: bold;
+  }

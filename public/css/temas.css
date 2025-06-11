@@ -1,0 +1,141 @@
+.body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e0eaf3;
+  color: #333;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Navegación */
+#nb {
+  position: relative;
+  width: 200px;
+  height: 100vh;
+  background-color: #338fcd;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: bold;
+  border-right: 3px solid #fff;
+  overflow-y: auto;
+}
+
+
+    #nb header {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .nb-link {
+      display: block;
+      color: black; /*originalmente blanco pero dificil de ver*/
+      text-decoration: none;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nb-link:hover {
+      background-color: #2276a0;
+      color: #fff;
+    }
+/* Contenido */
+
+#main-doc {
+  flex-grow: 1;
+  overflow-y: auto;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* OCULTAR SCROLLBAR VISUAL */
+#main-doc::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+#main-doc {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Evita que el contenido sobrescriba */
+.main-section {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+    .main-section header {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #338fcd;
+      border-bottom: 2px solid #338fcd;
+      padding-bottom: 5px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 10px 0;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li.li {
+      margin: 10px 0;
+      background-color: #c9e0ff;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 5px solid #338fcd;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    ul li:hover {
+      background-color: #a5c8f1;
+    }
+
+    .code-example {
+      background-color: #f0f9ff;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: 'Courier New', monospace;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    .nb-link.active {
+      background-color: #2276a0;
+    }
+
+    /* Estilo para pantallas pequeñas */
+    @media (max-width: 768px) {
+      #nb {
+        width: 100%;
+        height: auto;
+        position: static;
+        font-size: 14px;
+      }
+
+      #main-doc {
+        margin-left: 0;
+      }
+    }
+
+    #videos_educativos {
+        margin-left: 15%;
+        margin-right: 25%;
+        height: auto;
+        max-width: 768px;
+    }
+    #tangram{
+        width: 560px;
+    }

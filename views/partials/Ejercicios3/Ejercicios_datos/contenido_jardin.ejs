@@ -1,0 +1,90 @@
+<div class="body">
+
+  <h2>🎈 Suelta de flores 🌸 y tréboles 🍀 por clase 🎉</h2>
+  <p style="text-align:center;">Cada 🌸 representa <strong>7 flores</strong> y cada 🍀 representa <strong>9 tréboles</strong>.</p>
+  
+  <div class="contenedor-tablas">
+    <!-- Tabla de flores -->
+    <table>
+      <tr><th>Clase</th><th>Flores soltadas</th></tr>
+      <tr><td>1°A</td><td class="emoji">🌸🌸🌸🌸🌸🌸🌸</td></tr>
+      <tr><td>1°B</td><td class="emoji">🌸🌸🌸🌸🌸🌸</td></tr>
+      <tr><td>2°</td><td class="emoji">🌸🌸🌸</td></tr>
+      <tr><td>3°</td><td class="emoji">🌸🌸🌸🌸🌸</td></tr>
+      <tr><td>4°</td><td class="emoji">🌸🌸🌸🌸🌸🌸🌸🌸🌸</td></tr>
+      <tr><td>5°</td><td class="emoji">🌸🌸🌸🌸🌸🌸🌸🌸</td></tr>
+      <tr><td>6°</td><td class="emoji">🌸🌸</td></tr>
+    </table>
+  
+    <!-- Tabla de tréboles -->
+    <table>
+      <tr><th>Clase</th><th>Tréboles soltados</th></tr>
+      <tr><td>1°A</td><td class="emoji">🍀🍀🍀🍀🍀</td></tr>
+      <tr><td>1°B</td><td class="emoji">🍀🍀🍀</td></tr>
+      <tr><td>2°</td><td class="emoji">🍀🍀🍀🍀🍀🍀🍀🍀</td></tr>
+      <tr><td>3°</td><td class="emoji">🍀🍀</td></tr>
+      <tr><td>4°</td><td class="emoji">🍀🍀🍀🍀🍀🍀</td></tr>
+      <tr><td>5°</td><td class="emoji">🍀🍀🍀🍀</td></tr>
+      <tr><td>6°</td><td class="emoji">🍀🍀🍀🍀🍀🍀🍀🍀🍀</td></tr>
+    </table>
+  </div>
+  
+  <div class="contenedor-tablas">
+    <!-- Tabla de respuestas (flores) -->
+    <table>
+      <tr><th>Clase</th><th>Número de flores</th><th>✓ / ✗</th></tr>
+      <tr><td>1°A</td><td><input type="text" id="f1a"></td><td id="c1a" class="icono"></td></tr>
+      <tr><td>1°B</td><td><input type="text" id="f1b"></td><td id="c1b" class="icono"></td></tr>
+      <tr><td>2°</td><td><input type="text" id="f2"></td><td id="c2" class="icono"></td></tr>
+      <tr><td>3°</td><td><input type="text" id="f3"></td><td id="c3" class="icono"></td></tr>
+      <tr><td>4°</td><td><input type="text" id="f4"></td><td id="c4" class="icono"></td></tr>
+      <tr><td>5°</td><td><input type="text" id="f5"></td><td id="c5" class="icono"></td></tr>
+      <tr><td>6°</td><td><input type="text" id="f6"></td><td id="c6" class="icono"></td></tr>
+    </table>
+  
+    <!-- Tabla de respuestas (tréboles) -->
+    <table>
+      <tr><th>Clase</th><th>Número de tréboles</th><th>✓ / ✗</th></tr>
+      <tr><td>1°A</td><td><input type="text" id="t1a"></td><td id="ct1a" class="icono"></td></tr>
+      <tr><td>1°B</td><td><input type="text" id="t1b"></td><td id="ct1b" class="icono"></td></tr>
+      <tr><td>2°</td><td><input type="text" id="t2"></td><td id="ct2" class="icono"></td></tr>
+      <tr><td>3°</td><td><input type="text" id="t3"></td><td id="ct3" class="icono"></td></tr>
+      <tr><td>4°</td><td><input type="text" id="t4"></td><td id="ct4" class="icono"></td></tr>
+      <tr><td>5°</td><td><input type="text" id="t5"></td><td id="ct5" class="icono"></td></tr>
+      <tr><td>6°</td><td><input type="text" id="t6"></td><td id="ct6" class="icono"></td></tr>
+    </table>
+  </div>
+  
+  <div class="preguntas">
+    <h3>📝 Contesta las preguntas</h3>
+  
+    <p><strong>A)</strong> ¿Qué clase soltó más flores?
+      <input class="sr" type="text" id="p1"> <span id="cp1" class="icono"></span>
+    </p>
+  
+    <p><strong>B)</strong> ¿Qué clase soltó menos flores?
+      <input class="sr" type="text" id="p2"> <span id="cp2" class="icono"></span>
+    </p>
+  
+    <p><strong>C)</strong> ¿Cuántas flores soltaron entre las clases de 1°?
+      <input class="sr" type="text" id="p3"> <span id="cp3" class="icono"></span>
+    </p>
+  
+    <p><strong>D)</strong> ¿Cuántas flores soltaron de  más en la clase de 5° que en la de 3°?
+      <input class="sr" type="text" id="p4"> <span id="cp4" class="icono"></span>
+    </p>
+  
+    <p><strong>E)</strong> ¿Cuántos tréboles soltaron entre las clases de 2° y 3°?
+      <input class="sr" type="text" id="p5"> <span id="cp5" class="icono"></span>
+    </p>
+  
+    <p><strong>F)</strong> ¿Qué clase soltó menos tréboles?
+      <input class="sr" type="text" id="p6"> <span id="cp6" class="icono"></span>
+    </p>
+  
+    <button class="bn" id="verificar" onclick="verificarTodo()">Verificar respuestas</button>
+    <button id="btnReintentar" style="display:none;" onclick="reiniciarEjercicios()">Intentar de nuevo</button>
+  </div>
+  
+  <div id="resultadoFinal" class="resultado"></div>
+</div>

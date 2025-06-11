@@ -1,0 +1,63 @@
+<div class="body">
+  <h1>♫ Escribe el número en letras</h1>
+  <h2>Escucha el número y escribe cómo se escribe con letras</h2>
+
+  <div class="exercise" id="ex0">
+    <h3>Ejercicio 1</h3>
+    <p>Escucha el número:</p>
+    <audio controls>
+      <source src="audio1.mp3" type="audio/mpeg">
+    </audio>
+    <input class="rs" type="text" id="input0">
+    <button class="bn" onclick="checkAnswer(0)">Verificar</button>
+    <div class="result" id="result0"></div>
+  </div>
+
+  <div class="exercise" id="ex1">
+    <h3>Ejercicio 2</h3>
+    <p>Escucha el número:</p>
+    <audio controls>
+      <source src="audio2.mp3" type="audio/mpeg">
+    </audio>
+    <input class="rs" type="text" id="input1">
+    <button class="bn" onclick="checkAnswer(1)">Verificar</button>
+    <div class="result" id="result1"></div>
+  </div>
+
+  <div class="exercise" id="ex2">
+    <h3>Ejercicio 3</h3>
+    <p>Escucha el número:</p>
+    <audio controls>
+      <source src="audio3.mp3" type="audio/mpeg">
+    </audio>
+    <input class="rs" type="text" id="input2">
+    <button class="bn" onclick="checkAnswer(2)">Verificar</button>
+    <div class="result" id="result2"></div>
+  </div>
+
+  <div class="exercise" id="ex3">
+    <h3>Ejercicio 4</h3>
+    <p>Escucha el número:</p>
+    <audio controls>
+      <source src="audio4.mp3" type="audio/mpeg">
+    </audio>
+    <input class="rs" type="text" id="input3">
+    <button class="bn" onclick="checkAnswer(3)">Verificar</button>
+    <div class="result" id="result3"></div>
+  </div>
+
+  <div class="exercise" id="ex4">
+    <h3>Ejercicio 5</h3>
+    <p>Escucha el número:</p>
+    <audio controls>
+      <source src="audio5.mp3" type="audio/mpeg">
+    </audio>
+    <input class="rs" type="text" id="input4">
+    <button class="bn" onclick="checkAnswer(4)">Verificar</button>
+    <div class="result" id="result4"></div>
+  </div>
+
+  <div id="finalScore"></div>
+  <button class="bn" id="retryBtn" onclick="retry()">Volver a intentar</button>
+
+</div>

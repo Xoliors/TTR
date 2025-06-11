@@ -1,0 +1,86 @@
+.body {
+    font-family: Arial, sans-serif;
+    background: #e0f7fa;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .contenedor {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .tinaco-container {
+    margin: 10px;
+  }
+
+  .tinaco {
+    width: 220px;
+    height: 300px;
+    border: 5px solid #00796b;
+    border-radius: 120px / 40px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #b2dfdb, #80cbc4);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .llenado {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, #2ec5e7, #44e6fb);
+    transition: height 0.3s ease;
+  }
+
+  .litros {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .meta {
+    color: #004d40;
+    font-size: 14px;
+  }
+
+  .opciones {
+    margin: 15px 0;
+  }
+
+  .litro {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #4db6ac;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: grab;
+  }
+
+  .resultado {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #004d40;
+  }
+
+  button.bn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  #reiniciar {
+    display: none;
+    background-color: #c62828;
+  }

@@ -1,0 +1,93 @@
+   /* Estilo general */
+    .body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background:  #a2c2e1; /* Fondo degradado de azul */
+      color: #2b3e50;
+      overflow-x: hidden;
+    }
+
+    /* Estilo del encabezado */
+    h1.he {
+      text-align: center;
+      color: #0a4d8c;
+      font-size: 40px;
+      padding: 20px;
+      margin-top: 50px;
+      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+      animation: bounce 1s infinite; /* Animación de rebote para el título */
+    }
+
+    /* Animación del título */
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Estilo de la tabla */
+    table {
+      width: 45%; /* Tabla más delgada */
+      margin: 30px auto;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out; /* Efecto al pasar el ratón */
+ text-align: center;
+    }
+
+    table:hover {
+      transform: scale(1.02); /* Efecto de escala al pasar el ratón */
+    }
+
+    /* Estilo de las celdas de la tabla */
+    th, td {
+      padding: 15px;
+      text-align: justify;
+      border: 1px solid #a8c0d9;
+      font-size: 10px;
+      color: #333;
+    }
+
+    th {
+      background-color: #0a4d8c;
+      color: white;
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    td {
+      background-color: #f1faff;
+      font-size: 24px;
+    }
+
+    td:hover {
+      background-color: #d0e8ff; /* Efecto hover para celdas */
+      cursor: pointer;
+    }
+
+    /* Estilo para las filas alternas */
+    tr:nth-child(even) {
+      background-color: #e1f0fc;
+    }
+
+    tr:hover {
+      background-color: #b0d8f7;
+    }
+
+    /* Estilo de la celda de contenido */
+    .contenido {
+      background-color: #e8f4fc;
+      color: #4b8cdb;
+      text-align: center;
+    }
+
+    /* Estilo de las celdas de proceso */
+    .contenido:hover {
+      background-color: #c8e1f9; /* Cambio de color al pasar el ratón */
+    }
+
