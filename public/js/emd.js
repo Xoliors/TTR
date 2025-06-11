@@ -64,9 +64,6 @@ function showScore() {
   const id_ejercicio = 1; // ID fijo del ejercicio
   const fecha = new Date().toISOString().split('T')[0];
 
-  
-  // Llamar a la retroalimentación motivacional
-  mostrarMensajeMotivacional(grade);
 
   fetch('/ejercicios_numeros/ema/guardar-calificacion', {
     method: 'POST',
@@ -94,6 +91,8 @@ function showScore() {
       title: '¡Calificación registrada!',
       text: `Tu calificación fue de ${grade}/10.`,
       confirmButtonText: 'Aceptar'
+    }).then(() => {
+      mostrarMensajeMotivacional(grade.toFixed(1));
     });
   })
   .catch(error => {
