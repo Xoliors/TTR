@@ -12,6 +12,8 @@ const terceroRouter = require('./tercero');
 
 const temas = require('./temas');
 
+const reports = require('./report');
+
 const ejercicios1Router = require('./ejercicios_primer')
 const ejercicios_numeros = require('./ejercicios_numeros')
 const ejercicios2Router = require('./ejercicios_segundo')
@@ -114,6 +116,8 @@ router.use('/calificacionesd2', calificacionesd2)
 router.use('/calificaciones_mul_div', calificacionesT)
 
 router.use('/insignias', insignias)
+
+router.use('/', reports)
 
 //Métodos
 
