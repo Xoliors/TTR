@@ -176,7 +176,7 @@ function mostrarMensajeMotivacional(calificacionRaw) {
 
   if (calificacion === 0) {
     mensaje = cero[Math.floor(Math.random() * cero.length)];
-  } else if (calificacion >= 1 && calificacion <= 5) {
+  } else if (calificacion >= 0 && calificacion < 6) {
     mensaje = bajo[Math.floor(Math.random() * bajo.length)];
   } else if (calificacion >= 6 && calificacion <= 8) {
     mensaje = medio[Math.floor(Math.random() * medio.length)];

@@ -141,7 +141,7 @@ function mostrarPare(nombre) {
 
 function finalizar() {
   globalAttempts++;
-  localStorage.setItem('globalAttempts', globalAttempts);
+  localStorage.setItem(`globalAttempts_${id_ejercicio}`, globalAttempts);  // ← Aquí está el fix
 
   const total = aciertos + errores;
   const calificacion = total === 0 ? 0 : (10 * aciertos / total).toFixed(1);
@@ -168,8 +168,8 @@ function finalizar() {
         text: `Tu calificación fue de ${calificacion}/10.`,
         confirmButtonText: 'Aceptar'
       }).then(() => {
-            mostrarMensajeMotivacional(calificacion.toFixed(1));
-        });
+        mostrarMensajeMotivacional(calificacion);  // ← Ahora sí se ejecutará
+      });
     })
     .catch(error => {
       Swal.fire({
@@ -181,6 +181,7 @@ function finalizar() {
       console.error('Error al guardar calificación:', error);
     });
 }
+
 
 function reiniciarJuego() {
   iniciarJuego();
@@ -231,7 +232,22 @@ function mostrarMensajeMotivacional(calificacionRaw) {
     "¡Sigue así! El éxito es tuyo."
   ];
 
-  if (calificacion >= 1 && calificacion <= 5) {
+  const cero = [
+  "Todos empezamos desde cero, lo importante es seguir intentando.",
+  "No te preocupes, fallar es parte del proceso de aprender.",
+  "Hoy no fue tu día, pero puedes hacerlo mucho mejor, sigue practicando.",
+  "¡No te rindas! Cada error te acerca más al acierto.",
+  "Es solo el comienzo, lo importante es que sigas aprendiendo.",
+  "Los grandes logros comienzan con pequeños pasos, ¡inténtalo de nuevo!",
+  "Aprender toma tiempo, lo lograrás con práctica.",
+  "Un tropiezo no define tu camino. ¡Ánimo!",
+  "A veces fallar nos enseña más que acertar. ¡Sigue adelante!",
+  "Tener 0 hoy no significa que no puedas tener 10 mañana. ¡Confía en ti!"
+];
+
+  if (calificacion === 0) {
+    mensaje = cero[Math.floor(Math.random() * cero.length)];
+  } else if (calificacion >= 0 && calificacion < 6) {
     mensaje = bajo[Math.floor(Math.random() * bajo.length)];
   } else if (calificacion >= 6 && calificacion <= 8) {
     mensaje = medio[Math.floor(Math.random() * medio.length)];

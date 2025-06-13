@@ -169,7 +169,7 @@ const id_ejercicio = 25;
     "¡Sigue así! El éxito es tuyo."
   ];
 
-  if (calificacion >= 1 && calificacion <= 5) {
+  if (calificacion >= 0 && calificacion < 6) {
     mensaje = bajo[Math.floor(Math.random() * bajo.length)];
   } else if (calificacion >= 6 && calificacion <= 8) {
     mensaje = medio[Math.floor(Math.random() * medio.length)];
